@@ -1,0 +1,18 @@
+sudo: required
+
+branches:
+  except:
+    - gh-pages
+
+script:
+  - cd $TRAVIS_BUILD_DIR && python _scripts/extensions2.py
+
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN
+  keep-history: true
+  on:
+    branch: master
+  local-dir: extensions
+  allow-empty-commit: false
