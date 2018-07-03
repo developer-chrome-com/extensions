@@ -8,11 +8,11 @@
     <meta name="MobileOptimized" content="320">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="cleartype" content="on">
-    <link type="image/ico" rel="icon" href="//www.google.com/images/icons/product/chrome-32.png">
+    <link type="image/ico" rel="icon" href="/extensions//www.google.com/images/icons/product/chrome-32.png">
 
-    <link href="/static/css/out/site.css" rel="stylesheet" type="text/css">
-    <link href="/static/css/print.css" rel="stylesheet" type="text/css" media="print">
-    <link href="/static/css/prettify.css" rel="stylesheet" type="text/css">
+    <link href="/extensions/static/css/out/site.css" rel="stylesheet" type="text/css">
+    <link href="/extensions/static/css/print.css" rel="stylesheet" type="text/css" media="print">
+    <link href="/extensions/static/css/prettify.css" rel="stylesheet" type="text/css">
     <link href='//fonts.googleapis.com/css?family=Open+Sans:400,700|Source+Code+Pro' rel='stylesheet' type='text/css'>
 
 
@@ -29,7 +29,7 @@
 
 </script>
 
-    <title>What are extensions? - Google Chrome</title>
+    <title>Themes - Google Chrome</title>
   </head>
 
   <body>
@@ -704,12 +704,12 @@
         <li class="show toplevel">
           <span>Chrome</span>
           <ol class="toc">
-              <li class="show">
+              <li class="">
                 <a href="/extensions">
                   Extend the Browser
                 </a>
                 <ol class="toc">
-                    <li class="selected">
+                    <li class="">
                       <a href="/extensions">
                       What are Extensions?
                       </a>
@@ -822,7 +822,7 @@
                     </li>
                 </ol>
               </li>
-              <li class="">
+              <li class="show">
                 <a href="/webstore">
                   Web Store Publishing and Distribution
                 </a>
@@ -849,7 +849,7 @@
                           </li>
                       </ol>
                     </li>
-                    <li class="">
+                    <li class="show">
                       <a href="/extensions/hosting">
                       Publish Extensions
                       </a>
@@ -863,7 +863,7 @@
                           <li class="">
                             <a href="/extensions/tut_analytics">Google Analytics</a>
                           </li>
-                          <li class="">
+                          <li class="selected">
                             <a href="/extensions/themes">Publishing Themes</a>
                           </li>
                           <li class="">
@@ -1453,188 +1453,163 @@
   </nav>
   <div itemprop="articleBody">
     <nav class="inline-toc no-permalink">
+      <section id="toc">
+    <h3>Contents</h3>
+    <ol class="toc">
+      <li class="toplevel"><a data-list-item href="#manifest"
+          > Manifest </a>
+          <ol class="toc">
+              <li><a data-list-item href="#colors"
+                     >colors</a>
+              </li>
+              <li><a data-list-item href="#images"
+                     >images</a>
+              </li>
+              <li><a data-list-item href="#properties"
+                     >properties</a>
+              </li>
+              <li><a data-list-item href="#tints"
+                     >tints</a>
+              </li>
+          </ol>
+      </li>
+    </ol>
+</section>
+
     </nav>
-<h1 id="What-are-extensions">What are extensions?</h1>
-
-<p>
-  Extensions are small software programs that
-  customize the browsing experience.
-  They enable users to tailor Chrome functionality and
-  behavior to individual needs or preferences.
-  They are built on web technologies
-  such as HTML, JavaScript, and CSS.
+<h1 class="page_title">Themes</h1><p>
+A <em>theme</em> is a special kind of extension
+that changes the way the browser looks.
+Themes are <a href="packaging">packaged</a> like regular extensions,
+but they don't contain JavaScript or HTML code.
 </p>
 
 <p>
-  An extension must fulfill a
-  <a href="single_purpose">single purpose</a>
-  that is narrowly defined
-  and easy to understand.
-  A single extension can include multiple components
-  and a range of functionality,
-  as long as everything contributes towards a common purpose.
+You can find and try a bunch of themes at the
+<a href="https://chrome.google.com/webstore/category/themes">Chrome Web Store</a>.
 </p>
 
+<img src="/static/images/themes-1.png"
+     width="200" height="125" alt="green plants theme" />
+
+<img src="/static/images/themes-2.png"
+     width="200" height="125" alt="love smoke theme" />
+
+<img src="/static/images/themes-3.png"
+     width="200" height="125" alt="jus d'orange theme" />
+
+<h2 id="manifest"> Manifest </h2>
 <p>
-  <img src="/static/images/index/gmail-small.png"
-       width="91"
-       height="35"
-       align="right"
-       style="margin-top:0px; margin-left:0.5em"
-       alt="A screenshot of an extension's icon in the browser bar">
-  User interfaces should be minimal and have intent.
-  They can range from a simple icon,
-  such as the
-  <a href="samples#google-mail-checker">Google Mail Checker extension</a>
-  shown on the right,
-  to <a href="override">overriding</a> an entire page.
+Here is an example
+<a href="manifest"><code>manifest.json</code></a>
+file for a theme:
 </p>
 
-<p>
-  Extension files are zipped into a single <code>.crx</code> package
-  that the user downloads and installs.
-  This means extensions do not depend on content from the web,
-  unlike ordinary web apps.
-</p>
-
-<p>
-  Extensions are distributed through the
-  <a href="https://chrome.google.com/webstore/developer/dashboard">
-    Chrome Developer Dashboard</a>
-  and published to the
-  <a href="http://chrome.google.com/webstore">Chrome Web Store</a>.
-  For more information, see the
-  <a href="http://code.google.com/chrome/webstore">
-    store developer documentation</a>.
-</p>
-
-<h2 id="hello-extensions">Hello Extensions</h2>
-<p>
-Take a small step into extensions with this quick Hello Extensions example.
-Start by creating a new directory to store the extension's files,
-or download them from the
-<a href="/extensions/samples#search:hello">sample page</a>.
-</p>
-
-<p>
-Next, add a file called <code>manifest.json</code>
-and include the following code:
-</p>
 <pre data-filename="manifest.json">
-  {
-    "name": "Hello Extensions",
-    "description" : "Base Level Extension",
-    "version": "1.0",
-    "manifest_version": 2
-  }
-</pre>
-<p>
-Every extension requires a manifest,
-though most extensions will not do much with just the manifest.
-For this quick start,
-the extension has a popup file and icon declared under the
-<a href="browserAction"><code>browser_action</code></a> field:
-</p>
-<pre data-filename="manifest.json">
-  {
-    "name": "Hello Extensions",
-    "description" : "Base Level Extension",
-    "version": "1.0",
-    "manifest_version": 2,
-    <b>"browser_action": {
-      "default_popup": "hello.html",
-      "default_icon": "hello_extensions.png"
-    }</b>
-  }
-</pre>
-<p>
-  Download
-  <a href="/static/images/index/hello_extensions.png"
-  download="hello_extensions.png">
-  <code>hello_extensions.png</code> here</a>
-   and then create a file titled <code>hello.html</code>:
-</p>
-
-<pre data-filename="hello.html">
-  &lt;html&gt;
-    &lt;body&gt;
-      &lt;h1&gt;Hello Extensions&lt;/h1&gt;
-    &lt;/body&gt;
-  &lt;/html&gt;
-</pre>
-<p>
-  The extension now displays <code>hello.html</code> when the icon is clicked.
-  The next step is to include a command
-  in the <code>manifest.json</code> that enables a keyboard shortcut.
-  This step is fun, but not necessary:
-</p>
-<pre data-filename="manifest.json">
-  {
-    "name": "Hello Extensions",
-    "description" : "Base Level Extension",
-    "version": "1.0",
-    "manifest_version": 2,
-    "browser_action": {
-      "default_popup": "hello.html",
-      "default_icon": "hello_extensions.png"
+{
+  "version": "2.6",
+  "name": "camo theme",
+  <b>"theme": {
+    "images" : {
+      "theme_frame" : "images/theme_frame_camo.png",
+      "theme_frame_overlay" : "images/theme_frame_stripe.png",
+      "theme_toolbar" : "images/theme_toolbar_camo.png",
+      "theme_ntp_background" : "images/theme_ntp_background_norepeat.png",
+      "theme_ntp_attribution" : "images/attribution.png"
     },
-    <b>"commands": {
-      "_execute_browser_action": {
-        "suggested_key": {
-          "default": "Ctrl+Shift+F",
-          "mac": "MacCtrl+Shift+F"
-        },
-        "description": "Opens hello.html"
-      }
+    "colors" : {
+      "frame" : [71, 105, 91],
+      "toolbar" : [207, 221, 192],
+      "ntp_text" : [20, 40, 0],
+      "ntp_link" : [36, 70, 0],
+      "ntp_section" : [207, 221, 192],
+      "button_background" : [255, 255, 255]
+    },
+    "tints" : {
+      "buttons" : [0.33, 0.5, 0.47]
+    },
+    "properties" : {
+      "ntp_background_alignment" : "bottom"
     }
-  </b>
-  }
+  }</b>
+}
 </pre>
 
+<h3 id="colors">colors</h3>
+
 <p>
-The last step is to install the extension on your local machine.
-<ol>
-  <li>Navigate to <code>chrome://extensions</code> in your browser.
-  You can also access this page by
-  clicking on the Chrome menu on the top right side of the Omnibox,
-  hovering over <b>More Tools</b> and selecting <b>Extensions</b>.</li>
-  <li>Check the box next to <b> Developer Mode</b>.</li>
-  <li>Click <b>Load Unpacked Extension</b> and select the directory for your
-    "Hello Extensions" extension.</li>
-</ol>
-Congratulations! You can now use your popup-based extension by clicking
-the <code>hello_world.png</code> icon or by pressing
-<code>Ctrl+Shift+F</code> on your keyboard.
+Colors are in RGB format.
+To find the strings you can use within the "colors" field,
+look for kColor* strings in
+<a href="https://chromium.googlesource.com/chromium/src/+/master/chrome/browser/themes/theme_service.cc"><code>theme_service.cc</code></a>.
 </p>
 
-<h2 id="How-do-I-start">What next?</h2>
-<ol>
-  <li>
-    Follow the <a href="getstarted">Getting Started tutorial</a>
-  </li>
-  <li>
-    Read the
-    <a href="overview">Overview</a>
-  </li>
-  <li>
-    Keep up to date by reading the
-    <a href="http://blog.chromium.org/">Chromium blog</a>
-  </li>
-  <li>
-    Subscribe to the
-    <a href="http://groups.google.com/a/chromium.org/group/chromium-extensions">
-      chromium-extensions group</a>
-  </li>
-</ol>
-
-<h2 id="Featured-videos">Featured videos</h2>
+<h3 id="images">images</h3>
 
 <p>
-  <a href="http://www.youtube.com/view_play_list?p=CA101D6A85FE9D4B">
-    Technical videos</a>
-    <br>
-  <a href="http://www.youtube.com/view_play_list?p=38DF05697DE372B1">
-    Developer snapshots</a>
+Image resources use paths relative to the root of the extension.
+You can override any of the images that are specified by
+<code>kThemeableImages</code> in
+<a href="https://chromium.googlesource.com/chromium/src/+/master/chrome/browser/themes/theme_service.cc"><code>theme_service.cc</code></a>.
+Just remove the "IDR_"
+and convert the remaining characters to lowercase.
+For example, <code>IDR_THEME_NTP_BACKGROUND</code>
+(which <code>kThemeableImages</code> uses
+to specify the background of the new tab pane)
+corresponds to "theme_ntp_background".
+</p>
+
+<h3 id="properties">properties</h3>
+
+<p>
+This field lets you specify
+properties such as background alignment,
+background repeat,
+and an alternate logo.
+To see the properties and the values they can have, see
+<a href="https://chromium.googlesource.com/chromium/src/+/master/chrome/browser/themes/theme_service.cc"><code>theme_service.cc</code></a>.
+
+</p>
+
+<h3 id="tints">tints</h3>
+
+<p>
+You can specify tints to be applied to parts of the UI
+such as buttons, the frame, and the background tab.
+Google Chrome supports tints, not images,
+because images don't work across platforms
+and are brittle in the case of adding new buttons.
+To find the strings you can use within the "tints" field,
+look for kTint* strings in
+<a href="https://chromium.googlesource.com/chromium/src/+/master/chrome/browser/themes/theme_service.cc"><code>theme_service.cc</code></a>.
+</p>
+
+<p>
+Tints are in Hue-Saturation-Lightness (HSL) format,
+using floating-point numbers in the range 0 - 1.0:
+</p>
+
+<ul>
+  <li>
+    <b>Hue</b> is an absolute value, with 0 and 1 being red.
+  </li>
+  <li>
+    <b>Saturation</b> is relative to the currently provided image.
+    0.5 is <em>no change</em>,
+    0 is <em>totally desaturated</em>,
+    and 1 is <em>full saturation</em>.
+  </li>
+  <li>
+    <b>Lightness</b> is also relative,
+    with 0.5 being <em>no change</em>,
+    0 as <em>all pixels black</em>,
+    and 1 as <em>all pixels white</em>.
+  </li>
+</ul>
+
+<p>
+You can alternatively use <code>-1.0</code> for any of the HSL values
+to specify <em>no change</em>.
 </p>
     
     <footer id="cc-info">

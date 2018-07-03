@@ -8,11 +8,11 @@
     <meta name="MobileOptimized" content="320">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="cleartype" content="on">
-    <link type="image/ico" rel="icon" href="//www.google.com/images/icons/product/chrome-32.png">
+    <link type="image/ico" rel="icon" href="/extensions//www.google.com/images/icons/product/chrome-32.png">
 
-    <link href="/static/css/out/site.css" rel="stylesheet" type="text/css">
-    <link href="/static/css/print.css" rel="stylesheet" type="text/css" media="print">
-    <link href="/static/css/prettify.css" rel="stylesheet" type="text/css">
+    <link href="/extensions/static/css/out/site.css" rel="stylesheet" type="text/css">
+    <link href="/extensions/static/css/print.css" rel="stylesheet" type="text/css" media="print">
+    <link href="/extensions/static/css/prettify.css" rel="stylesheet" type="text/css">
     <link href='//fonts.googleapis.com/css?family=Open+Sans:400,700|Source+Code+Pro' rel='stylesheet' type='text/css'>
 
 
@@ -29,7 +29,7 @@
 
 </script>
 
-    <title>What are extensions? - Google Chrome</title>
+    <title>Tutorial: Google Analytics - Google Chrome</title>
   </head>
 
   <body>
@@ -704,12 +704,12 @@
         <li class="show toplevel">
           <span>Chrome</span>
           <ol class="toc">
-              <li class="show">
+              <li class="">
                 <a href="/extensions">
                   Extend the Browser
                 </a>
                 <ol class="toc">
-                    <li class="selected">
+                    <li class="">
                       <a href="/extensions">
                       What are Extensions?
                       </a>
@@ -822,7 +822,7 @@
                     </li>
                 </ol>
               </li>
-              <li class="">
+              <li class="show">
                 <a href="/webstore">
                   Web Store Publishing and Distribution
                 </a>
@@ -849,7 +849,7 @@
                           </li>
                       </ol>
                     </li>
-                    <li class="">
+                    <li class="show">
                       <a href="/extensions/hosting">
                       Publish Extensions
                       </a>
@@ -860,7 +860,7 @@
                           <li class="">
                             <a href="/extensions/hosting_changes">Hosting Policy Changes</a>
                           </li>
-                          <li class="">
+                          <li class="selected">
                             <a href="/extensions/tut_analytics">Google Analytics</a>
                           </li>
                           <li class="">
@@ -1453,189 +1453,249 @@
   </nav>
   <div itemprop="articleBody">
     <nav class="inline-toc no-permalink">
+      <section id="toc">
+    <h3>Contents</h3>
+    <ol class="toc">
+      <li class="toplevel"><a data-list-item href="#toc-requirements"
+          >Requirements</a>
+      </li>
+      <li class="toplevel"><a data-list-item href="#toc-installing"
+          >Installing the tracking code</a>
+      </li>
+      <li class="toplevel"><a data-list-item href="#toc-tracking-pageviews"
+          >Tracking page views</a>
+      </li>
+      <li class="toplevel"><a data-list-item href="#toc-debugging"
+          >Monitoring analytics requests</a>
+      </li>
+      <li class="toplevel"><a data-list-item href="#toc-tracking-events"
+          >Tracking events</a>
+      </li>
+      <li class="toplevel"><a data-list-item href="#toc-samplecode"
+          >Sample code</a>
+      </li>
+    </ol>
+</section>
+
     </nav>
-<h1 id="What-are-extensions">What are extensions?</h1>
+<h1>Tutorial: Google Analytics</h1>
+
 
 <p>
-  Extensions are small software programs that
-  customize the browsing experience.
-  They enable users to tailor Chrome functionality and
-  behavior to individual needs or preferences.
-  They are built on web technologies
-  such as HTML, JavaScript, and CSS.
+  This tutorial demonstrates using Google Analytics to track the usage of your
+  extension. If you are developing a platform app, see <a
+  href="/apps/analytics">Analytics for Apps</a> since apps have different
+  restrictions from extensions.
+</p>
+
+<h2 id="toc-requirements">Requirements</h2>
+<p>
+  This tutorial expects that you have some familiarity writing extensions for
+  Google Chrome.  If you need information on how to write an extension, please
+  read the <a href="getstarted">Getting Started tutorial</a>.
 </p>
 
 <p>
-  An extension must fulfill a
-  <a href="single_purpose">single purpose</a>
-  that is narrowly defined
-  and easy to understand.
-  A single extension can include multiple components
-  and a range of functionality,
-  as long as everything contributes towards a common purpose.
+  You will also need a <a href="http://www.google.com/analytics">Google
+  Analytics account</a> set up to track your extension. Note that when setting
+  up the account, you can use any value in the Website's URL field, as your
+  extension will not have an URL of its own.
+</p>
+
+<p style="text-align: center">
+  <img src="/static/images/tut_analytics/screenshot01.png"
+       style="width:400px;height:82px;"
+       alt="The analytics setup with info for a chrome extension filled out." />
+</p>
+
+<h2 id="toc-installing">Installing the tracking code</h2>
+
+<p>
+  The standard Google Analytics tracking code snippet fetches a file named
+  <code>ga.js</code> from an SSL protected URL if the current page
+  was loaded using the <code>https://</code> protocol.  <strong>Chrome
+  extensions and applications may <em>only</em> use the SSL-protected version of
+  <code>ga.js</code></strong>. Loading <code>ga.js</code> over insecure HTTP is
+  disallowed by Chrome's default <a href="contentSecurityPolicy">Content
+  Security Policy</a>. This, plus the fact that Chrome extensions are hosted
+  under the <code>chrome-extension://</code> schema, requires a slight
+  modification to the usual tracking snippet to pull <code>ga.js</code> directly
+  from <code>https://ssl.google-analytics.com/ga.js</code> instead of the
+  default location.
 </p>
 
 <p>
-  <img src="/static/images/index/gmail-small.png"
-       width="91"
-       height="35"
-       align="right"
-       style="margin-top:0px; margin-left:0.5em"
-       alt="A screenshot of an extension's icon in the browser bar">
-  User interfaces should be minimal and have intent.
-  They can range from a simple icon,
-  such as the
-  <a href="samples#google-mail-checker">Google Mail Checker extension</a>
-  shown on the right,
-  to <a href="override">overriding</a> an entire page.
+  Below is a modified snippet for the
+  <a href="http://code.google.com/apis/analytics/docs/tracking/asyncTracking.html">asynchronous
+  tracking API</a> (the modified line is bolded):
 </p>
 
-<p>
-  Extension files are zipped into a single <code>.crx</code> package
-  that the user downloads and installs.
-  This means extensions do not depend on content from the web,
-  unlike ordinary web apps.
-</p>
+<pre data-filename="asyncTracking.js">
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  <strong>ga.src = 'https://ssl.google-analytics.com/ga.js';</strong>
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</pre>
 
 <p>
-  Extensions are distributed through the
-  <a href="https://chrome.google.com/webstore/developer/dashboard">
-    Chrome Developer Dashboard</a>
-  and published to the
-  <a href="http://chrome.google.com/webstore">Chrome Web Store</a>.
-  For more information, see the
-  <a href="http://code.google.com/chrome/webstore">
-    store developer documentation</a>.
+  You'll also need to ensure that your extension has access to load the resource
+  by relaxing the default content security policy. The policy definition in your
+  <a href="manifest"><code>manifest.json</code></a> might look like:
 </p>
 
-<h2 id="hello-extensions">Hello Extensions</h2>
-<p>
-Take a small step into extensions with this quick Hello Extensions example.
-Start by creating a new directory to store the extension's files,
-or download them from the
-<a href="/extensions/samples#search:hello">sample page</a>.
-</p>
-
-<p>
-Next, add a file called <code>manifest.json</code>
-and include the following code:
-</p>
 <pre data-filename="manifest.json">
-  {
-    "name": "Hello Extensions",
-    "description" : "Base Level Extension",
-    "version": "1.0",
-    "manifest_version": 2
+{
+  ...,
+  "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'",
+  ...
+}
+</pre>
+
+<p>
+  Here is a popup page (<code>popup.html</code>) which loads the asynchronous
+  tracking code via an external JavaScript file (<code>popup.js</code>) and
+  tracks a single page view:
+</p>
+
+<pre data-filename="popup.html">
+&lt;!DOCTYPE html>
+&lt;html>
+ &lt;head>
+   ...
+  &lt;script src="popup.js">&lt;/script>
+ &lt;/head>
+ &lt;body>
+   ...
+ &lt;/body>
+&lt;/html>
+</pre>
+
+<pre data-filename="popup.js">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-XXXXXXXX-X']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = 'https://ssl.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</pre>
+
+<p>
+  Keep in mind that the string <code>UA-XXXXXXXX-X</code> should be replaced
+  with your own Google Analytics account number.
+</p>
+
+<h2 id="toc-tracking-pageviews">Tracking page views</h2>
+
+<p>
+  The <code>_gaq.push(['_trackPageview']);</code> code will track a single
+  page view.  This code may be used on any page in your extension.  When
+  placed on a background page, it will register a view once per browser
+  session.  When placed on a popup, it will register a view once every time
+  the popup is opened.
+</p>
+
+<p>
+  By looking at the page view data for each page in your extension, you can
+  get an idea of how many times your users interact with your extension per
+  browser session:
+</p>
+
+<p style="text-align: center">
+  <img src="/static/images/tut_analytics/screenshot02.png"
+       style="width:300px;height:119px;"
+       alt="Analytics view of the top content for a site." />
+</p>
+
+<h2 id="toc-debugging">Monitoring analytics requests</h2>
+
+<p>
+  To ensure that tracking data from your extension is being sent to Google
+  Analytics, you can inspect the pages of your extension in the
+  Developer Tools window (see the
+  <a href="tut_debugging">debugging tutorial</a> for more information).
+  As the following figure shows, you should see requests for a file named
+  <strong>__utm.gif</strong> if everything is set up correctly.
+</p>
+
+<p style="text-align: center">
+  <img src="/static/images/tut_analytics/screenshot04.png"
+       style="width:683px;height:418px;"
+       alt="Developer Tools window showing the __utm.gif request" />
+</p>
+
+<h2 id="toc-tracking-events">Tracking events</h2>
+
+<p>
+  By configuring event tracking, you can determine which parts of your
+  extension your users interact with the most.  For example, if you have
+  three buttons users may click:
+</p>
+
+<pre>
+  &lt;button id='button1'>Button 1&lt;/button>
+  &lt;button id='button2'>Button 2&lt;/button>
+  &lt;button id='button3'>Button 3&lt;/button>
+</pre>
+
+<p>
+  Write a function that sends click events to Google Analytics:
+</p>
+
+<pre>
+  function trackButton(e) {
+    _gaq.push(['_trackEvent', e.target.id, 'clicked']);
+  };
+</pre>
+
+<p>
+  And use it as an event handler for each button's click:
+</p>
+
+<pre>
+  var buttons = document.querySelectorAll('button');
+  for (var i = 0; i < buttons.length; i++) {
+    buttons[i].addEventListener('click', trackButtonClick);
   }
 </pre>
-<p>
-Every extension requires a manifest,
-though most extensions will not do much with just the manifest.
-For this quick start,
-the extension has a popup file and icon declared under the
-<a href="browserAction"><code>browser_action</code></a> field:
-</p>
-<pre data-filename="manifest.json">
-  {
-    "name": "Hello Extensions",
-    "description" : "Base Level Extension",
-    "version": "1.0",
-    "manifest_version": 2,
-    <b>"browser_action": {
-      "default_popup": "hello.html",
-      "default_icon": "hello_extensions.png"
-    }</b>
-  }
-</pre>
-<p>
-  Download
-  <a href="/static/images/index/hello_extensions.png"
-  download="hello_extensions.png">
-  <code>hello_extensions.png</code> here</a>
-   and then create a file titled <code>hello.html</code>:
-</p>
-
-<pre data-filename="hello.html">
-  &lt;html&gt;
-    &lt;body&gt;
-      &lt;h1&gt;Hello Extensions&lt;/h1&gt;
-    &lt;/body&gt;
-  &lt;/html&gt;
-</pre>
-<p>
-  The extension now displays <code>hello.html</code> when the icon is clicked.
-  The next step is to include a command
-  in the <code>manifest.json</code> that enables a keyboard shortcut.
-  This step is fun, but not necessary:
-</p>
-<pre data-filename="manifest.json">
-  {
-    "name": "Hello Extensions",
-    "description" : "Base Level Extension",
-    "version": "1.0",
-    "manifest_version": 2,
-    "browser_action": {
-      "default_popup": "hello.html",
-      "default_icon": "hello_extensions.png"
-    },
-    <b>"commands": {
-      "_execute_browser_action": {
-        "suggested_key": {
-          "default": "Ctrl+Shift+F",
-          "mac": "MacCtrl+Shift+F"
-        },
-        "description": "Opens hello.html"
-      }
-    }
-  </b>
-  }
-</pre>
 
 <p>
-The last step is to install the extension on your local machine.
-<ol>
-  <li>Navigate to <code>chrome://extensions</code> in your browser.
-  You can also access this page by
-  clicking on the Chrome menu on the top right side of the Omnibox,
-  hovering over <b>More Tools</b> and selecting <b>Extensions</b>.</li>
-  <li>Check the box next to <b> Developer Mode</b>.</li>
-  <li>Click <b>Load Unpacked Extension</b> and select the directory for your
-    "Hello Extensions" extension.</li>
-</ol>
-Congratulations! You can now use your popup-based extension by clicking
-the <code>hello_world.png</code> icon or by pressing
-<code>Ctrl+Shift+F</code> on your keyboard.
+  The Google Analytics event tracking overview page will give you metrics
+  regarding how many times each individual button is clicked:
 </p>
 
-<h2 id="How-do-I-start">What next?</h2>
-<ol>
-  <li>
-    Follow the <a href="getstarted">Getting Started tutorial</a>
-  </li>
-  <li>
-    Read the
-    <a href="overview">Overview</a>
-  </li>
-  <li>
-    Keep up to date by reading the
-    <a href="http://blog.chromium.org/">Chromium blog</a>
-  </li>
-  <li>
-    Subscribe to the
-    <a href="http://groups.google.com/a/chromium.org/group/chromium-extensions">
-      chromium-extensions group</a>
-  </li>
-</ol>
-
-<h2 id="Featured-videos">Featured videos</h2>
+<p style="text-align: center">
+  <img src="/static/images/tut_analytics/screenshot03.png"
+       style="width:300px;height:482px;"
+       alt="Analytics view of the event tracking data for a site." />
+</p>
 
 <p>
-  <a href="http://www.youtube.com/view_play_list?p=CA101D6A85FE9D4B">
-    Technical videos</a>
-    <br>
-  <a href="http://www.youtube.com/view_play_list?p=38DF05697DE372B1">
-    Developer snapshots</a>
+  By using this approach, you can see which parts of your extension are
+  under-or-overutilized.  This information can help guide decisions about UI
+  redesigns or additional functionality to implement.
 </p>
+
+<p>
+  For more information about using event tracking, see the
+  Google Analytics
+  <a href="https://developers.google.com/analytics/devguides/collection/gajs/eventTrackerGuide">developer
+  documentation</a>.
+</p>
+
+<h2 id="toc-samplecode">Sample code</h2>
+
+<p>
+  A sample extension that uses these techniques is
+  available in the Chromium source tree:
+</p>
+
+<blockquote>
+  <a href="https://chromium.googlesource.com/chromium/src/+/master/chrome/common/extensions/docs/examples/tutorials/analytics/">.../examples/tutorials/analytics/</a>
+</blockquote>
     
     <footer id="cc-info">
       <!--p class="last-updated">Last updated August 2, 2013.</p-->

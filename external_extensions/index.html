@@ -8,11 +8,11 @@
     <meta name="MobileOptimized" content="320">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="cleartype" content="on">
-    <link type="image/ico" rel="icon" href="//www.google.com/images/icons/product/chrome-32.png">
+    <link type="image/ico" rel="icon" href="/extensions//www.google.com/images/icons/product/chrome-32.png">
 
-    <link href="/static/css/out/site.css" rel="stylesheet" type="text/css">
-    <link href="/static/css/print.css" rel="stylesheet" type="text/css" media="print">
-    <link href="/static/css/prettify.css" rel="stylesheet" type="text/css">
+    <link href="/extensions/static/css/out/site.css" rel="stylesheet" type="text/css">
+    <link href="/extensions/static/css/print.css" rel="stylesheet" type="text/css" media="print">
+    <link href="/extensions/static/css/prettify.css" rel="stylesheet" type="text/css">
     <link href='//fonts.googleapis.com/css?family=Open+Sans:400,700|Source+Code+Pro' rel='stylesheet' type='text/css'>
 
 
@@ -29,7 +29,7 @@
 
 </script>
 
-    <title>What are extensions? - Google Chrome</title>
+    <title>Alternative Extension Distribution Options - Google Chrome</title>
   </head>
 
   <body>
@@ -704,12 +704,12 @@
         <li class="show toplevel">
           <span>Chrome</span>
           <ol class="toc">
-              <li class="show">
+              <li class="">
                 <a href="/extensions">
                   Extend the Browser
                 </a>
                 <ol class="toc">
-                    <li class="selected">
+                    <li class="">
                       <a href="/extensions">
                       What are Extensions?
                       </a>
@@ -822,7 +822,7 @@
                     </li>
                 </ol>
               </li>
-              <li class="">
+              <li class="show">
                 <a href="/webstore">
                   Web Store Publishing and Distribution
                 </a>
@@ -849,7 +849,7 @@
                           </li>
                       </ol>
                     </li>
-                    <li class="">
+                    <li class="show">
                       <a href="/extensions/hosting">
                       Publish Extensions
                       </a>
@@ -866,7 +866,7 @@
                           <li class="">
                             <a href="/extensions/themes">Publishing Themes</a>
                           </li>
-                          <li class="">
+                          <li class="selected">
                             <a href="/extensions/external_extensions">Other Deployment Options</a>
                           </li>
                       </ol>
@@ -1453,189 +1453,412 @@
   </nav>
   <div itemprop="articleBody">
     <nav class="inline-toc no-permalink">
+      <section id="toc">
+    <h3>Contents</h3>
+    <ol class="toc">
+      <li class="toplevel"><a data-list-item href="#prereqs"
+          >Before you begin</a>
+      </li>
+      <li class="toplevel"><a data-list-item href="#preferences"
+          >Using a preferences file</a>
+          <ol class="toc">
+              <li><a data-list-item href="#troubleshooting"
+                     >Troubleshooting Mac OS permissions problems</a>
+              </li>
+          </ol>
+      </li>
+      <li class="toplevel"><a data-list-item href="#registry"
+          >Using the Windows registry</a>
+      </li>
+      <li class="toplevel"><a data-list-item href="#updating"
+          >Updating and uninstalling</a>
+      </li>
+      <li class="toplevel"><a data-list-item href="#faq"
+          >FAQ</a>
+      </li>
+    </ol>
+</section>
+
     </nav>
-<h1 id="What-are-extensions">What are extensions?</h1>
+<h1>Alternative Extension Distribution Options</h1>
 
 <p>
-  Extensions are small software programs that
-  customize the browsing experience.
-  They enable users to tailor Chrome functionality and
-  behavior to individual needs or preferences.
-  They are built on web technologies
-  such as HTML, JavaScript, and CSS.
-</p>
-
-<p>
-  An extension must fulfill a
-  <a href="single_purpose">single purpose</a>
-  that is narrowly defined
-  and easy to understand.
-  A single extension can include multiple components
-  and a range of functionality,
-  as long as everything contributes towards a common purpose.
+All Chrome extensions must be distributed either directly from the
+Chrome Web Store
+or by using the mechanisms described below.
+Failure to comply with one of these distribution methods constitutes
+a violation of the
+<a href="/extensions/single_purpose">Chrome extension policy</a>
+and may result in the extension
+and/or the software distributing it to be flagged as
+<a href="https://www.google.com/about/company/unwanted-software-policy.html">unwanted software</a>.
 </p>
 
 <p>
-  <img src="/static/images/index/gmail-small.png"
-       width="91"
-       height="35"
-       align="right"
-       style="margin-top:0px; margin-left:0.5em"
-       alt="A screenshot of an extension's icon in the browser bar">
-  User interfaces should be minimal and have intent.
-  They can range from a simple icon,
-  such as the
-  <a href="samples#google-mail-checker">Google Mail Checker extension</a>
-  shown on the right,
-  to <a href="override">overriding</a> an entire page.
+Usually, users install extensions from the Chrome Web Store,
+but sometimes you might want an extension
+to be installed via other means.
+Here are two typical cases:
+</p>
+
+<ul>
+  <li>
+    An extension is associated with some other software,
+    and the extension should be installed
+    whenever the user installs that other software.
+  </li>
+  <li>
+    A network admin wants to install the same extensions
+    throughout their organization.
+  </li>
+</ul>
+
+<p>
+An extension that is not installed from the Chrome Web Store
+is known as an
+<em>external extension</em>.
+For developers who want to distribute an extension as part
+of the installation process for other software,
+or for network admins that want to distribute an extension
+throughout their organization,
+Google Chrome supports the following extension installation methods:
+</p>
+
+<ul>
+  <li> Using a preferences JSON file (for Mac OS X and Linux only)</li>
+  <li> Using the Windows registry (for Windows only) </li>
+</ul>
+
+<p>
+Both ways support installing an extension hosted at an
+<code>update_URL</code>.
+On Windows and Mac,
+the <code>update_URL</code> must point to the Chrome Web Store
+where the extension must be hosted.
 </p>
 
 <p>
-  Extension files are zipped into a single <code>.crx</code> package
-  that the user downloads and installs.
-  This means extensions do not depend on content from the web,
-  unlike ordinary web apps.
+The preferences file on <a href ="/extensions/linux_hosting">Linux can point
+to your own server where you are hosting the extension</a>.
+The preferences JSON file also supports installing
+an extension from a <code>.crx</code> extension
+file on the user's Linux computer.
+</p>
+
+<h2 id="prereqs">Before you begin</h2>
+
+<p>
+First, <a href="/webstore/publish">publish</a>
+the extension in the Chrome Web Store,
+or package a <a href="packaging"><code>.crx</code> file</a>
+and make sure that it installs successfully.
+</p>
+
+
+<p class="warning">
+<b>Windows and Mac installs must come from Chrome Web Store:</b><br>
+As of Chrome 33,
+no external installs are allowed from a path to a local <code>.crx</code> on Windows
+(see <a href="http://blog.chromium.org/2013/11/protecting-windows-users-from-malicious.html">Protecting Windows users from malicious extensions</a>).
+As of Chrome 44,
+no external installs are allowed from a path to a local .crx on Mac
+(see <a href="http://blog.chromium.org/2015/05/continuing-to-protect-chrome-users-from.html">Continuing to protect Chrome users from malicious extensions</a>).
 </p>
 
 <p>
-  Extensions are distributed through the
-  <a href="https://chrome.google.com/webstore/developer/dashboard">
-    Chrome Developer Dashboard</a>
-  and published to the
-  <a href="http://chrome.google.com/webstore">Chrome Web Store</a>.
-  For more information, see the
-  <a href="http://code.google.com/chrome/webstore">
-    store developer documentation</a>.
-</p>
-
-<h2 id="hello-extensions">Hello Extensions</h2>
-<p>
-Take a small step into extensions with this quick Hello Extensions example.
-Start by creating a new directory to store the extension's files,
-or download them from the
-<a href="/extensions/samples#search:hello">sample page</a>.
+If installing from an
+ <a href="autoupdate#update_url">update URL</a>, ensure that the extension
+is properly <a href="hosting">hosted</a>.
 </p>
 
 <p>
-Next, add a file called <code>manifest.json</code>
-and include the following code:
-</p>
-<pre data-filename="manifest.json">
-  {
-    "name": "Hello Extensions",
-    "description" : "Base Level Extension",
-    "version": "1.0",
-    "manifest_version": 2
-  }
-</pre>
-<p>
-Every extension requires a manifest,
-though most extensions will not do much with just the manifest.
-For this quick start,
-the extension has a popup file and icon declared under the
-<a href="browserAction"><code>browser_action</code></a> field:
-</p>
-<pre data-filename="manifest.json">
-  {
-    "name": "Hello Extensions",
-    "description" : "Base Level Extension",
-    "version": "1.0",
-    "manifest_version": 2,
-    <b>"browser_action": {
-      "default_popup": "hello.html",
-      "default_icon": "hello_extensions.png"
-    }</b>
-  }
-</pre>
-<p>
-  Download
-  <a href="/static/images/index/hello_extensions.png"
-  download="hello_extensions.png">
-  <code>hello_extensions.png</code> here</a>
-   and then create a file titled <code>hello.html</code>:
+Before you edit the preferences file or the registry,
+make a note of the following:
 </p>
 
-<pre data-filename="hello.html">
-  &lt;html&gt;
-    &lt;body&gt;
-      &lt;h1&gt;Hello Extensions&lt;/h1&gt;
-    &lt;/body&gt;
-  &lt;/html&gt;
-</pre>
-<p>
-  The extension now displays <code>hello.html</code> when the icon is clicked.
-  The next step is to include a command
-  in the <code>manifest.json</code> that enables a keyboard shortcut.
-  This step is fun, but not necessary:
-</p>
-<pre data-filename="manifest.json">
-  {
-    "name": "Hello Extensions",
-    "description" : "Base Level Extension",
-    "version": "1.0",
-    "manifest_version": 2,
-    "browser_action": {
-      "default_popup": "hello.html",
-      "default_icon": "hello_extensions.png"
-    },
-    <b>"commands": {
-      "_execute_browser_action": {
-        "suggested_key": {
-          "default": "Ctrl+Shift+F",
-          "mac": "MacCtrl+Shift+F"
-        },
-        "description": "Opens hello.html"
-      }
-    }
-  </b>
-  }
-</pre>
+<ul>
+ <li> The intended <b>location</b> of the extension's <code>.crx</code> file,
+        or the update URL from which it is served </li>
+ <li> The extension's <b>version</b>
+   (from the manifest file or the <b>chrome://extensions</b> page) </li>
+ <li> The extension's <b>ID</b>
+   (from the <b>chrome://extensions</b> page
+   when you've loaded the packed extension) </li>
+</ul>
 
 <p>
-The last step is to install the extension on your local machine.
+The following examples assume the version is <code>1.0</code>
+and the ID is <code>aaaaaaaaaabbbbbbbbbbcccccccccc</code>.
+</p>
+
+<h2 id="preferences">Using a preferences file</h2>
+
+<br>
+
+<p class="note">
+<b>Mac OS X and Linux only:</b>
+Do not use the preferences file for Windows.
+Use <a href="#registry">Windows registry</a> instead.
+</p>
+
 <ol>
-  <li>Navigate to <code>chrome://extensions</code> in your browser.
-  You can also access this page by
-  clicking on the Chrome menu on the top right side of the Omnibox,
-  hovering over <b>More Tools</b> and selecting <b>Extensions</b>.</li>
-  <li>Check the box next to <b> Developer Mode</b>.</li>
-  <li>Click <b>Load Unpacked Extension</b> and select the directory for your
-    "Hello Extensions" extension.</li>
+<li>If you are installing from a file on Linux, make the <code>.crx</code> extension
+file available to the machine you want to install the extension on.
+(Copy it to a local directory or to a network share for example,
+<code>\\server\share\extension.crx</code>
+or <code>/home/share/extension.crx</code>.)
+</li>
+
+<li>Create a file with the following name in one of the folders listed below:
+  <code>aaaaaaaaaabbbbbbbbbbcccccccccc.json</code> where the file name (without the extension)
+  corresponds to your extension's ID.
+  The location depends on the operating system.
+  <dl>
+  <dt> Mac OS X:</dt>
+    <dd>For a specific user: <code>~USERNAME/Library/Application Support/Google/Chrome/External Extensions/</code><br>
+        For all users: <code>/Library/Application Support/Google/Chrome/External Extensions/</code>
+    <p>The external extension file for all users is read only if every directory in the path is owned by the user <code>root</code>, has the group <code>admin</code> or <code>wheel</code>, and is not world writable.  The path must also be free of symbolic links.  These restrictions prevent an unprivileged user from causing extensions to be installed for all users.  See <a href="#troubleshooting">troubleshooting</a> for details.</p>
+    <p class="note">
+    <b>Note:</b> The above path for all users was added in Chrome 16.  Prior versions used a different path:<br/>
+     <code>/Applications/Google Chrome.app/Contents/Extensions/</code>
+     This path was deprecated in version 17.  Support was removed in version 20.  Use one of the paths above instead.</p>
+  </dd>
+
+  <dt> Linux: </dt>
+    <dd> <code>/opt/google/chrome/extensions/</code> <br>
+    </dd>
+    <dd> <code>/usr/share/google-chrome/extensions/</code> <br>
+    <b>Note:</b> Use <code>chmod</code> if necessary
+    to make sure that the <code>aaaaaaaaaabbbbbbbbbbcccccccccc.json</code> files
+    are world-readable.
+    </dd>
+  </dl>
+</li>
+
+<li>Linux only: If you are installing from a file, specify the extension's location and version with fields
+named "external_crx" and "external_version" in the file created above.
+  <ul>
+    <li>Example:</li>
+    <li>
+<pre>
+  {
+    "external_crx": "/home/share/extension.crx",
+    "external_version": "1.0"
+  }
+</pre>
+    </li>
+    <li>
+      <b>Note:</b>
+      You need to escape
+      each <code>\</code> character in the location.
+      For example,
+      <code>\\server\share\extension.crx</code> would be
+      <code>"\\\\server\\share\\extension.crx"</code>.
+    </li>
+  </ul>
+</li>
+
+<li>If you are installing from an update URL, specify the extension's update URL
+with field name "external_update_url".</li>
+
+<li>
+Example of installation from local .crx file (Linux only):
+  <ol>
+    <li>
+<pre>
+  {
+    "external_update_url": "http://myhost.com/mytestextension/updates.xml"
+  }
+</pre>
+    </li>
+  </ol>
+</li>
+
+<li>
+Example of installation from the Chrome Webstore (Mac and Linux):
+  <ol>
+    <li>
+<pre>
+  {
+    "external_update_url": "https://clients2.google.com/service/update2/crx"
+  }
+</pre>
+    </li>
+  </ol>
+</li>
+
+<li>
+If you would like to install extension only for some browser locales,
+you can list supported locales in field name "supported_locale". Locale may
+specify parent locale like "en", in this case the extension will be
+installed for all English locales like "en-US", "en-GB", etc.
+If another browser locale is selected that is not supported by the extension,
+the external extensions will be uninstalled. If "supported_locales" list
+is missing, the extension will be installed for any locale.
+  <ul>
+    <li>Example:</li>
+    <li>
+<pre>
+  {
+    "external_update_url": "https://clients2.google.com/service/update2/crx",
+    "supported_locales": [ "en", "fr", "de" ]
+  }
+</pre>
+    </li>
+  </ul>
+</li>
+<li>Save the JSON file.</li>
+<li>Launch Google Chrome and go to <b>chrome://extensions</b>;
+you should see the extension listed. </li>
 </ol>
-Congratulations! You can now use your popup-based extension by clicking
-the <code>hello_world.png</code> icon or by pressing
-<code>Ctrl+Shift+F</code> on your keyboard.
+
+<p class="note">
+<b>Note:</b>
+Previous versions of Google Chrome used an
+<code>external_extensions.json</code> file to specify which extensions to
+install. This file has been deprecated in favor of individual <code>.json</code>
+files, one per extension.
 </p>
 
-<h2 id="How-do-I-start">What next?</h2>
+<h3 id="troubleshooting">Troubleshooting Mac OS permissions problems</h3>
+
+<p>On Mac OS, the external extensions files for all users are only read if file system permissions prevent unprivileged users from changing it.  If you do not see external extensions installed when Chrome is launched, there may be a permissions problem with the external extensions preferences files.  To see if this is the problem, follow these steps:</p>
+
 <ol>
-  <li>
-    Follow the <a href="getstarted">Getting Started tutorial</a>
-  </li>
-  <li>
-    Read the
-    <a href="overview">Overview</a>
-  </li>
-  <li>
-    Keep up to date by reading the
-    <a href="http://blog.chromium.org/">Chromium blog</a>
-  </li>
-  <li>
-    Subscribe to the
-    <a href="http://groups.google.com/a/chromium.org/group/chromium-extensions">
-      chromium-extensions group</a>
-  </li>
+  <li> Launch the Console program.  You can find it under /Applications/Utilities/Console. </li>
+  <li> If the leftmost icon in the Console says "Show Log List", click that icon.  A second column appears at the left. </li>
+  <li> Click "Console Messages" in the left pane. </li>
+  <li> Search for the string <b>Can not read external extensions</b>.  If there is a problem reading the external extensions files, you will see an error message.  Look for another error message directly above it, which should explain the issue.  For example, if you see the following error:
+     "Path /Library/Application Support/Google/Chrome is owned by the wrong group", you need to use <code>chgrp</code> or the Finder's Get Info dialog to change the directory's group owner to the Administrator group.</li>
+  <li> After fixing the issue, relaunch Chrome.  Test that the external extension is now installed.  It is possible that one permissions error keeps Chrome from detecting a second error.  If the external extension was not installed, repeat these steps until you do not see an error in the Console application.
 </ol>
 
-<h2 id="Featured-videos">Featured videos</h2>
+<h2 id="registry">Using the Windows registry</h2>
+
+<ol>
+<li>Find or create the following key in the
+registry:
+<ul>
+  <li> 32-bit Windows: <code>HKEY_LOCAL_MACHINE\Software\Google\Chrome\Extensions</code> </li>
+  <li> 64-bit Windows: <code>HKEY_LOCAL_MACHINE\Software\Wow6432Node\Google\Chrome\Extensions</code> </li>
+</ul>
+</li>
+
+<li>Create a new key (folder)
+under the <b>Extensions</b> key with the
+same name as the ID of your extension
+(for example, <code>aaaaaaaaaabbbbbbbbbbcccccccccc</code>).
+</li>
+<li>In your extension key,
+create a property, "update_url", and set it to the value:
+"https://clients2.google.com/service/update2/crx"
+(this points to your extension's crx in the Chrome Web Store):
+<pre>{
+  "update_url": "https://clients2.google.com/service/update2/crx"
+}</pre>
+</li>
+<li>Launch the browser and go to
+<b>chrome://extensions</b>; you should
+see the extension listed. </li>
+</ol>
+
+<h2 id="updating">Updating and uninstalling</h2>
+
+<p>Google Chrome scans the metadata entries
+in the preferences and registry
+each time the browser starts, and makes
+any necessary changes to the installed
+external extensions. </p>
+
+<p>To update your extension to a new version,
+update the file, and then update the version
+in the preferences or registry. </p>
+
+<p>To uninstall your extension
+(for example, if your software is uninstalled),
+remove your preference file (aaaaaaaaaabbbbbbbbbbcccccccccc.json)
+or the metadata from the registry. </p>
+
+<h2 id="faq">FAQ</h2>
 
 <p>
-  <a href="http://www.youtube.com/view_play_list?p=CA101D6A85FE9D4B">
-    Technical videos</a>
-    <br>
-  <a href="http://www.youtube.com/view_play_list?p=38DF05697DE372B1">
-    Developer snapshots</a>
+This section answers common questions about external extensions.
 </p>
+
+<p><b>Will the methodology for allowing a “pre-install” still be supported
+by Google Chrome from M33 onwards?</b></p>
+<p>Yes, but only as an install from a Chrome Web Store
+<code>update_URL</code>,
+not from a local file path.</p>
+
+<p><b>Can I specify a URL as a path to the external extension?</b> </p>
+<p>Yes, use the <a href="#preferences">preferences JSON</a> file
+for Mac OS X and Linux; the <a href="#registry">registry</a> for Windows.
+The extension must be hosted as explained in
+<a href="hosting">hosting</a>.
+In the preferences file,
+use the "external_update_url" property to point to an
+<a href="autoupdate#update_manifest">update manifest</a> that has the URL for your
+extension.
+In the Windows registry,
+use the "update_url" property.</p>
+
+<p><b>What are some common mistakes when installing with the preferences
+file?</b></p>
+<ul>
+  <li>
+    Not specifying the same id/version
+    as the one listed in the <code>.crx</code> </li>
+  <li>
+    The .json file (<code>aaaaaaaaaabbbbbbbbbbcccccccccc.json</code>) is in
+    the wrong location or the ID specified does not match the extension ID.
+  <li>
+    Syntax error in JSON file
+    (forgetting to separate entries with comma or
+    leaving a trailing comma somewhere) </li>
+  <li>
+    JSON file entry points to the wrong path
+    to the <code>.crx</code> (or path specified but no filename) </li>
+  <li>
+    Backslashes in UNC path not escaped
+    (for example, <code>"\\server\share\file"</code> is wrong;
+    it should be <code>"\\\\server\\share\\extension"</code>) </li>
+  <li>
+    Permissions problems on a network share </li>
+</ul>
+
+<p><b>What are some common mistakes when installing with the registry?</b> </p>
+<ul>
+  <li>Not specifying the same id/version
+    as the one listed in the Chrome Web Store </li>
+  <li>Key created in the wrong location in the registry </li>
+  <li>Registry entry points to the wrong path
+to the <code>.crx</code> file in the Chrome Web Store</li>
+  <li>Permissions problems on a network share </li>
+</ul>
+
+<p><b>How do I update my native binaries and extension in-step?</b></p>
+<p>Previously when off-store extensions were supported,
+it was possible to have the native binaries and the extension be updated in lock step.
+However, extensions hosted on the Chrome Web Store are updated
+via the Chrome update mechanism which developers do not control.
+Extension developers should be careful about updating extensions
+that have a dependency on the native binary
+(for example, legacy extensions using <a href="npapi">NPAPI</a>).
+</p>
+
+<p><b>What if the user uninstalls the extension?</b> </p>
+<p>If the user uninstalls the extension through the UI, it will no
+longer be installed or updated on each startup. In other words, the
+external extension is blocklisted. </p>
+
+<p><b>How do I get off the blocklist?</b> </p>
+<p>If the user uninstalls your extension, you should respect that
+decision. However, if you (the developer) accidentally uninstalled
+your extension through the UI,
+you can remove the blocklist tag
+by installing the extension normally
+through the UI, and then uninstalling it. </p>
     
     <footer id="cc-info">
       <!--p class="last-updated">Last updated August 2, 2013.</p-->

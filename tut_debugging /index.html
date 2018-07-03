@@ -8,11 +8,11 @@
     <meta name="MobileOptimized" content="320">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="cleartype" content="on">
-    <link type="image/ico" rel="icon" href="//www.google.com/images/icons/product/chrome-32.png">
+    <link type="image/ico" rel="icon" href="/extensions//www.google.com/images/icons/product/chrome-32.png">
 
-    <link href="/static/css/out/site.css" rel="stylesheet" type="text/css">
-    <link href="/static/css/print.css" rel="stylesheet" type="text/css" media="print">
-    <link href="/static/css/prettify.css" rel="stylesheet" type="text/css">
+    <link href="/extensions/static/css/out/site.css" rel="stylesheet" type="text/css">
+    <link href="/extensions/static/css/print.css" rel="stylesheet" type="text/css" media="print">
+    <link href="/extensions/static/css/prettify.css" rel="stylesheet" type="text/css">
     <link href='//fonts.googleapis.com/css?family=Open+Sans:400,700|Source+Code+Pro' rel='stylesheet' type='text/css'>
 
 
@@ -29,7 +29,7 @@
 
 </script>
 
-    <title>What are extensions? - Google Chrome</title>
+    <title>Debugging Extensions - Google Chrome</title>
   </head>
 
   <body>
@@ -709,7 +709,7 @@
                   Extend the Browser
                 </a>
                 <ol class="toc">
-                    <li class="selected">
+                    <li class="">
                       <a href="/extensions">
                       What are Extensions?
                       </a>
@@ -748,7 +748,7 @@
                           </li>
                       </ol>
                     </li>
-                    <li class="">
+                    <li class="show">
                       <a href="/extensions/devguide">
                       Developer Guide
                       </a>
@@ -762,7 +762,7 @@
                           <li class="">
                             <a href="/extensions/security">Stay Secure</a>
                           </li>
-                          <li class="">
+                          <li class="selected">
                             <a href="/extensions/tut_debugging">Debugging</a>
                           </li>
                           <li class="">
@@ -1453,188 +1453,312 @@
   </nav>
   <div itemprop="articleBody">
     <nav class="inline-toc no-permalink">
+      <section id="toc">
+    <h3>Contents</h3>
+    <ol class="toc">
+      <li class="toplevel"><a data-list-item href="#locate_logs"
+          >Locate the Logs</a>
+          <ol class="toc">
+              <li><a data-list-item href="#debug_bg"
+                     >Background Script</a>
+              </li>
+              <li><a data-list-item href="#debug_popup"
+                     >Popup</a>
+              </li>
+              <li><a data-list-item href="#debug_cs"
+                     >Content Script</a>
+              </li>
+              <li><a data-list-item href="#extension_tabs"
+                     >Extension Tabs</a>
+              </li>
+          </ol>
+      </li>
+      <li class="toplevel"><a data-list-item href="#network_requests"
+          >Monitor Network Requests</a>
+      </li>
+      <li class="toplevel"><a data-list-item href="#declare_permission"
+          >Declare Permissions</a>
+      </li>
+      <li class="toplevel"><a data-list-item href="#next"
+          >Next Steps</a>
+      </li>
+    </ol>
+</section>
+
     </nav>
-<h1 id="What-are-extensions">What are extensions?</h1>
+<h1>Debugging Extensions</h1>
+
 
 <p>
-  Extensions are small software programs that
-  customize the browsing experience.
-  They enable users to tailor Chrome functionality and
-  behavior to individual needs or preferences.
-  They are built on web technologies
-  such as HTML, JavaScript, and CSS.
+  Extensions are able to leverage the same debugging benifits
+  <a href="https://developers.google.com/web/tools/chrome-devtools/">
+    Chrome DevTools
+  </a> provides for web pages,
+  but they carry unique behavior properties.
+  Becoming a master extension debugger
+  requires an understanding of these behaviors,
+  how extension components work with each other,
+  and where to corner bugs.
+  This tutorial gives developers a basic understanding of debugging extensions.
+</p>
+
+
+<h2 id="locate_logs">Locate the Logs</h2>
+
+<p>
+  Extensions are made of many different components,
+  and these components have individual responsibilities.
+  Download a broken extension
+  <a href="examples/tutorials/broken_background_color.zip"
+  download="broken_background_color.zip">here</a>
+  to begin locating error logs for different extension components.
+</p>
+
+<h3 id="debug_bg">Background Script</h3>
+<p>
+  Navigate to the chrome extensions management page at
+  <code>chrome://extensions</code> and
+  ensure developer mode is on.
+  Click the <b>Load Unpacked</b> button
+  and select the broken extension directory.
+  After the extension is loaded,
+  it should have three buttons:
+  <b>Details</b>, <b>Remove</b> and <b>Errors</b> in red letters.
+</p>
+
+<img src="/static/images/debugging/error_button.png"
+      alt="Image displaying error button on extension management page">
+
+<p>
+  Click the <b>Errors</b> button to view the error log.
+  The extensions system has found an issue in the background script.
 </p>
 
 <p>
-  An extension must fulfill a
-  <a href="single_purpose">single purpose</a>
-  that is narrowly defined
-  and easy to understand.
-  A single extension can include multiple components
-  and a range of functionality,
-  as long as everything contributes towards a common purpose.
+  <code style="color:red;">
+    Uncaught TypeError: Cannot read property ‘addListener’ of undefined
+  </code>
+</p>
+
+<img src="/static/images/debugging/background_error.png"
+      alt="Extensions Management Page displaying background script error"/>
+
+<p>
+  Additionally, the Chrome DevTools panel can be opened for the
+  background script by selecting the blue link next to
+  <b>Inspect views</b>.
+</p>
+
+<img src="/static/images/debugging/inspect_views_background.png"
+      alt="DevTools displaying background script error"/>
+
+<p>
+  Return to the code.
+</p>
+<pre data-filename="background.js">
+  chrome.runtime.on<b>i</b>nstalled.addListener(function() {
+    chrome.storage.sync.set({color: '#3aa757'}, function() {
+      console.log('The color is green.');
+    });
+    chrome.declarativeContent.onPageChanged.removeRules(undefined, function() {
+      chrome.declarativeContent.onPageChanged.addRules([{
+        conditions: [new chrome.declarativeContent.PageStateMatcher({
+          pageUrl: {hostEquals: 'developer.chrome.com'},
+        })],
+        actions: [new chrome.declarativeContent.ShowPageAction()]
+      }]);
+    });
+  });
+</pre>
+
+<p>
+  The background script is attempting to listen for the
+  <a href="extensions/runtime#event-onInstalled"><code>onInstalled</code></a>
+  event,
+  but the property name requires an upper case "I".
+  Update the code to reflect the correct call,
+  click the <b>Clear all</b> button in the upper right hand corner,
+  then reload the extension.
+</p>
+
+<h3 id="debug_popup">Popup</h3>
+
+<p>
+  Now that the extension initializes correctly,
+  other components can be tested.
+  Refresh this page,
+  or open a new tab and naigate to any page on developer.chrome.com,
+  open the popup and click the green square.
+  And... nothing happens.
 </p>
 
 <p>
-  <img src="/static/images/index/gmail-small.png"
-       width="91"
-       height="35"
-       align="right"
-       style="margin-top:0px; margin-left:0.5em"
-       alt="A screenshot of an extension's icon in the browser bar">
-  User interfaces should be minimal and have intent.
-  They can range from a simple icon,
-  such as the
-  <a href="samples#google-mail-checker">Google Mail Checker extension</a>
-  shown on the right,
-  to <a href="override">overriding</a> an entire page.
+  Navigate back to the Extensions Management Page,
+  the <b>Errors</b> button has reappeared.
+  Click it to view the new log.
+</p>
+<p>
+  <code style="color:red;">
+    Uncaught ReferenceError: tabs is not defined
+  </code>
+</p>
+
+<img src="/static/images/debugging/popup_error.png"
+      alt="Extensions Management Page displaying popup error"/>
+
+<p>
+  Popup errors can also be viewed by inspecting the popup.
+</p>
+
+<img src="/static/images/debugging/inspect_popup.png"
+      alt="DevTools displaying popup error"/>
+
+<p>
+  The error, <code>tabs is undefined</code>,
+  says the extension doesn’t know where to inject the content script.
+  This can be corrected by calling the
+  <a href="/extensions/tabs#method-query"><code>tabs.query()</code></a>
+  method,
+  then selecting the active tab.
+</p>
+
+<pre data-filename="popup.js">
+  let changeColor = document.getElementById('changeColor');
+
+  chrome.storage.sync.get('color', function(data) {
+    changeColor.style.backgroundColor = data.color;
+    changeColor.setAttribute('value', data.color);
+  });
+
+  changeColor.onclick = function(element) {
+    let color = element.target.value;
+    <b>chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {</b>
+      chrome.tabs.executeScript(
+          tabs[0].id,
+          {code: 'document.body.style.backgroundColor = color;'});
+    <b>});</b>
+  };
+</pre>
+
+<p>
+  Update the code,
+  click the <b>Clear all</b> button in the upper right hand corner,
+  and then reload the extension.
+</p>
+
+<h3 id="debug_cs">Content Script</h3>
+
+<p>
+  Refresh the page, open the popup and click the green box.
+  And... nope, the background still hasn’t changed colors!
+  Navigate back to the Extensions Management Page
+  and... there is no <b>Errors</b> button.
+  The likely culprite is the content script,
+  which runs inside the web page.
 </p>
 
 <p>
-  Extension files are zipped into a single <code>.crx</code> package
-  that the user downloads and installs.
-  This means extensions do not depend on content from the web,
-  unlike ordinary web apps.
+  Open the DevTools pannel of the web page the extension is trying to alter.
 </p>
 
-<p>
-  Extensions are distributed through the
-  <a href="https://chrome.google.com/webstore/developer/dashboard">
-    Chrome Developer Dashboard</a>
-  and published to the
-  <a href="http://chrome.google.com/webstore">Chrome Web Store</a>.
-  For more information, see the
-  <a href="http://code.google.com/chrome/webstore">
-    store developer documentation</a>.
-</p>
-
-<h2 id="hello-extensions">Hello Extensions</h2>
-<p>
-Take a small step into extensions with this quick Hello Extensions example.
-Start by creating a new directory to store the extension's files,
-or download them from the
-<a href="/extensions/samples#search:hello">sample page</a>.
-</p>
+<img src="/static/images/debugging/content_script_error.png"
+      alt="Extension error displayed in web page console"/>
 
 <p>
-Next, add a file called <code>manifest.json</code>
-and include the following code:
+  Only runtime errors, <code>console.warning</code>
+  and <code>console.error</code> will be recorded on the
+  Extensions Management Page.
+</p>
+<p>
+  To use DevTools from within the content script,
+  click the dropdown arrow next to <b>top</b> and select the extension.
+</p>
+
+<img src="/static/images/debugging/inspect_content_script.png"
+      alt="Uncaught ReferenceError: tabs is not defined"/>
+
+<p>
+  The error says <code>color</code> is not defined.
+  The extension must not be passing the variable correctly.
+  Correct the injected script to pass the color variable into the code.
+</p>
+<pre data-filename="popup.js">
+  {code: 'document.body.style.backgroundColor = "' + color + '";'});
+</pre>
+
+<h3 id="extension_tabs">Extension Tabs</h3>
+
+<p>
+  Logs for extension pages displayed as a tab,
+  such as <a href="extensions/override">override pages</a> and
+  <a href="extensions/options#full_page">full-page options</a>,
+  can be found in the web page console and on the extensions management page.
+</p>
+
+<h2 id="network_requests">Monitor Network Requests</h2>
+<p>
+  The popup will often make all of the required network requests before even the
+  speediest of developers can open DevTools.
+  To view these requests, refresh from inside the network pannel.
+  It will reload the popup without closing the DevTools panel.
+</p>
+<img src="/static/images/debugging/network_reload.gif"
+      alt="Refresh inside the network panel to view popup network requests"/>
+
+<h2 id="declare_permission">Declare Permissions</h2>
+<p>
+  While extensions have similar capabilities as web pages
+  they often need permission to use certain features,
+  such as <a href="/extensions/cookies">cookies</a>,
+  <a href="/extensions/storage">storage</a> and
+  <a href="/extensions/xhr">Cross-Origin XMLHttpRequsts</a>.
+  Refer to the <a href="extensions/permission_warnings">permissions article</a>
+  and the availabe <a href="/extensions/api_index">Chrome APIs</a>
+  to ensure an extension is requesting the correct permissions in its
+  <a href="/extensions/manifest">manifest</a>.
 </p>
 <pre data-filename="manifest.json">
   {
-    "name": "Hello Extensions",
-    "description" : "Base Level Extension",
+    "name": "Broken Background Color",
     "version": "1.0",
+    "description": "Fix an Extension!",
+    <b>"permissions": [</b>
+      <b>"activeTab",</b>
+      <b>"declarativeContent",</b>
+      <b>"storage"</b>
+    <b>],</b>
+    "options_page": "options.html",
+    "background": {
+      "scripts": ["background.js"],
+      "persistent": false
+    },
+    "page_action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        "16": "images/get_started16.png",
+        "32": "images/get_started32.png",
+        "48": "images/get_started48.png",
+        "128": "images/get_started128.png"
+      }
+    },
+    "icons": {
+      "16": "images/get_started16.png",
+      "32": "images/get_started32.png",
+      "48": "images/get_started48.png",
+      "128": "images/get_started128.png"
+    },
     "manifest_version": 2
   }
 </pre>
-<p>
-Every extension requires a manifest,
-though most extensions will not do much with just the manifest.
-For this quick start,
-the extension has a popup file and icon declared under the
-<a href="browserAction"><code>browser_action</code></a> field:
-</p>
-<pre data-filename="manifest.json">
-  {
-    "name": "Hello Extensions",
-    "description" : "Base Level Extension",
-    "version": "1.0",
-    "manifest_version": 2,
-    <b>"browser_action": {
-      "default_popup": "hello.html",
-      "default_icon": "hello_extensions.png"
-    }</b>
-  }
-</pre>
-<p>
-  Download
-  <a href="/static/images/index/hello_extensions.png"
-  download="hello_extensions.png">
-  <code>hello_extensions.png</code> here</a>
-   and then create a file titled <code>hello.html</code>:
-</p>
-
-<pre data-filename="hello.html">
-  &lt;html&gt;
-    &lt;body&gt;
-      &lt;h1&gt;Hello Extensions&lt;/h1&gt;
-    &lt;/body&gt;
-  &lt;/html&gt;
-</pre>
-<p>
-  The extension now displays <code>hello.html</code> when the icon is clicked.
-  The next step is to include a command
-  in the <code>manifest.json</code> that enables a keyboard shortcut.
-  This step is fun, but not necessary:
-</p>
-<pre data-filename="manifest.json">
-  {
-    "name": "Hello Extensions",
-    "description" : "Base Level Extension",
-    "version": "1.0",
-    "manifest_version": 2,
-    "browser_action": {
-      "default_popup": "hello.html",
-      "default_icon": "hello_extensions.png"
-    },
-    <b>"commands": {
-      "_execute_browser_action": {
-        "suggested_key": {
-          "default": "Ctrl+Shift+F",
-          "mac": "MacCtrl+Shift+F"
-        },
-        "description": "Opens hello.html"
-      }
-    }
-  </b>
-  }
-</pre>
+<h2 id="next">Next Steps</h2>
 
 <p>
-The last step is to install the extension on your local machine.
-<ol>
-  <li>Navigate to <code>chrome://extensions</code> in your browser.
-  You can also access this page by
-  clicking on the Chrome menu on the top right side of the Omnibox,
-  hovering over <b>More Tools</b> and selecting <b>Extensions</b>.</li>
-  <li>Check the box next to <b> Developer Mode</b>.</li>
-  <li>Click <b>Load Unpacked Extension</b> and select the directory for your
-    "Hello Extensions" extension.</li>
-</ol>
-Congratulations! You can now use your popup-based extension by clicking
-the <code>hello_world.png</code> icon or by pressing
-<code>Ctrl+Shift+F</code> on your keyboard.
-</p>
-
-<h2 id="How-do-I-start">What next?</h2>
-<ol>
-  <li>
-    Follow the <a href="getstarted">Getting Started tutorial</a>
-  </li>
-  <li>
-    Read the
-    <a href="overview">Overview</a>
-  </li>
-  <li>
-    Keep up to date by reading the
-    <a href="http://blog.chromium.org/">Chromium blog</a>
-  </li>
-  <li>
-    Subscribe to the
-    <a href="http://groups.google.com/a/chromium.org/group/chromium-extensions">
-      chromium-extensions group</a>
-  </li>
-</ol>
-
-<h2 id="Featured-videos">Featured videos</h2>
-
-<p>
-  <a href="http://www.youtube.com/view_play_list?p=CA101D6A85FE9D4B">
-    Technical videos</a>
-    <br>
-  <a href="http://www.youtube.com/view_play_list?p=38DF05697DE372B1">
-    Developer snapshots</a>
+  For further information on debugging extensions,
+  watch
+  <a href="http://www.youtube.com/watch?v=IP0nMv_NI1s&feature=PlayList&p=CA101D6A85FE9D4B&index=5">Developing and Debugging</a>.
+  Learn more about
+  <a href="https://developers.google.com/web/tools/chrome-devtools/">
+    Chrome Devtools</a> by reading the documentation.
 </p>
     
     <footer id="cc-info">
