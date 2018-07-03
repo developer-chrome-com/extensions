@@ -59,7 +59,9 @@ def parse_html(index_html, subpath):
         if href.startswith('/extensions/'):
             download_list.append(href)
         if not href.startswith('/'):
-            download_list.append(subpath + '/' + href)
+            download_list.append(
+                os.path.normpath(subpath + '/../' + href)
+            )
     return list(set(download_list))
 
 
@@ -84,8 +86,8 @@ if __name__ == '__main__':
 
     clean_dest(dest_path)
 
-    download_list = [extensions_path]
-    downloaded = {}
+    download_list = [extensions_path + url_suffix]
+    downloaded = {'': '/'}
     while len(download_list) > 0:
         subpath = download_list.pop()
         if subpath in ignore_list:
@@ -113,7 +115,8 @@ if __name__ == '__main__':
                 reverse=True
             )
             logging.debug('{s} appends following list:\n{l}'.format(
-                s=subpath, l='\n'.join(append_list)))
+                s=subpath, l='\n'.join(append_list)
+            ))
             download_list = append_list + download_list
             modify_css_href(dest_html)
 
