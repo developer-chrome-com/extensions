@@ -16,6 +16,9 @@ css_list = [
     '/static/css/print.css',
     '/static/css/prettify.css'
 ]
+ignore_list = [
+    '/extensions/whats_new'
+]
 
 
 class MyHTMLParser(HTMLParser):
@@ -40,16 +43,21 @@ def clean_dest(dest_path):
     os.mkdir(dest_path)
 
 
-def parse_html(index_html):
+def parse_html(index_html, subpath):
     with open(index_html, 'r') as f:
         html_string = f.read()
     parser = MyHTMLParser()
     parser.feed(html_string)
     download_list = []
     for href in parser.hrefs:
+        if re.search(r'\.[^\.]{1,4}$', href):
+            continue
+        if href.startswith('http'):
+            continue
         if href.startswith('/extensions/'):
-            if not re.search(r'(js|css|png)$', href):
-                download_list.append(href)
+            download_list.append(href)
+        if not href.startswith('/'):
+            download_list.append(subpath + '/' + href)
     return list(set(download_list))
 
 
@@ -74,22 +82,38 @@ if __name__ == '__main__':
 
     clean_dest(dest_path)
 
-    download_file(origin_url + extensions_path, dest_path + url_suffix)
-    modify_css_href(dest_path + url_suffix)
-    download_list = parse_html(dest_path + url_suffix)
-    downloaded = []
-
+    download_list = [extensions_path]
+    downloaded = {}
     while len(download_list) > 0:
         subpath = download_list.pop()
-        dest_html = root_path + subpath + url_suffix
+        if subpath in ignore_list:
+            continue
+        subpath_base = os.path.basename(subpath)
+        if subpath_base in downloaded.keys():
+            print('Ignoring {s} due to existing {e}'.format(
+                s=subpath, e=downloaded[subpath_base]
+            ))
+            continue
+        dest_html = root_path + subpath
+        if not dest_html.endswith('.html'):
+            dest_html += url_suffix
         if not os.path.exists(os.path.dirname(dest_html)):
-            os.mkdir(os.path.dirname(dest_html))
+            os.makedirs(os.path.dirname(dest_html))
         download_file(origin_url + subpath, dest_html)
-        downloaded.append(subpath)
-        modify_css_href(dest_html)
+        downloaded[subpath_base] = subpath
 
-        download_list += list(
-            set(parse_html(dest_html)) - set(download_list) - set(downloaded))
+        if dest_html.endswith('.html'):
+            append_list = sorted(
+                list(
+                    set(parse_html(dest_html, subpath)) -
+                    set(download_list)
+                ),
+                reverse=True
+            )
+            print('{s} appends following list:\n{l}'.format(
+                s=subpath, l='\n'.join(append_list)))
+            download_list = append_list + download_list
+            modify_css_href(dest_html)
 
     for css in css_list:
         dest_css = root_path + extensions_path + css
