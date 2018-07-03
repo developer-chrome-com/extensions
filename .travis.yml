@@ -8,6 +8,7 @@ branches:
 
 script:
   - cd $TRAVIS_BUILD_DIR && python _scripts/extensions2.py
+  - mv $TRAVIS_BUILD_DIR/*.log $TRAVIS_BUILD_DIR/extensions
 
 deploy:
   provider: pages

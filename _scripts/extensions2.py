@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 from HTMLParser import HTMLParser
+import logging
 import os
 import os.path
 import re
@@ -19,6 +20,7 @@ css_list = [
 ignore_list = [
     '/extensions/whats_new'
 ]
+logging.basicConfig(filename='example.log', level=logging.DEBUG)
 
 
 class MyHTMLParser(HTMLParser):
@@ -90,7 +92,7 @@ if __name__ == '__main__':
             continue
         subpath_base = os.path.basename(subpath)
         if subpath_base in downloaded.keys():
-            print('Ignoring {s} due to existing {e}'.format(
+            logging.debug('Ignoring {s} due to existing {e}'.format(
                 s=subpath, e=downloaded[subpath_base]
             ))
             continue
@@ -110,7 +112,7 @@ if __name__ == '__main__':
                 ),
                 reverse=True
             )
-            print('{s} appends following list:\n{l}'.format(
+            logging.debug('{s} appends following list:\n{l}'.format(
                 s=subpath, l='\n'.join(append_list)))
             download_list = append_list + download_list
             modify_css_href(dest_html)
