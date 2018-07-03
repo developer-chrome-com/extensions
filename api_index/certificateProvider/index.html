@@ -1,0 +1,1338 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="cleartype" content="on">
+    <link type="image/ico" rel="icon" href="/extensions//www.google.com/images/icons/product/chrome-32.png">
+
+    <link href="/extensions/static/css/out/site.css" rel="stylesheet" type="text/css">
+    <link href="/extensions/static/css/print.css" rel="stylesheet" type="text/css" media="print">
+    <link href="/extensions/static/css/prettify.css" rel="stylesheet" type="text/css">
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:400,700|Source+Code+Pro' rel='stylesheet' type='text/css'>
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-41980257-1', 'auto');
+  ga('create', 'UA-49880327-5', {'name': 'chromeDocs'});
+  ga('send', 'pageview');
+  ga('chromeDocs.send', 'pageview');
+
+</script>
+
+    <title>chrome.certificateProvider - Google Chrome</title>
+  </head>
+
+  <body>
+    <div class="gc-container">
+    <a href="#gc-pagecontent" class="element-invisible element-focusable">Skip to main content</a>
+
+    <header id="topnav" role="banner">
+      <div id="logo">
+        <a href="/">
+          <img alt="Chrome: developer" src="/static/images/chrome-logo_2x.png">
+        </a>
+        <span class="collase-icon"><!-- <img src="/static/images/burger-icon.png" class="collase-icon">--></span>
+      </div>
+      <nav id="fatnav" role="navigation">
+      <ul>
+          <li class="pillar">
+            <span class="toplevel">Chrome</span>
+            <ul class="expandee">
+                <li class="submenu">Extend the Browser
+                  <ul>
+                      <li class="category">
+                        <a href="/extensions">
+                        What are Extensions?
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="/extensions/getstarted">
+                        Get Started Tutorial
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="/extensions/overview">
+                        Overview
+                        </a>
+                        <ul>
+                            <li><a href="/extensions/manifest">Manifest Format</a>
+                            </li>
+                            <li><a href="/extensions/background_pages">Manage Events</a>
+                            </li>
+                            <li><a href="/extensions/user_interface">Design User Interface</a>
+                            </li>
+                            <li><a href="/extensions/content_scripts">Content Scripts</a>
+                            </li>
+                            <li><a href="/extensions/permission_warnings">Declare Permissions and Warn Users</a>
+                            </li>
+                            <li><a href="/extensions/options">Give Users Options</a>
+                            </li>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="/extensions/devguide">
+                        Developer Guide
+                        </a>
+                        <ul>
+                            <li><a href="/extensions/performance">Reach Peak Performance</a>
+                            </li>
+                            <li><a href="/extensions/user_privacy">Protect User Privacy</a>
+                            </li>
+                            <li><a href="/extensions/security">Stay Secure</a>
+                            </li>
+                            <li><a href="/extensions/tut_debugging">Debugging</a>
+                            </li>
+                            <li><a href="/extensions/tut_oauth">OAuth</a>
+                            </li>
+                            <li><a href="/extensions/a11y">Accessibility</a>
+                            </li>
+                            <li><a href="/extensions/contentSecurityPolicy">Content Security Policy</a>
+                            </li>
+                            <li><a href="/extensions/xhr">Cross-Origin XHR</a>
+                            </li>
+                            <li><a href="/extensions/i18n">Internationalization</a>
+                            </li>
+                            <li><a href="/extensions/messaging">Message Passing</a>
+                            </li>
+                            <li><a href="/extensions/nativeMessaging">Native Messaging</a>
+                            </li>
+                            <li><a href="/extensions/match_patterns">Match Patterns</a>
+                            </li>
+                            <li><a href="/extensions/single_purpose">Extension Quality Guidelines FAQ</a>
+                            </li>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="/extensions/samples">
+                        Samples
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="/extensions/faq">
+                        Help
+                        </a>
+                        <ul>
+                            <li><a href="/extensions/faq">FAQ</a>
+                            </li>
+                            <li><a href="/extensions/whats_new">What's New?</a>
+                            </li>
+                            <li><a href="https://groups.google.com/a/chromium.org/forum/#!forum/chromium-extensions">Google Groups</a>
+                            </li>
+                            <li><a href="http://stackoverflow.com/tags/google-chrome-extension/info">Stack Overflow</a>
+                            </li>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Web Store Publishing and Distribution
+                  <ul>
+                      <li class="category">
+                        <a href="/webstore">
+                        Distribution Overview
+                        </a>
+                        <ul>
+                            <li><a href="/webstore">Distributing Products Built for Chrome</a>
+                            </li>
+                            <li><a href="/webstore/about_webstore">What Is the Chrome Web Store?</a>
+                            </li>
+                            <li><a href="/webstore/overview">What Can You Publish?</a>
+                            </li>
+                            <li><a href="/webstore/get_started_simple">Tutorial: Getting Started</a>
+                            </li>
+                            <li><a href="/webstore/samples">Samples</a>
+                            </li>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="/extensions/hosting">
+                        Publish Extensions
+                        </a>
+                        <ul>
+                            <li><a href="/extensions/hosting">Hosting and Updating</a>
+                            </li>
+                            <li><a href="/extensions/hosting_changes">Hosting Policy Changes</a>
+                            </li>
+                            <li><a href="/extensions/tut_analytics">Google Analytics</a>
+                            </li>
+                            <li><a href="/extensions/themes">Publishing Themes</a>
+                            </li>
+                            <li><a href="/extensions/external_extensions">Other Deployment Options</a>
+                            </li>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="/webstore/money">
+                        Monetizing
+                        </a>
+                        <ul>
+                            <li><a href="/webstore/money">Monetizing Your App</a>
+                            </li>
+                            <li><a href="/webstore/identify_user">Using Google Accounts</a>
+                            </li>
+                            <li><a href="/webstore/one_time_payments">One-Time Payments</a>
+                            </li>
+                            <li><a href="/webstore/pricing">Pricing</a>
+                            </li>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="/webstore/branding">
+                        Branding
+                        </a>
+                        <ul>
+                            <li><a href="/webstore/branding">Branding Guidelines</a>
+                            </li>
+                            <li><a href="/webstore/images">Supplying Images</a>
+                            </li>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="/webstore/best_practices">
+                        Help
+                        </a>
+                        <ul>
+                            <li><a href="/webstore/best_practices">Best Practices</a>
+                            </li>
+                            <li><a href="/webstore/faq">FAQ</a>
+                            </li>
+                            <li><a href="http://stackoverflow.com/questions/tagged/google-chrome-app">Stack Overflow</a>
+                            </li>
+                            <li><a href="/webstore/articles">Articles</a>
+                            </li>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Mobile Chrome
+                  <ul>
+                      <li class="category">
+                        <a href="/multidevice">
+                        Chrome for a Multi-Device World
+                        </a>
+                        <ul>
+                            <li><a href="/multidevice/user-agent">User Agents</a>
+                            </li>
+                            <li><a href="/multidevice/android/customtabs">Chrome Custom Tabs</a>
+                            </li>
+                            <li><a href="/devtools/docs/mobile-emulation">Mobile Emulation</a>
+                            </li>
+                            <li><a href="/devtools/docs/remote-debugging">Remote Debugging</a>
+                            </li>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="/multidevice/android/overview">
+                        Chrome for Android
+                        </a>
+                        <ul>
+                            <li><a href="/multidevice/android/overview">Overview</a>
+                            </li>
+                            <li><a href="/multidevice/android/intents">Android Intents with Chrome</a>
+                            </li>
+                            <li><a href="/multidevice/android/customtabs">Chrome Custom Tabs</a>
+                            </li>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="/multidevice/webview/overview">
+                        Chrome WebView
+                        </a>
+                        <ul>
+                            <li><a href="/multidevice/webview/overview">WebView for Android</a>
+                            </li>
+                            <li><a href="/multidevice/webview/gettingstarted">Getting Started</a>
+                            </li>
+                            <li><a href="/multidevice/webview/pixelperfect">Pixel-Perfect UI</a>
+                            </li>
+                            <li><a href="/multidevice/webview/workflow">WebView Workflow</a>
+                            </li>
+                            <li><a href="/multidevice/webview/tipsandtricks">Tips &amp; Tricks</a>
+                            </li>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="/multidevice/ios/links">
+                        Chrome for iOS
+                        </a>
+                        <ul>
+                            <li><a href="/multidevice/ios/links">Opening Links in Chrome</a>
+                            </li>
+                            <li><a href="/multidevice/user-agent#chrome_for_ios_user_agent">User Agent</a>
+                            </li>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="/multidevice/faq">
+                        FAQ
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+            </ul>
+          </li>
+          <li class="pillar">
+            <span class="toplevel">Chrome OS</span>
+            <ul class="expandee">
+                <li class="submenu">Apps
+                  <ul>
+                      <li class="category">
+                        <a href="/apps/about_apps">
+                        Learn Basics
+                        </a>
+                        <ul>
+                            <li><a href="/apps/about_apps">What Are Chrome Apps?</a>
+                            </li>
+                            <li><a href="/extensions/single_purpose">Extension Quality Guidelines FAQ</a>
+                            </li>
+                            <li><a href="/apps/first_app">Create Your First App</a>
+                            </li>
+                            <li><a href="/apps/app_architecture">App Architecture</a>
+                            </li>
+                            <li><a href="/apps/app_lifecycle">App Lifecycle</a>
+                            </li>
+                            <li><a href="/apps/contentSecurityPolicy">Content Security Policy</a>
+                            </li>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="/apps/app_codelab_intro">
+                        Learn with Codelab
+                        </a>
+                        <ul>
+                            <li><a href="/apps/app_codelab_intro">Intro - Build Chrome App</a>
+                            </li>
+                            <li><a href="/apps/app_codelab_basics">1 - Create and run a Chrome App</a>
+                            </li>
+                            <li><a href="/apps/app_codelab_import_todomvc">2 - Import an existing web app</a>
+                            </li>
+                            <li><a href="/apps/app_codelab_alarms">3 - Add alarms and notifications</a>
+                            </li>
+                            <li><a href="/apps/app_codelab_webview">4 - Open external links with a webview</a>
+                            </li>
+                            <li><a href="/apps/app_codelab_images">5 - Add images from the web</a>
+                            </li>
+                            <li><a href="/apps/app_codelab_filesystem">6 - Export todos to the filesystem</a>
+                            </li>
+                            <li><a href="/apps/app_codelab_publish">7 - Publish your app</a>
+                            </li>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="/apps/chrome_apps_on_mobile">
+                        Run Chrome Apps on Mobile
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="/apps/samples">
+                        Samples
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="/apps/offline_apps">
+                        Develop in the Cloud
+                        </a>
+                        <ul>
+                            <li><a href="/apps/offline_apps">Offline First</a>
+                            </li>
+                            <li><a href="/apps/app_external">Handling External Content</a>
+                            </li>
+                            <li><a href="/apps/app_storage">Storing Data</a>
+                            </li>
+                            <li><a href="/apps/offline_storage">Managing Offline Storage</a>
+                            </li>
+                            <li><a href="/apps/nativeMessaging">Native Messaging</a>
+                            </li>
+                            <li><a href="/apps/richNotifications">Rich Notifications</a>
+                            </li>
+                            <li><a href="/apps/app_identity">User Authentication</a>
+                            </li>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="/apps/app_usb">
+                        User Low-Level System Services
+                        </a>
+                        <ul>
+                            <li><a href="/apps/app_usb">USB</a>
+                            </li>
+                            <li><a href="/apps/app_serial">Serial</a>
+                            </li>
+                            <li><a href="/apps/app_network">Network Communications</a>
+                            </li>
+                            <li><a href="/apps/app_bluetooth">Bluetooth</a>
+                            </li>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="/apps/app_frameworks">
+                        MVC Architecture &amp; Frameworks
+                        </a>
+                        <ul>
+                            <li><a href="/apps/app_frameworks">About MVC Architecture</a>
+                            </li>
+                            <li><a href="/apps/angular_framework">Build Apps with AngularJS</a>
+                            </li>
+                            <li><a href="/apps/sencha_framework">Build Apps with SenchaJS</a>
+                            </li>
+                            <li><a href="/apps/game_engines">Game Engines</a>
+                            </li>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="/apps/publish_app">
+                        Distribute Apps
+                        </a>
+                        <ul>
+                            <li><a href="/apps/publish_app">Publish Your App</a>
+                            </li>
+                            <li><a href="/webstore/payments-iap">Monetize Your App</a>
+                            </li>
+                            <li><a href="/webstore/one_time_payments">One-Time Payments</a>
+                            </li>
+                            <li><a href="/apps/analytics">Analytics</a>
+                            </li>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="/apps/manifest">
+                        Chrome Platform APIs
+                        </a>
+                        <ul>
+                            <li><a href="/apps/manifest">Manifest File Format</a>
+                            </li>
+                            <li><a href="/apps/tags/webview">Webview Tag</a>
+                            </li>
+                            <li><a href="/apps/tags/appview">Appview Tag</a>
+                            </li>
+                            <li><a href="/apps/api_other">Web APIs</a>
+                            </li>
+                            <li><a href="/apps/app_deprecated">Disabled Web Features</a>
+                            </li>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="/apps/faq">
+                        Help
+                        </a>
+                        <ul>
+                            <li><a href="/apps/faq">FAQ</a>
+                            </li>
+                            <li><a href="http://stackoverflow.com/questions/tagged/google-chrome-app">Stack Overflow</a>
+                            </li>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Native Client
+                  <ul>
+                      <li class="category">
+                        <a href="/native-client">
+                        Learn Basics
+                        </a>
+                        <ul>
+                            <li><a href="/native-client/overview">Technical Overview</a>
+                            </li>
+                            <li><a href="/native-client/nacl-and-pnacl">NaCl and PNaCl</a>
+                            </li>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="/native-client/migration">
+                        WebAssembly Migration Guide
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="/native-client/sdk/download">
+                        Download the SDK
+                        </a>
+                        <ul>
+                            <li><a href="/native-client/sdk/download">Download the Native Client SDK</a>
+                            </li>
+                            <li><a href="/native-client/sdk/examples">Examples</a>
+                            </li>
+                            <li><a href="/native-client/sdk/release-notes">Release Notes</a>
+                            </li>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="/native-client/devguide/tutorial/tutorial-part1">
+                        Tutorial
+                        </a>
+                        <ul>
+                            <li><a href="/native-client/devguide/tutorial/tutorial-part1">Part 1: Simple PNaCl Web App</a>
+                            </li>
+                            <li><a href="/native-client/devguide/tutorial/tutorial-part2">Part 2: SDK Build System and Chrome Apps</a>
+                            </li>
+                            <li><a href="/native-client/cds2014">Chrome Dev Summit 2014 - Codelabs</a>
+                            </li>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="/native-client/devguide/devcycle/building">
+                        Development Cycle
+                        </a>
+                        <ul>
+                            <li><a href="/native-client/devguide/devcycle/building">Building</a>
+                            </li>
+                            <li><a href="/native-client/devguide/devcycle/running">Running</a>
+                            </li>
+                            <li><a href="/native-client/devguide/devcycle/debugging">Debugging</a>
+                            </li>
+                            <li><a href="/native-client/devguide/devcycle/vs-addin">Debugging with Visual Studio</a>
+                            </li>
+                            <li><a href="/native-client/devguide/devcycle/dynamic-loading">Dynamic Linking and Loading with GlibC</a>
+                            </li>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="/native-client/devguide/coding/application-structure">
+                        Coding Your Application
+                        </a>
+                        <ul>
+                            <li><a href="/native-client/devguide/coding/application-structure">Application Structure</a>
+                            </li>
+                            <li><a href="/native-client/devguide/coding/native-client-modules">Native Client Modules</a>
+                            </li>
+                            <li><a href="/native-client/devguide/coding/3D-graphics">3D Graphics</a>
+                            </li>
+                            <li><a href="/native-client/devguide/coding/audio">Audio</a>
+                            </li>
+                            <li><a href="/native-client/devguide/coding/file-io">File I/O</a>
+                            </li>
+                            <li><a href="/native-client/devguide/coding/nacl_io">The nacl_io Library</a>
+                            </li>
+                            <li><a href="/native-client/devguide/coding/message-system">Messaging System</a>
+                            </li>
+                            <li><a href="/native-client/devguide/coding/progress-events">Progress Events</a>
+                            </li>
+                            <li><a href="/native-client/devguide/coding/url-loading">URL Loading</a>
+                            </li>
+                            <li><a href="/native-client/devguide/coding/view-focus-input-events">View Change, Focus, &amp; Input Events</a>
+                            </li>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="/native-client/devguide/distributing">
+                        Distribute Your Apps
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="/native-client/c-api">
+                        Pepper API Reference
+                        </a>
+                        <ul>
+                            <li><a href="/native-client/c-api">Pepper C API (Stable)</a>
+                            </li>
+                            <li><a href="/native-client/cpp-api">Pepper C++ API (Stable)</a>
+                            </li>
+                            <li><a href="/native-client/c-api-beta">Pepper C API (Beta)</a>
+                            </li>
+                            <li><a href="/native-client/cpp-api-beta">Pepper C++ API (Beta)</a>
+                            </li>
+                            <li><a href="/native-client/c-api-dev">Pepper C API (Dev)</a>
+                            </li>
+                            <li><a href="/native-client/cpp-api-dev">Pepper C++ API (Dev)</a>
+                            </li>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="/native-client/glossary">
+                        Additional Reference &amp; Versions
+                        </a>
+                        <ul>
+                            <li><a href="/native-client/glossary">Glossary</a>
+                            </li>
+                            <li><a href="/native-client/reference/ideas">Contributor Ideas</a>
+                            </li>
+                            <li><a href="/native-client/reference/nacl-manifest-format">Native Client Manifest (nmf) Format</a>
+                            </li>
+                            <li><a href="/native-client/reference/pnacl-bitcode-manual">Contents of PNaCl Bitcode Files</a>
+                            </li>
+                            <li><a href="/native-client/reference/pnacl-bitcode-abi">PNaCl Bitcode Reference Manual</a>
+                            </li>
+                            <li><a href="/native-client/reference/pnacl-undefined-behavior">PNaCl Undefined Behavior</a>
+                            </li>
+                            <li><a href="/native-client/reference/pnacl-c-cpp-language-support">PNaCl C/C++ Language Support</a>
+                            </li>
+                            <li><a href="/native-client/reference/sandbox_internals/index">Sandbox Internals</a>
+                            </li>
+                            <li><a href="/native-client/reference/design-docs">Design Documents</a>
+                            </li>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="/native-client/faq">
+                        Help
+                        </a>
+                        <ul>
+                            <li><a href="/native-client/faq">FAQ</a>
+                            </li>
+                            <li><a href="/native-client/help">Forums &amp; Issues Tracker</a>
+                            </li>
+                            <li><a href="/native-client/publications-and-presentations">Publications &amp; Presentations</a>
+                            </li>
+                            <li><a href="/native-client/community/security-contest/index">Security Contest Archive</a>
+                            </li>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+            </ul>
+          </li>
+          <li class="pillar">
+            <span class="toplevel">Chrome APIs</span>
+            <ul class="expandee">
+                <li class="submenu">Extensions APIs
+                  <ul>
+                      <li class="category">
+                        <a href="/extensions/api_index">
+                        Extension APIs
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Apps APIs
+                  <ul>
+                      <li class="category">
+                        <a href="/apps/api_index">
+                        Apps APIs
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+            </ul>
+          </li>
+        <li id="search">
+          <img src="/static/images/search.png">
+          <div class="expandee">
+      
+      <!-- override search styles set globally by site.css -->
+      <style>
+      .gsc-above-wrapper-area, .gsc-result-info {
+        font-size: 11px;
+      }
+      .gs-webResult div, .gs-result div {
+        line-height: initial;
+      }
+      .gs-webResult a, .gs-result a {
+        text-decoration: none;
+      }
+      td.gcsc-branding-img-noclear, .gcsc-branding-img-noclear a {
+        width: 51px;
+        height: 15px;
+        vertical-align: top;
+      }
+      .gsc-table-result, .gsc-thumbnail-inside, .gsc-url-top {
+        padding: 0;
+      }
+      .gsc-control-cse tr, .gsc-control-cse td, .gsc-control-cse th {
+       padding: inherit;
+       border: none;
+      }
+      .gsc-control-cse {
+        white-space: normal;
+        border: none;
+        padding: 0 1em;
+      }
+      #search .gsc-control-cse img {
+        height: inherit;
+        width: inherit;
+      }
+      .gsc-control-cse table {
+        margin: initial;
+      }
+      .gsc-control-cse * {
+        box-sizing: initial;
+        -webkit-box-sizing: initial;
+        -moz-box-sizing: initial;
+      }
+      #fatnav .expandee .gsc-control-cse a {
+       padding: 0;
+       color: inherit;
+      }
+      </style>
+      
+            <form id="chrome-docs-cse-search-form" action="https://google.com/cse">
+              <input type="search" id="chrome-docs-cse-input" name="q" placeholder="What are you looking for?">
+              <input type="hidden" name="cx" value="010997258251033819707:7owyldxmpkc" />
+              <input type="hidden" name="ie" value="UTF-8" />
+            </form>
+            <gcse:searchresults-only gname="results"></gcse:searchresults-only>
+          </div>
+        </li>
+      </ul>
+      </nav>
+          </header>
+
+    <main id="gc-pagecontent" role="main">
+
+
+<article>
+  <div itemprop="articleBody" class="api">
+    <h1>chrome.certificateProvider</h1>
+    <table class="intro" id="intro">
+      <tr>
+        <td class="title">Description:</td>
+        <td>
+             Use this API to expose certificates to the platform which can use these
+             certificates for TLS authentications.
+                    <br>
+        </td>
+      </tr>
+      <tr>
+        <td class="title">Availability:</td>
+        <td>
+            Since Chrome 46.
+            <br>
+        </td>
+      </tr>
+      <tr>
+        <td class="title">Permissions:</td>
+        <td>
+            <span class="code">
+            "certificateProvider"
+                    </span>
+            <br>
+        </td>
+      </tr>
+    </table>
+    <p class="caution">
+      <b>Important:</b>
+      This API works <b>only on Chrome OS</b>.
+    </p>
+    <section>
+      <h2 id="usage">Usage</h2>
+      
+      <p>
+      Typical usage of this API to expose client certificates to Chrome OS follows these steps:
+      </p>
+      
+      <ul>
+        <li>The Extension registers for the events
+          <a href=/extensions/certificateProvider#event-onCertificatesRequested>onCertificatesRequested</a> and <a href=/extensions/certificateProvider#event-onSignDigestRequested>onSignDigestRequested</a>.
+        </li>
+        <li>During a TLS handshake, the browser receives a client certificate request.
+          With a <a href=/extensions/certificateProvider#event-onCertificatesRequested>onCertificatesRequested</a> event, the browser asks the Extension
+          to report all certificates that it currently provides.
+        </li>
+        <li>The Extension reports back with the currently available certificates,
+          using the callback that was provided with the event.
+        </li>
+        <li>The browser matches all available certificates with the client certificate
+          request from the remote host. The matches are presented to the user in a
+          selection dialog.
+        </li>
+        <li>The user can select a certificate and thereby approve the authentication
+          or abort the authentication.
+        <p>
+        <img src="/static/images/certificate_provider_selection_dialog.png"
+           align="middle" width="443" height="264" alt="Certificate selection dialog" />
+        </p>
+        </li>
+        <li>If the user aborts the authentication or no certificate matched the
+          request, the TLS client authentication is aborted.
+        </li>
+        <li>Otherwise, if the user approves the authentication with a certificate
+          provided by this Extension, the browser requests the Extension to sign a
+          digest to continue the TLS handshake. The request is sent as a
+          <a href=/extensions/certificateProvider#event-onSignDigestRequested>onSignDigestRequested</a> event.
+        </li>
+        <li>This event contains a digest, declares which hash function was used to
+          create the digest, and refers to one of the certificates that were reported
+          by this Extension in reaction to the most recent certificate request. The
+          Extension must create a signature for the given digest using the private key
+          associated with the referenced certificate. Creating the signature might
+          require prepending a DigestInfo and padding the result before the actual
+          signing.
+        </li>
+        <li>The Extension sends back the signature to the browser using the callback
+          that was provided as part of the event. If the signature couldn't be
+          calculated, the callback is called without signature.
+        </li>
+        <li>If the signature was provided, the browser completes the TLS handshake.
+        </li>
+      </ul>
+      
+      <p>
+      The actual sequence of steps can be different. For example, the user will not be
+      asked to select a certificate if the enterprise policy to automatically select a
+      certificate is used (see
+      <a href="https://www.chromium.org/administrators/policy-list-3#AutoSelectCertificateForUrls">AutoSelectCertificateForUrls</a>
+      and
+      <a href="https://support.google.com/chrome/a/answer/2657289?hl=en#AutoSelectCertificateForUrls">Chrome policies for users</a>).
+      </p>
+      
+      <p>
+      In the Extension, this can look similar to the following snippet:
+      </p>
+      
+      <pre data-filename="background.js">
+      function onCertificatesRejected(rejectedCerts) {
+        // If certificates were rejected by the API, log an error, for example.
+        console.error(rejectedCerts.length + ' certificates were rejected.');
+      }
+      
+      function reportCertificates(reportCallback) {
+        var certs = [];
+        // Fill |certs| with all certificates that this Extension provides.
+        // For example:
+        var certInfo = {
+          certificate: new Uint8Array(...),
+          supportedHashes: ['SHA256']
+        };
+        certs.push(certInfo);
+      
+        reportCallback(certs, function(rejectedCerts) {
+          if (chrome.runtime.lastError) {
+            // Handle API errors, like argument type errors.
+            return;
+          }
+          if (rejectedCerts.length !== 0)
+            onCertificatesRejected(rejectedCerts);
+        });
+      }
+      
+      // Returns a private key handle for the given DER-encoded certificate.
+      // |certificate| is an ArrayBuffer.
+      function getPrivateKeyHandle(certificate) {...}
+      
+      // If required, prepends |digest| with a DigestInfo and pads the result
+      // according to the key type and the given Hash function.
+      // |digest| is an ArrayBuffer. |hash| is a <a href=/extensions/certificateProvider#type-Hash>Hash</a>. Returns an ArrayBuffer.
+      function prepareDigest(digest, hash) {...}
+      
+      // Signs |digest| with the given private key. |digest| is an ArrayBuffer.
+      // Returns the signature as ArrayBuffer.
+      function signDigest(privateKey, digest) {...}
+      
+      function reportSignature(signRequest, reportCallback) {
+        // Look up the handle to the private key of |signRequest.certificate|.
+        var key = getPrivateKeyHandle(signRequest.certificate);
+        if (!key) {
+          // Handle if the key isn't available.
+          console.error('Key for requested certificate no available.');
+      
+          // Abort the request by reporting the error to the API.
+          reportCallback();
+          return;
+        }
+      
+        var preparedDigest = prepareDigest(signRequest.digest, signRequest.hash);
+        var signature = signDigest(key, preparedDigest);
+      
+        reportCallback(signature);
+      }
+      
+      chrome.certificateProvider.onCertificatesRequested.addListener(
+          reportCertificates);
+      chrome.certificateProvider.onSignDigestRequested.addListener(
+          reportSignature);
+      </pre>
+    </section>
+    <section id="toc">
+    <h2>Summary</h2>
+    <table class="api-summary">
+      <tr>
+        <tr><th colspan="2">Types</th></tr>
+          <tr><td><a href="#type-Hash">Hash</a></td></tr>
+          <tr><td><a href="#type-PinRequestErrorType">PinRequestErrorType</a></td></tr>
+          <tr><td><a href="#type-CertificateInfo">CertificateInfo</a></td></tr>
+          <tr><td><a href="#type-SignRequest">SignRequest</a></td></tr>
+        <tr><th colspan="2">Methods</th></tr>
+        <tr><td><a href="#method-requestPin">requestPin</a> &minus;
+            <code class="prettyprint">
+            chrome.certificateProvider.requestPin(<span>object details</span>, <span>function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="#method-stopPinRequest">stopPinRequest</a> &minus;
+            <code class="prettyprint">
+            chrome.certificateProvider.stopPinRequest(<span>object details</span>, <span>function callback</span>)
+            </code>
+          </td></tr>
+        <tr><th colspan="2">Events</th></tr>
+          <tr><td><a href="#event-onCertificatesRequested">onCertificatesRequested</a></td></tr>
+          <tr><td><a href="#event-onSignDigestRequested">onSignDigestRequested</a></td></tr>
+    </table>
+    </section>
+    <section>
+      <div class="api-reference">
+          <h2 id="types">Types</h2>
+            <div>
+              <h3 id="type-Hash">Hash</h3>
+              <table>
+                <tr><th>Enum</th></tr>
+                <tr><td>
+                        <code>"MD5_SHA1"</code>, 
+                        <code>"SHA1"</code>, 
+                        <code>"SHA256"</code>, 
+                        <code>"SHA384"</code>, 
+                        or <code>"SHA512"</code>
+                </td></tr>
+                <dd></dd>
+              </table>
+            </div>
+            <div>
+              <h3 id="type-PinRequestErrorType">PinRequestErrorType</h3>
+              <table>
+                <tr><th>Enum</th></tr>
+                <tr><td>
+                        <code>"INVALID_PIN"</code>, 
+                        <code>"INVALID_PUK"</code>, 
+                        <code>"MAX_ATTEMPTS_EXCEEDED"</code>, 
+                        or <code>"UNKNOWN_ERROR"</code>
+                </td></tr>
+                <dd>The types of errors that can be presented to the user through the requestPin function.</dd>
+              </table>
+            </div>
+            <div>
+              <h3 id="type-CertificateInfo">CertificateInfo</h3>
+              <table>
+                  <tr><th colspan="3" id="CertificateInfo-properties">properties</th></tr>
+                  <tr id="property-CertificateInfo-certificate">
+                    <td>ArrayBuffer</td>
+                    <td>
+                        certificate</td>
+                    <td>
+                    
+                    <p>
+                      Must be the DER encoding of a X.509 certificate. Currently, only certificates of RSA keys are supported.
+                    </p></td>
+                  </tr><tr id="property-CertificateInfo-supportedHashes">
+                    <td>array of     <a href=/extensions/certificateProvider#type-Hash>Hash</a></td>
+                    <td>
+                        supportedHashes</td>
+                    <td>
+                    
+                    <p>
+                      Must be set to all hashes supported for this certificate. This extension will only be asked for signatures of digests calculated with one of these hash algorithms. This should be in order of decreasing hash preference.
+                    </p></td>
+                  </tr>
+              </table>
+            </div>
+            <div>
+              <h3 id="type-SignRequest">SignRequest</h3>
+              <table>
+                  <tr><th colspan="3" id="SignRequest-properties">properties</th></tr>
+                  <tr id="property-SignRequest-signRequestId">
+                    <td>integer</td>
+                    <td>
+                        signRequestId</td>
+                    <td>
+                    <p class="availability">
+                      Since Chrome 57.
+                    </p>
+                    
+                    <p>
+                      The unique ID to be used by the extension should it need to call a method that requires it, e.g. requestPin.
+                    </p></td>
+                  </tr><tr id="property-SignRequest-digest">
+                    <td>ArrayBuffer</td>
+                    <td>
+                        digest</td>
+                    <td>
+                    
+                    <p>
+                      The digest that must be signed.
+                    </p></td>
+                  </tr><tr id="property-SignRequest-hash">
+                    <td>    <a href=/extensions/certificateProvider#type-Hash>Hash</a></td>
+                    <td>
+                        hash</td>
+                    <td>
+                    
+                    <p>
+                      Refers to the hash algorithm that was used to create <code>digest</code>.
+                    </p></td>
+                  </tr><tr id="property-SignRequest-certificate">
+                    <td>ArrayBuffer</td>
+                    <td>
+                        certificate</td>
+                    <td>
+                    
+                    <p>
+                      The DER encoding of a X.509 certificate. The extension must sign <code>digest</code> using the associated private key.
+                    </p></td>
+                  </tr>
+              </table>
+            </div>
+          <h2 id="methods">Methods</h2>
+            <div>
+              <h3
+                  id="method-requestPin"
+                  >requestPin
+              </h3>
+              <div class="summary">
+              <code class="prettyprint">
+              chrome.certificateProvider.requestPin(<span>object details</span>, <span>function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p class="availability">
+                  Since Chrome 57.
+                </p>
+                <p>
+                  Requests the PIN from the user. Only one ongoing request at a time is allowed. The requests issued while another flow is ongoing are rejected. It's the extension's responsibility to try again later if another flow is in progress.
+                </p>
+                <table >
+                  <tr><th colspan="3">Parameters</th></tr>
+                    <tr id="property-requestPin-details">
+                      <td>object</td>
+                      <td>
+                          details</td>
+                      <td>
+                      
+                      <p>
+                        Contains the details about the requested dialog.
+                      </p>  <table class="innerTable">
+                          <tr id="property-details-signRequestId">
+                            <td>integer</td>
+                            <td>
+                                signRequestId</td>
+                            <td>
+                            
+                            <p>
+                              The ID given by Chrome in SignRequest.
+                            </p></td>
+                          </tr><tr id="property-details-requestType">
+                            <td>enum of    <code>"PIN"</code>,    or <code>"PUK"</code></td>
+                            <td><span class="optional">(optional)</span>
+                                requestType</td>
+                            <td>
+                            
+                            <p>
+                              The type of code requested. Default is PIN.
+                            </p></td>
+                          </tr><tr id="property-details-errorType">
+                            <td>    <a href=/extensions/certificateProvider#type-PinRequestErrorType>PinRequestErrorType</a></td>
+                            <td><span class="optional">(optional)</span>
+                                errorType</td>
+                            <td>
+                            
+                            <p>
+                              The error template displayed to the user. This should be set if the previous request failed, to notify the user of the failure reason.
+                            </p></td>
+                          </tr><tr id="property-details-attemptsLeft">
+                            <td>integer</td>
+                            <td><span class="optional">(optional)</span>
+                                attemptsLeft</td>
+                            <td>
+                            
+                            <p>
+                              The number of attempts left. This is provided so that any UI can present this information to the user. Chrome is not expected to enforce this, instead stopPinRequest should be called by the extension with errorType = MAX_ATTEMPTS_EXCEEDED when the number of pin requests is exceeded.
+                            </p></td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                    <tr id="property-requestPin-callback">
+                      <td>function</td>
+                      <td>
+                          callback</td>
+                      <td>
+                      
+                      <p>
+                        Is called when the dialog is resolved with the user input, or when the dialog request finishes unsuccessfully (e.g. the dialog was canceled by the user or was not allowed to be shown).
+                      </p>    <p>
+                              The <em>callback</em> parameter should be a function
+                              that looks like this:
+                          </p>
+                        <code class="prettyprint">function(object details) <span class="subdued">{...}</span>;</code>
+                          <table class="innerTable">
+                            <tr id="property-callback-details">
+                              <td>object</td>
+                              <td><span class="optional">(optional)</span>
+                                  details</td>
+                              <td>
+                              
+                                <table class="innerTable">
+                                  <tr id="property-details-userInput">
+                                    <td>string</td>
+                                    <td><span class="optional">(optional)</span>
+                                        userInput</td>
+                                    <td>
+                                    
+                                    <p>
+                                      The code provided by the user. Empty if user closed the dialog or some other error occurred.
+                                    </p></td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                          </table>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-stopPinRequest"
+                  >stopPinRequest
+              </h3>
+              <div class="summary">
+              <code class="prettyprint">
+              chrome.certificateProvider.stopPinRequest(<span>object details</span>, <span>function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p class="availability">
+                  Since Chrome 57.
+                </p>
+                <p>
+                  Stops the pin request started by the <a href=/extensions/certificateProvider#method-requestPin>requestPin</a> function.
+                </p>
+                <table >
+                  <tr><th colspan="3">Parameters</th></tr>
+                    <tr id="property-stopPinRequest-details">
+                      <td>object</td>
+                      <td>
+                          details</td>
+                      <td>
+                      
+                      <p>
+                        Contains the details about the reason for stopping the request flow.
+                      </p>  <table class="innerTable">
+                          <tr id="property-details-signRequestId">
+                            <td>integer</td>
+                            <td>
+                                signRequestId</td>
+                            <td>
+                            
+                            <p>
+                              The ID given by Chrome in SignRequest.
+                            </p></td>
+                          </tr><tr id="property-details-errorType">
+                            <td>    <a href=/extensions/certificateProvider#type-PinRequestErrorType>PinRequestErrorType</a></td>
+                            <td><span class="optional">(optional)</span>
+                                errorType</td>
+                            <td>
+                            
+                            <p>
+                              The error template. If present it is displayed to user. Intended to contain the reason for stopping the flow if it was caused by an error, e.g. MAX_ATTEMPTS_EXCEEDED.
+                            </p></td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                    <tr id="property-stopPinRequest-callback">
+                      <td>function</td>
+                      <td>
+                          callback</td>
+                      <td>
+                      
+                      <p>
+                        To be used by Chrome to send to the extension the status from their request to close PIN dialog for user.
+                      </p>    <p>
+                              The <em>callback</em> parameter should be a function
+                              that looks like this:
+                          </p>
+                        <code class="prettyprint">function() <span class="subdued">{...}</span>;</code>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+          <h2 id="events">Events</h2>
+            <div>
+              <h3 id="event-onCertificatesRequested">onCertificatesRequested</h3>
+              <div class="description">
+                <p class="availability">
+                  Since Chrome 47.
+                </p>
+            <p>
+                  This event fires every time the browser requests the current list of certificates provided by this extension. The extension must call <code>reportCallback</code> exactly once with the current list of certificates.
+                </p>      <tr><td>
+                  <div>
+                    <h4
+                        title="">addListener
+                    </h4>
+                    <div class="summary">
+                    <code class="prettyprint">
+                    chrome.certificateProvider.onCertificatesRequested.addListener(<span>function callback</span>)
+                    </code>
+                    </div>
+                    <div class="description">
+                      <table class="innerTable">
+                        <tr><th colspan="3">Parameters</th></tr>
+                          <tr id="property-onCertificatesRequested-callback">
+                            <td>function</td>
+                            <td>
+                                callback</td>
+                            <td>
+                            
+                                <p>
+                                    The <em>callback</em> parameter should be a function
+                                    that looks like this:
+                                </p>
+                              <code class="prettyprint">function(function reportCallback) <span class="subdued">{...}</span>;</code>
+                                <table class="innerTable">
+                                  <tr id="property-onCertificatesRequested-reportCallback">
+                                    <td>function</td>
+                                    <td>
+                                        reportCallback</td>
+                                    <td>
+                                    
+                                    <p>
+                                      Call this exactly once with the list of certificates that this extension is providing. The list must only contain certificates for which the extension can sign data using the associated private key. If the list contains invalid certificates, these will be ignored. All valid certificates are still registered for the extension. Chrome will call back with the list of rejected certificates, which might be empty.
+                                    </p>    <p>
+                                            The <em>reportCallback</em> parameter should be a function
+                                            that looks like this:
+                                        </p>
+                                      <code class="prettyprint">function(array of     <a href=/extensions/certificateProvider#type-CertificateInfo>CertificateInfo</a> certificates) <span class="subdued">{...}</span>;</code>
+                                        <table class="innerTable">
+                                          <tr id="property-reportCallback-certificates">
+                                            <td>array of     <a href=/extensions/certificateProvider#type-CertificateInfo>CertificateInfo</a></td>
+                                            <td>
+                                                certificates</td>
+                                            <td>
+                                            
+                                            </td>
+                                          </tr>
+                                        </table>
+                                    </td>
+                                  </tr>
+                                </table>
+                            </td>
+                          </tr>
+                      </table>
+                    </div>
+                  </div>
+                  </td></tr>
+              </div>
+            </div>
+            <div>
+              <h3 id="event-onSignDigestRequested">onSignDigestRequested</h3>
+              <div class="description">
+            <p>
+                  This event fires every time the browser needs to sign a message using a certificate provided by this extension in reply to an <a href=/extensions/certificateProvider#event-onCertificatesRequested>onCertificatesRequested</a> event. The extension must sign the data in <code>request</code> using the appropriate algorithm and private key and return it by calling <code>reportCallback</code>. <code>reportCallback</code> must be called exactly once.
+                </p>      <tr><td>
+                  <div>
+                    <h4
+                        title="">addListener
+                    </h4>
+                    <div class="summary">
+                    <code class="prettyprint">
+                    chrome.certificateProvider.onSignDigestRequested.addListener(<span>function callback</span>)
+                    </code>
+                    </div>
+                    <div class="description">
+                      <table class="innerTable">
+                        <tr><th colspan="3">Parameters</th></tr>
+                          <tr id="property-onSignDigestRequested-callback">
+                            <td>function</td>
+                            <td>
+                                callback</td>
+                            <td>
+                            
+                                <p>
+                                    The <em>callback</em> parameter should be a function
+                                    that looks like this:
+                                </p>
+                              <code class="prettyprint">function(    <a href=/extensions/certificateProvider#type-SignRequest>SignRequest</a> request, function reportCallback) <span class="subdued">{...}</span>;</code>
+                                <table class="innerTable">
+                                  <tr id="property-onSignDigestRequested-request">
+                                    <td>    <a href=/extensions/certificateProvider#type-SignRequest>SignRequest</a></td>
+                                    <td>
+                                        request</td>
+                                    <td>
+                                    
+                                    <p>
+                                      Contains the details about the sign request.
+                                    </p></td>
+                                  </tr>
+                                  <tr id="property-onSignDigestRequested-reportCallback">
+                                    <td>function</td>
+                                    <td>
+                                        reportCallback</td>
+                                    <td>
+                                    
+                                    <p>
+                                      If no error occurred, this function must be called with the signature of the digest using the private key of the requested certificate. For an RSA key, the signature must be a PKCS#1 signature. The extension is responsible for prepending the DigestInfo prefix and adding PKCS#1 padding. If an <code>MD5_SHA1</code> hash is to be signed, the extension must not prepend a DigestInfo prefix but only add PKCS#1 padding. If an error occurred, this callback should be called without signature.
+                                    </p>    <p>
+                                            The <em>reportCallback</em> parameter should be a function
+                                            that looks like this:
+                                        </p>
+                                      <code class="prettyprint">function(ArrayBuffer signature) <span class="subdued">{...}</span>;</code>
+                                        <table class="innerTable">
+                                          <tr id="property-reportCallback-signature">
+                                            <td>ArrayBuffer</td>
+                                            <td><span class="optional">(optional)</span>
+                                                signature</td>
+                                            <td>
+                                            
+                                            </td>
+                                          </tr>
+                                        </table>
+                                    </td>
+                                  </tr>
+                                </table>
+                            </td>
+                          </tr>
+                      </table>
+                    </div>
+                  </div>
+                  </td></tr>
+              </div>
+            </div>
+      </div>
+    </section>
+  </div>
+</article>
+    </main>
+    </div>
+
+    <footer id="gc-footer" role="contentinfo">
+      <div class="g-section g-tpl-50-50 gc-container">
+        <div class="g-unit g-first">
+          <nav class="links">
+            <a href="https://www.google.com/">Google</a><a href="https://developers.google.com/site-terms">Terms of Service</a><a href="http://www.google.com/intl/en/privacy/">Privacy Policy</a><a href="http://crbug.com/new" data-feedback>Report a content bug</a>
+          </nav>
+        </div>
+        <div class="g-unit g-last">
+          <div id="social-buttons">
+            <div data-size="small" data-href="http://www.google.com/chrome" data-annotation="bubble" class="g-plusone"></div>
+            <a rel="publisher" target="_blank" href="https://plus.google.com/+GoogleChromeDevelopers?prsrc=3" data-g-label="plus" data-g-event="nav-subfooter">Add us on <span class="element-invisible">Google+</span><img src="//ssl.gstatic.com/images/icons/gplus-16.png" data-g-label="plus" data-g-event="nav-subfooter" alt=""></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="/static/js/fatnav.js"></script>
+    <script src="/static/js/article.js"></script>
+    <script src="/static/js/prettify.js"></script>
+    <script src="/static/js/search.js"></script>
+    <script src="//www.gstatic.com/feedback/api.js"></script>
+    <script src="/static/js/site.js"></script>
+  </body>
+</html>
+
