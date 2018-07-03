@@ -45,6 +45,46 @@ def clean_dest(dest_path):
     os.mkdir(dest_path)
 
 
+r''' comment
+def parse_html1(index_html, subpath):
+    with open(index_html, 'r') as f:
+        html_string = f.read()
+    html_string = re.sub(r'<(link|meta|img|input|br)[^<>]*>', '', html_string)
+    html_string = re.sub(r'<([^\/\s:"]+):', r'<\1-', html_string)
+    html_string = re.sub(r':([^\/\s:"]+)>', r'-\1>', html_string)
+    html_string = re.sub(
+        r'<!DOCTYPE html>', '', html_string, flags=re.IGNORECASE)
+    temp = ''
+    for pre, attrs, post in re.findall(
+        r'([^<]*</?\w+)\b(.*?)(/?>[^<]*)',
+        html_string
+    ):
+        temp += pre + ''.join([attr[0] for attr in re.findall(
+            r'(\s+\w+=(?:([\'"]).*?\2|\S+))|\S+', attrs)]) + post
+    html_string = temp
+    try:
+        root = ET.fromstring(html_string)
+    except Exception as err:
+        line = int(str(err).split(':')[1].split(',')[0].strip().split(' ')[1])
+        print('\n'.join(html_string.split('\n')[line-5:line+5]))
+        return []
+    hrefs = map(lambda x: x.attrib['href'], root.findall('.//*[@href]'))
+    download_list = []
+    for href in hrefs:
+        if re.search(r'\.[^\.]{1,4}$', href):
+            continue
+        if href.startswith('http'):
+            continue
+        if href.startswith('/extensions/'):
+            download_list.append(href)
+        if not href.startswith('/'):
+            download_list.append(
+                os.path.normpath(subpath + '/../' + href)
+            )
+    return list(set(download_list))
+'''
+
+
 def parse_html(index_html, subpath):
     with open(index_html, 'r') as f:
         html_string = f.read()
