@@ -42,7 +42,6 @@ DEBUG:root:/extensions appends following list:
 /browserAction
 /
 DEBUG:root:/extensions/a11y appends following list:
-/extensions/sampleshtml
 /extensions/a11y
 /extensions
 DEBUG:root:/extensions/api_index appends following list:
@@ -242,12 +241,10 @@ DEBUG:root:Ignoring /samples due to existing /extensions/samples
 DEBUG:root:Ignoring /single_purpose due to existing /extensions/single_purpose
 DEBUG:root:Ignoring /extensions due to existing /extensions
 DEBUG:root:Ignoring /extensions/a11y due to existing /extensions/a11y
-DEBUG:root:/extensions/sampleshtml appends following list:
-/extensions/sampleshtml
-/extensions/a11y
-/extensions
 DEBUG:root:/extensions/accessibilityFeatures appends following list:
 /extensions/accessibilityFeatures
+/extensions/a11y
+/extensions
 DEBUG:root:/extensions/alarms appends following list:
 /extensions/alarms
 DEBUG:root:Ignoring /extensions/api_index due to existing /extensions/api_index
@@ -469,7 +466,6 @@ DEBUG:root:/extensions/manifest/default_locale appends following list:
 /extensions/manifest/shared_modules
 /extensions/manifest/settings_override
 /extensions/manifest/sessions
-/extensions/manifest/sampleshtml
 /extensions/manifest/samples
 /extensions/manifest/runtime
 /extensions/manifest/richNotifications
@@ -725,7 +721,6 @@ DEBUG:root:/extensions/examples/api/displaySource/tabCast/README appends followi
 /extensions/examples/api/displaySource/tabCast/shared_modules
 /extensions/examples/api/displaySource/tabCast/settings_override
 /extensions/examples/api/displaySource/tabCast/sessions
-/extensions/examples/api/displaySource/tabCast/sampleshtml
 /extensions/examples/api/displaySource/tabCast/samples
 /extensions/examples/api/displaySource/tabCast/runtime
 /extensions/examples/api/displaySource/tabCast/richNotifications
@@ -894,7 +889,6 @@ DEBUG:root:/extensions/examples/api/windows/merge_windows/NOTICE appends followi
 /extensions/examples/api/windows/merge_windows/shared_modules
 /extensions/examples/api/windows/merge_windows/settings_override
 /extensions/examples/api/windows/merge_windows/sessions
-/extensions/examples/api/windows/merge_windows/sampleshtml
 /extensions/examples/api/windows/merge_windows/samples
 /extensions/examples/api/windows/merge_windows/runtime
 /extensions/examples/api/windows/merge_windows/richNotifications
@@ -1063,7 +1057,6 @@ DEBUG:root:/extensions/examples/apps/calculator/app/LICENSE appends following li
 /extensions/examples/apps/calculator/app/shared_modules
 /extensions/examples/apps/calculator/app/settings_override
 /extensions/examples/apps/calculator/app/sessions
-/extensions/examples/apps/calculator/app/sampleshtml
 /extensions/examples/apps/calculator/app/samples
 /extensions/examples/apps/calculator/app/runtime
 /extensions/examples/apps/calculator/app/richNotifications
@@ -1227,7 +1220,6 @@ DEBUG:root:/extensions/examples/howto/sandbox/LICENSE.handlebars appends followi
 /extensions/examples/howto/sandbox/shared_modules
 /extensions/examples/howto/sandbox/settings_override
 /extensions/examples/howto/sandbox/sessions
-/extensions/examples/howto/sandbox/sampleshtml
 /extensions/examples/howto/sandbox/samples
 /extensions/examples/howto/sandbox/runtime
 /extensions/examples/howto/sandbox/richNotifications
@@ -1392,7 +1384,6 @@ DEBUG:root:Ignoring /extensions/user_privacy due to existing /extensions/user_pr
 DEBUG:root:Ignoring /extensions/xhr due to existing /extensions/xhr
 DEBUG:root:Ignoring /extensions due to existing /extensions
 DEBUG:root:Ignoring /extensions/a11y due to existing /extensions/a11y
-DEBUG:root:Ignoring /extensions/sampleshtml due to existing /extensions/sampleshtml
 DEBUG:root:Ignoring /extensions/accessibilityFeatures due to existing /extensions/accessibilityFeatures
 DEBUG:root:Ignoring /extensions/alarms due to existing /extensions/alarms
 DEBUG:root:Ignoring /extensions/api_index due to existing /extensions/api_index
@@ -1433,7 +1424,6 @@ DEBUG:root:/extensions/cloudMessaging appends following list:
 /extensions/themes
 /extensions/single_purpose
 /extensions/security
-/extensions/sampleshtml
 /extensions/samples
 /extensions/fontSettings
 /extensions/fileSystemProvider
@@ -1730,7 +1720,6 @@ DEBUG:root:Ignoring /extensions/manifest/proxy due to existing /extensions/proxy
 DEBUG:root:Ignoring /extensions/manifest/richNotifications due to existing /extensions/richNotifications
 DEBUG:root:Ignoring /extensions/manifest/runtime due to existing /extensions/runtime
 DEBUG:root:Ignoring /extensions/manifest/samples due to existing /extensions/samples
-DEBUG:root:Ignoring /extensions/manifest/sampleshtml due to existing /extensions/sampleshtml
 DEBUG:root:Ignoring /extensions/manifest/sessions due to existing /extensions/sessions
 DEBUG:root:Ignoring /extensions/manifest/settings_override due to existing /extensions/settings_override
 DEBUG:root:Ignoring /extensions/manifest/shared_modules due to existing /extensions/shared_modules
@@ -1851,7 +1840,6 @@ DEBUG:root:/extensions/examples/api/displaySource/tabCast appends following list
 /extensions/examples/api/displaySource/shared_modules
 /extensions/examples/api/displaySource/settings_override
 /extensions/examples/api/displaySource/sessions
-/extensions/examples/api/displaySource/sampleshtml
 /extensions/examples/api/displaySource/samples
 /extensions/examples/api/displaySource/runtime
 /extensions/examples/api/displaySource/richNotifications
@@ -2122,7 +2110,6 @@ DEBUG:root:Ignoring /extensions/examples/api/displaySource/tabCast/proxy due to 
 DEBUG:root:Ignoring /extensions/examples/api/displaySource/tabCast/richNotifications due to existing /extensions/richNotifications
 DEBUG:root:Ignoring /extensions/examples/api/displaySource/tabCast/runtime due to existing /extensions/runtime
 DEBUG:root:Ignoring /extensions/examples/api/displaySource/tabCast/samples due to existing /extensions/samples
-DEBUG:root:Ignoring /extensions/examples/api/displaySource/tabCast/sampleshtml due to existing /extensions/sampleshtml
 DEBUG:root:Ignoring /extensions/examples/api/displaySource/tabCast/sessions due to existing /extensions/sessions
 DEBUG:root:Ignoring /extensions/examples/api/displaySource/tabCast/settings_override due to existing /extensions/settings_override
 DEBUG:root:Ignoring /extensions/examples/api/displaySource/tabCast/shared_modules due to existing /extensions/shared_modules
@@ -2181,7 +2168,6 @@ DEBUG:root:/extensions/examples/api/windows/merge_windows appends following list
 /extensions/examples/api/windows/shared_modules
 /extensions/examples/api/windows/settings_override
 /extensions/examples/api/windows/sessions
-/extensions/examples/api/windows/sampleshtml
 /extensions/examples/api/windows/samples
 /extensions/examples/api/windows/richNotifications
 /extensions/examples/api/windows/publish_app
@@ -2445,7 +2431,6 @@ DEBUG:root:Ignoring /extensions/examples/api/windows/merge_windows/proxy due to 
 DEBUG:root:Ignoring /extensions/examples/api/windows/merge_windows/richNotifications due to existing /extensions/richNotifications
 DEBUG:root:Ignoring /extensions/examples/api/windows/merge_windows/runtime due to existing /extensions/runtime
 DEBUG:root:Ignoring /extensions/examples/api/windows/merge_windows/samples due to existing /extensions/samples
-DEBUG:root:Ignoring /extensions/examples/api/windows/merge_windows/sampleshtml due to existing /extensions/sampleshtml
 DEBUG:root:Ignoring /extensions/examples/api/windows/merge_windows/sessions due to existing /extensions/sessions
 DEBUG:root:Ignoring /extensions/examples/api/windows/merge_windows/settings_override due to existing /extensions/settings_override
 DEBUG:root:Ignoring /extensions/examples/api/windows/merge_windows/shared_modules due to existing /extensions/shared_modules
@@ -2508,7 +2493,6 @@ DEBUG:root:/extensions/examples/apps/calculator/app appends following list:
 /extensions/examples/apps/calculator/shared_modules
 /extensions/examples/apps/calculator/settings_override
 /extensions/examples/apps/calculator/sessions
-/extensions/examples/apps/calculator/sampleshtml
 /extensions/examples/apps/calculator/samples
 /extensions/examples/apps/calculator/richNotifications
 /extensions/examples/apps/calculator/publish_app
@@ -2770,7 +2754,6 @@ DEBUG:root:Ignoring /extensions/examples/apps/calculator/app/proxy due to existi
 DEBUG:root:Ignoring /extensions/examples/apps/calculator/app/richNotifications due to existing /extensions/richNotifications
 DEBUG:root:Ignoring /extensions/examples/apps/calculator/app/runtime due to existing /extensions/runtime
 DEBUG:root:Ignoring /extensions/examples/apps/calculator/app/samples due to existing /extensions/samples
-DEBUG:root:Ignoring /extensions/examples/apps/calculator/app/sampleshtml due to existing /extensions/sampleshtml
 DEBUG:root:Ignoring /extensions/examples/apps/calculator/app/sessions due to existing /extensions/sessions
 DEBUG:root:Ignoring /extensions/examples/apps/calculator/app/settings_override due to existing /extensions/settings_override
 DEBUG:root:Ignoring /extensions/examples/apps/calculator/app/shared_modules due to existing /extensions/shared_modules
@@ -2939,7 +2922,6 @@ DEBUG:root:Ignoring /extensions/examples/howto/sandbox/proxy due to existing /ex
 DEBUG:root:Ignoring /extensions/examples/howto/sandbox/richNotifications due to existing /extensions/richNotifications
 DEBUG:root:Ignoring /extensions/examples/howto/sandbox/runtime due to existing /extensions/runtime
 DEBUG:root:Ignoring /extensions/examples/howto/sandbox/samples due to existing /extensions/samples
-DEBUG:root:Ignoring /extensions/examples/howto/sandbox/sampleshtml due to existing /extensions/sampleshtml
 DEBUG:root:Ignoring /extensions/examples/howto/sandbox/sessions due to existing /extensions/sessions
 DEBUG:root:Ignoring /extensions/examples/howto/sandbox/settings_override due to existing /extensions/settings_override
 DEBUG:root:Ignoring /extensions/examples/howto/sandbox/shared_modules due to existing /extensions/shared_modules
@@ -3015,7 +2997,6 @@ DEBUG:root:Ignoring /extensions/fileBrowserHandler due to existing /extensions/f
 DEBUG:root:Ignoring /extensions/fileSystemProvider due to existing /extensions/fileSystemProvider
 DEBUG:root:Ignoring /extensions/fontSettings due to existing /extensions/fontSettings
 DEBUG:root:Ignoring /extensions/samples due to existing /extensions/samples
-DEBUG:root:Ignoring /extensions/sampleshtml due to existing /extensions/sampleshtml
 DEBUG:root:Ignoring /extensions/security due to existing /extensions/security
 DEBUG:root:Ignoring /extensions/single_purpose due to existing /extensions/single_purpose
 DEBUG:root:Ignoring /extensions/themes due to existing /extensions/themes
@@ -3044,7 +3025,6 @@ DEBUG:root:/extensions/publish_app appends following list:
 /extensions/shared_modules
 /extensions/settings_override
 /extensions/security
-/extensions/sampleshtml
 /extensions/samples
 /extensions/publish_app
 /extensions/packaging
@@ -3341,7 +3321,6 @@ DEBUG:root:Ignoring /extensions/examples/api/displaySource/publish_app due to ex
 DEBUG:root:Ignoring /extensions/examples/api/displaySource/richNotifications due to existing /extensions/richNotifications
 DEBUG:root:Ignoring /extensions/examples/api/displaySource/runtime due to existing /extensions/runtime
 DEBUG:root:Ignoring /extensions/examples/api/displaySource/samples due to existing /extensions/samples
-DEBUG:root:Ignoring /extensions/examples/api/displaySource/sampleshtml due to existing /extensions/sampleshtml
 DEBUG:root:Ignoring /extensions/examples/api/displaySource/sessions due to existing /extensions/sessions
 DEBUG:root:Ignoring /extensions/examples/api/displaySource/settings_override due to existing /extensions/settings_override
 DEBUG:root:Ignoring /extensions/examples/api/displaySource/shared_modules due to existing /extensions/shared_modules
@@ -3521,7 +3500,6 @@ DEBUG:root:Ignoring /extensions/examples/api/windows/proxy due to existing /exte
 DEBUG:root:Ignoring /extensions/examples/api/windows/publish_app due to existing /extensions/publish_app
 DEBUG:root:Ignoring /extensions/examples/api/windows/richNotifications due to existing /extensions/richNotifications
 DEBUG:root:Ignoring /extensions/examples/api/windows/samples due to existing /extensions/samples
-DEBUG:root:Ignoring /extensions/examples/api/windows/sampleshtml due to existing /extensions/sampleshtml
 DEBUG:root:Ignoring /extensions/examples/api/windows/sessions due to existing /extensions/sessions
 DEBUG:root:Ignoring /extensions/examples/api/windows/settings_override due to existing /extensions/settings_override
 DEBUG:root:Ignoring /extensions/examples/api/windows/shared_modules due to existing /extensions/shared_modules
@@ -3625,7 +3603,6 @@ DEBUG:root:/extensions/examples/apps/calculator appends following list:
 /extensions/examples/apps/shared_modules
 /extensions/examples/apps/settings_override
 /extensions/examples/apps/sessions
-/extensions/examples/apps/sampleshtml
 /extensions/examples/apps/samples
 /extensions/examples/apps/richNotifications
 /extensions/examples/apps/publish_app
@@ -3897,7 +3874,6 @@ DEBUG:root:Ignoring /extensions/examples/apps/calculator/proxy due to existing /
 DEBUG:root:Ignoring /extensions/examples/apps/calculator/publish_app due to existing /extensions/publish_app
 DEBUG:root:Ignoring /extensions/examples/apps/calculator/richNotifications due to existing /extensions/richNotifications
 DEBUG:root:Ignoring /extensions/examples/apps/calculator/samples due to existing /extensions/samples
-DEBUG:root:Ignoring /extensions/examples/apps/calculator/sampleshtml due to existing /extensions/sampleshtml
 DEBUG:root:Ignoring /extensions/examples/apps/calculator/sessions due to existing /extensions/sessions
 DEBUG:root:Ignoring /extensions/examples/apps/calculator/settings_override due to existing /extensions/settings_override
 DEBUG:root:Ignoring /extensions/examples/apps/calculator/shared_modules due to existing /extensions/shared_modules
@@ -4023,7 +3999,6 @@ DEBUG:root:Ignoring /extensions/override due to existing /extensions/override
 DEBUG:root:Ignoring /extensions/packaging due to existing /extensions/packaging
 DEBUG:root:Ignoring /extensions/publish_app due to existing /extensions/publish_app
 DEBUG:root:Ignoring /extensions/samples due to existing /extensions/samples
-DEBUG:root:Ignoring /extensions/sampleshtml due to existing /extensions/sampleshtml
 DEBUG:root:Ignoring /extensions/security due to existing /extensions/security
 DEBUG:root:Ignoring /extensions/settings_override due to existing /extensions/settings_override
 DEBUG:root:Ignoring /extensions/shared_modules due to existing /extensions/shared_modules
@@ -4057,7 +4032,6 @@ DEBUG:root:/extensions/app_architecture appends following list:
 /extensions/shared_modules
 /extensions/settings_override
 /extensions/security
-/extensions/sampleshtml
 /extensions/samples
 /extensions/richNotifications
 /extensions/publish_app
@@ -4225,7 +4199,6 @@ DEBUG:root:/extensions/examples/apps appends following list:
 /extensions/examples/shared_modules
 /extensions/examples/settings_override
 /extensions/examples/sessions
-/extensions/examples/sampleshtml
 /extensions/examples/samples
 /extensions/examples/richNotifications
 /extensions/examples/publish_app
@@ -4502,7 +4475,6 @@ DEBUG:root:Ignoring /extensions/examples/apps/proxy due to existing /extensions/
 DEBUG:root:Ignoring /extensions/examples/apps/publish_app due to existing /extensions/publish_app
 DEBUG:root:Ignoring /extensions/examples/apps/richNotifications due to existing /extensions/richNotifications
 DEBUG:root:Ignoring /extensions/examples/apps/samples due to existing /extensions/samples
-DEBUG:root:Ignoring /extensions/examples/apps/sampleshtml due to existing /extensions/sampleshtml
 DEBUG:root:Ignoring /extensions/examples/apps/sessions due to existing /extensions/sessions
 DEBUG:root:Ignoring /extensions/examples/apps/settings_override due to existing /extensions/settings_override
 DEBUG:root:Ignoring /extensions/examples/apps/shared_modules due to existing /extensions/shared_modules
@@ -4682,7 +4654,6 @@ DEBUG:root:Ignoring /extensions/privacy due to existing /extensions/privacy
 DEBUG:root:Ignoring /extensions/publish_app due to existing /extensions/publish_app
 DEBUG:root:Ignoring /extensions/richNotifications due to existing /extensions/richNotifications
 DEBUG:root:Ignoring /extensions/samples due to existing /extensions/samples
-DEBUG:root:Ignoring /extensions/sampleshtml due to existing /extensions/sampleshtml
 DEBUG:root:Ignoring /extensions/security due to existing /extensions/security
 DEBUG:root:Ignoring /extensions/settings_override due to existing /extensions/settings_override
 DEBUG:root:Ignoring /extensions/shared_modules due to existing /extensions/shared_modules
@@ -4737,7 +4708,6 @@ DEBUG:root:/extensions/app_frameworks appends following list:
 /extensions/sessions
 /extensions/sencha_framework
 /extensions/security
-/extensions/sampleshtml
 /extensions/samples
 /extensions/runtime
 /extensions/richNotifications
@@ -5045,7 +5015,6 @@ DEBUG:root:Ignoring /extensions/examples/proxy due to existing /extensions/proxy
 DEBUG:root:Ignoring /extensions/examples/publish_app due to existing /extensions/publish_app
 DEBUG:root:Ignoring /extensions/examples/richNotifications due to existing /extensions/richNotifications
 DEBUG:root:Ignoring /extensions/examples/samples due to existing /extensions/samples
-DEBUG:root:Ignoring /extensions/examples/sampleshtml due to existing /extensions/sampleshtml
 DEBUG:root:Ignoring /extensions/examples/sessions due to existing /extensions/sessions
 DEBUG:root:Ignoring /extensions/examples/settings_override due to existing /extensions/settings_override
 DEBUG:root:Ignoring /extensions/examples/shared_modules due to existing /extensions/shared_modules
@@ -5220,13 +5189,11 @@ DEBUG:root:Ignoring /extensions/publish_app due to existing /extensions/publish_
 DEBUG:root:Ignoring /extensions/richNotifications due to existing /extensions/richNotifications
 DEBUG:root:Ignoring /extensions/runtime due to existing /extensions/runtime
 DEBUG:root:Ignoring /extensions/samples due to existing /extensions/samples
-DEBUG:root:Ignoring /extensions/sampleshtml due to existing /extensions/sampleshtml
 DEBUG:root:Ignoring /extensions/security due to existing /extensions/security
 DEBUG:root:/extensions/sencha_framework appends following list:
 /extensions/socket
 /extensions/sencha_framework
 /extensions/security
-/extensions/sampleshtml
 /extensions/samples
 /extensions/runtime
 /extensions/richNotifications
@@ -5614,14 +5581,12 @@ DEBUG:root:Ignoring /extensions/publish_app due to existing /extensions/publish_
 DEBUG:root:Ignoring /extensions/richNotifications due to existing /extensions/richNotifications
 DEBUG:root:Ignoring /extensions/runtime due to existing /extensions/runtime
 DEBUG:root:Ignoring /extensions/samples due to existing /extensions/samples
-DEBUG:root:Ignoring /extensions/sampleshtml due to existing /extensions/sampleshtml
 DEBUG:root:Ignoring /extensions/security due to existing /extensions/security
 DEBUG:root:Ignoring /extensions/sencha_framework due to existing /extensions/sencha_framework
 DEBUG:root:/extensions/socket appends following list:
 /extensions/socket
 /extensions/sencha_framework
 /extensions/security
-/extensions/sampleshtml
 /extensions/samples
 /extensions/runtime
 /extensions/richNotifications
@@ -5870,7 +5835,6 @@ DEBUG:root:/extensions/manifest/sockets appends following list:
 /extensions/manifest/settings_override
 /extensions/manifest/sessions
 /extensions/manifest/sencha_framework
-/extensions/manifest/sampleshtml
 /extensions/manifest/samples
 /extensions/manifest/runtime
 /extensions/manifest/richNotifications
@@ -6187,7 +6151,6 @@ DEBUG:root:Ignoring /extensions/publish_app due to existing /extensions/publish_
 DEBUG:root:Ignoring /extensions/richNotifications due to existing /extensions/richNotifications
 DEBUG:root:Ignoring /extensions/runtime due to existing /extensions/runtime
 DEBUG:root:Ignoring /extensions/samples due to existing /extensions/samples
-DEBUG:root:Ignoring /extensions/sampleshtml due to existing /extensions/sampleshtml
 DEBUG:root:Ignoring /extensions/security due to existing /extensions/security
 DEBUG:root:Ignoring /extensions/sencha_framework due to existing /extensions/sencha_framework
 DEBUG:root:Ignoring /extensions/socket due to existing /extensions/socket
@@ -6351,7 +6314,6 @@ DEBUG:root:Ignoring /extensions/manifest/publish_app due to existing /extensions
 DEBUG:root:Ignoring /extensions/manifest/richNotifications due to existing /extensions/richNotifications
 DEBUG:root:Ignoring /extensions/manifest/runtime due to existing /extensions/runtime
 DEBUG:root:Ignoring /extensions/manifest/samples due to existing /extensions/samples
-DEBUG:root:Ignoring /extensions/manifest/sampleshtml due to existing /extensions/sampleshtml
 DEBUG:root:Ignoring /extensions/manifest/sencha_framework due to existing /extensions/sencha_framework
 DEBUG:root:Ignoring /extensions/manifest/sessions due to existing /extensions/sessions
 DEBUG:root:Ignoring /extensions/manifest/settings_override due to existing /extensions/settings_override
