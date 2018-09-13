@@ -388,6 +388,7 @@ DEBUG:root:/extensions/declare_permissions appends following list:
 /extensions/system.display
 /extensions/idltest
 /extensions/extensions/tabs
+/extensions/enterprise.hardwarePlatform
 /extensions/dns
 /extensions/declare_permissions
 /extensions/declarativeNetRequest
@@ -558,6 +559,7 @@ DEBUG:root:/extensions/manifest/default_locale appends following list:
 /extensions/manifest/events
 /extensions/manifest/event_pages
 /extensions/manifest/enterprise.platformKeys
+/extensions/manifest/enterprise.hardwarePlatform
 /extensions/manifest/enterprise.deviceAttributes
 /extensions/manifest/downloads
 /extensions/manifest/documentScan
@@ -813,6 +815,7 @@ DEBUG:root:/extensions/examples/api/displaySource/tabCast/README appends followi
 /extensions/examples/api/displaySource/tabCast/events
 /extensions/examples/api/displaySource/tabCast/event_pages
 /extensions/examples/api/displaySource/tabCast/enterprise.platformKeys
+/extensions/examples/api/displaySource/tabCast/enterprise.hardwarePlatform
 /extensions/examples/api/displaySource/tabCast/enterprise.deviceAttributes
 /extensions/examples/api/displaySource/tabCast/downloads
 /extensions/examples/api/displaySource/tabCast/documentScan
@@ -981,6 +984,7 @@ DEBUG:root:/extensions/examples/api/windows/merge_windows/NOTICE appends followi
 /extensions/examples/api/windows/merge_windows/events
 /extensions/examples/api/windows/merge_windows/event_pages
 /extensions/examples/api/windows/merge_windows/enterprise.platformKeys
+/extensions/examples/api/windows/merge_windows/enterprise.hardwarePlatform
 /extensions/examples/api/windows/merge_windows/enterprise.deviceAttributes
 /extensions/examples/api/windows/merge_windows/downloads
 /extensions/examples/api/windows/merge_windows/documentScan
@@ -1149,6 +1153,7 @@ DEBUG:root:/extensions/examples/apps/calculator/app/LICENSE appends following li
 /extensions/examples/apps/calculator/app/events
 /extensions/examples/apps/calculator/app/event_pages
 /extensions/examples/apps/calculator/app/enterprise.platformKeys
+/extensions/examples/apps/calculator/app/enterprise.hardwarePlatform
 /extensions/examples/apps/calculator/app/enterprise.deviceAttributes
 /extensions/examples/apps/calculator/app/downloads
 /extensions/examples/apps/calculator/app/documentScan
@@ -1312,6 +1317,7 @@ DEBUG:root:/extensions/examples/howto/sandbox/LICENSE.handlebars appends followi
 /extensions/examples/howto/sandbox/events
 /extensions/examples/howto/sandbox/event_pages
 /extensions/examples/howto/sandbox/enterprise.platformKeys
+/extensions/examples/howto/sandbox/enterprise.hardwarePlatform
 /extensions/examples/howto/sandbox/enterprise.deviceAttributes
 /extensions/examples/howto/sandbox/downloads
 /extensions/examples/howto/sandbox/documentScan
@@ -1560,6 +1566,8 @@ DEBUG:root:Ignoring /extensions/declare_permissions due to existing /extensions/
 DEBUG:root:/extensions/dns appends following list:
 /extensions/dns
 /extensions/declare_permissions
+DEBUG:root:/extensions/enterprise.hardwarePlatform appends following list:
+/extensions/enterprise.hardwarePlatform
 DEBUG:root:Ignoring /extensions/extensions/tabs due to existing /extensions/tabs
 DEBUG:root:/extensions/idltest appends following list:
 /extensions/idltest
@@ -1628,6 +1636,7 @@ DEBUG:root:Ignoring /extensions/manifest/dns due to existing /extensions/dns
 DEBUG:root:Ignoring /extensions/manifest/documentScan due to existing /extensions/documentScan
 DEBUG:root:Ignoring /extensions/manifest/downloads due to existing /extensions/downloads
 DEBUG:root:Ignoring /extensions/manifest/enterprise.deviceAttributes due to existing /extensions/enterprise.deviceAttributes
+DEBUG:root:Ignoring /extensions/manifest/enterprise.hardwarePlatform due to existing /extensions/enterprise.hardwarePlatform
 DEBUG:root:Ignoring /extensions/manifest/enterprise.platformKeys due to existing /extensions/enterprise.platformKeys
 DEBUG:root:Ignoring /extensions/manifest/event_pages due to existing /extensions/event_pages
 DEBUG:root:Ignoring /extensions/manifest/events due to existing /extensions/events
@@ -1934,6 +1943,7 @@ DEBUG:root:/extensions/examples/api/displaySource/tabCast appends following list
 /extensions/examples/api/displaySource/events
 /extensions/examples/api/displaySource/event_pages
 /extensions/examples/api/displaySource/enterprise.platformKeys
+/extensions/examples/api/displaySource/enterprise.hardwarePlatform
 /extensions/examples/api/displaySource/enterprise.deviceAttributes
 /extensions/examples/api/displaySource/downloads
 /extensions/examples/api/displaySource/documentScan
@@ -2018,6 +2028,7 @@ DEBUG:root:Ignoring /extensions/examples/api/displaySource/tabCast/dns due to ex
 DEBUG:root:Ignoring /extensions/examples/api/displaySource/tabCast/documentScan due to existing /extensions/documentScan
 DEBUG:root:Ignoring /extensions/examples/api/displaySource/tabCast/downloads due to existing /extensions/downloads
 DEBUG:root:Ignoring /extensions/examples/api/displaySource/tabCast/enterprise.deviceAttributes due to existing /extensions/enterprise.deviceAttributes
+DEBUG:root:Ignoring /extensions/examples/api/displaySource/tabCast/enterprise.hardwarePlatform due to existing /extensions/enterprise.hardwarePlatform
 DEBUG:root:Ignoring /extensions/examples/api/displaySource/tabCast/enterprise.platformKeys due to existing /extensions/enterprise.platformKeys
 DEBUG:root:Ignoring /extensions/examples/api/displaySource/tabCast/event_pages due to existing /extensions/event_pages
 DEBUG:root:Ignoring /extensions/examples/api/displaySource/tabCast/events due to existing /extensions/events
@@ -2260,6 +2271,7 @@ DEBUG:root:/extensions/examples/api/windows/merge_windows appends following list
 /extensions/examples/api/windows/events
 /extensions/examples/api/windows/event_pages
 /extensions/examples/api/windows/enterprise.platformKeys
+/extensions/examples/api/windows/enterprise.hardwarePlatform
 /extensions/examples/api/windows/enterprise.deviceAttributes
 /extensions/examples/api/windows/downloads
 /extensions/examples/api/windows/documentScan
@@ -2339,6 +2351,7 @@ DEBUG:root:Ignoring /extensions/examples/api/windows/merge_windows/dns due to ex
 DEBUG:root:Ignoring /extensions/examples/api/windows/merge_windows/documentScan due to existing /extensions/documentScan
 DEBUG:root:Ignoring /extensions/examples/api/windows/merge_windows/downloads due to existing /extensions/downloads
 DEBUG:root:Ignoring /extensions/examples/api/windows/merge_windows/enterprise.deviceAttributes due to existing /extensions/enterprise.deviceAttributes
+DEBUG:root:Ignoring /extensions/examples/api/windows/merge_windows/enterprise.hardwarePlatform due to existing /extensions/enterprise.hardwarePlatform
 DEBUG:root:Ignoring /extensions/examples/api/windows/merge_windows/enterprise.platformKeys due to existing /extensions/enterprise.platformKeys
 DEBUG:root:Ignoring /extensions/examples/api/windows/merge_windows/event_pages due to existing /extensions/event_pages
 DEBUG:root:Ignoring /extensions/examples/api/windows/merge_windows/events due to existing /extensions/events
@@ -2585,6 +2598,7 @@ DEBUG:root:/extensions/examples/apps/calculator/app appends following list:
 /extensions/examples/apps/calculator/events
 /extensions/examples/apps/calculator/event_pages
 /extensions/examples/apps/calculator/enterprise.platformKeys
+/extensions/examples/apps/calculator/enterprise.hardwarePlatform
 /extensions/examples/apps/calculator/enterprise.deviceAttributes
 /extensions/examples/apps/calculator/downloads
 /extensions/examples/apps/calculator/documentScan
@@ -2662,6 +2676,7 @@ DEBUG:root:Ignoring /extensions/examples/apps/calculator/app/dns due to existing
 DEBUG:root:Ignoring /extensions/examples/apps/calculator/app/documentScan due to existing /extensions/documentScan
 DEBUG:root:Ignoring /extensions/examples/apps/calculator/app/downloads due to existing /extensions/downloads
 DEBUG:root:Ignoring /extensions/examples/apps/calculator/app/enterprise.deviceAttributes due to existing /extensions/enterprise.deviceAttributes
+DEBUG:root:Ignoring /extensions/examples/apps/calculator/app/enterprise.hardwarePlatform due to existing /extensions/enterprise.hardwarePlatform
 DEBUG:root:Ignoring /extensions/examples/apps/calculator/app/enterprise.platformKeys due to existing /extensions/enterprise.platformKeys
 DEBUG:root:Ignoring /extensions/examples/apps/calculator/app/event_pages due to existing /extensions/event_pages
 DEBUG:root:Ignoring /extensions/examples/apps/calculator/app/events due to existing /extensions/events
@@ -2830,6 +2845,7 @@ DEBUG:root:Ignoring /extensions/examples/howto/sandbox/dns due to existing /exte
 DEBUG:root:Ignoring /extensions/examples/howto/sandbox/documentScan due to existing /extensions/documentScan
 DEBUG:root:Ignoring /extensions/examples/howto/sandbox/downloads due to existing /extensions/downloads
 DEBUG:root:Ignoring /extensions/examples/howto/sandbox/enterprise.deviceAttributes due to existing /extensions/enterprise.deviceAttributes
+DEBUG:root:Ignoring /extensions/examples/howto/sandbox/enterprise.hardwarePlatform due to existing /extensions/enterprise.hardwarePlatform
 DEBUG:root:Ignoring /extensions/examples/howto/sandbox/enterprise.platformKeys due to existing /extensions/enterprise.platformKeys
 DEBUG:root:Ignoring /extensions/examples/howto/sandbox/event_pages due to existing /extensions/event_pages
 DEBUG:root:Ignoring /extensions/examples/howto/sandbox/events due to existing /extensions/events
@@ -3178,6 +3194,7 @@ DEBUG:root:Ignoring /extensions/webstore due to existing /extensions/webstore
 DEBUG:root:Ignoring /extensions/windows due to existing /extensions/windows
 DEBUG:root:Ignoring /extensions/declare_permissions due to existing /extensions/declare_permissions
 DEBUG:root:Ignoring /extensions/dns due to existing /extensions/dns
+DEBUG:root:Ignoring /extensions/enterprise.hardwarePlatform due to existing /extensions/enterprise.hardwarePlatform
 DEBUG:root:Ignoring /extensions/extensions/tabs due to existing /extensions/tabs
 DEBUG:root:Ignoring /extensions/idltest due to existing /extensions/idltest
 DEBUG:root:Ignoring /extensions/system.display due to existing /extensions/system.display
@@ -3227,6 +3244,7 @@ DEBUG:root:Ignoring /extensions/examples/api/displaySource/dns due to existing /
 DEBUG:root:Ignoring /extensions/examples/api/displaySource/documentScan due to existing /extensions/documentScan
 DEBUG:root:Ignoring /extensions/examples/api/displaySource/downloads due to existing /extensions/downloads
 DEBUG:root:Ignoring /extensions/examples/api/displaySource/enterprise.deviceAttributes due to existing /extensions/enterprise.deviceAttributes
+DEBUG:root:Ignoring /extensions/examples/api/displaySource/enterprise.hardwarePlatform due to existing /extensions/enterprise.hardwarePlatform
 DEBUG:root:Ignoring /extensions/examples/api/displaySource/enterprise.platformKeys due to existing /extensions/enterprise.platformKeys
 DEBUG:root:Ignoring /extensions/examples/api/displaySource/event_pages due to existing /extensions/event_pages
 DEBUG:root:Ignoring /extensions/examples/api/displaySource/events due to existing /extensions/events
@@ -3408,6 +3426,7 @@ DEBUG:root:Ignoring /extensions/examples/api/windows/dns due to existing /extens
 DEBUG:root:Ignoring /extensions/examples/api/windows/documentScan due to existing /extensions/documentScan
 DEBUG:root:Ignoring /extensions/examples/api/windows/downloads due to existing /extensions/downloads
 DEBUG:root:Ignoring /extensions/examples/api/windows/enterprise.deviceAttributes due to existing /extensions/enterprise.deviceAttributes
+DEBUG:root:Ignoring /extensions/examples/api/windows/enterprise.hardwarePlatform due to existing /extensions/enterprise.hardwarePlatform
 DEBUG:root:Ignoring /extensions/examples/api/windows/enterprise.platformKeys due to existing /extensions/enterprise.platformKeys
 DEBUG:root:Ignoring /extensions/examples/api/windows/event_pages due to existing /extensions/event_pages
 DEBUG:root:Ignoring /extensions/examples/api/windows/events due to existing /extensions/events
@@ -3696,6 +3715,7 @@ DEBUG:root:/extensions/examples/apps/calculator appends following list:
 /extensions/examples/apps/events
 /extensions/examples/apps/event_pages
 /extensions/examples/apps/enterprise.platformKeys
+/extensions/examples/apps/enterprise.hardwarePlatform
 /extensions/examples/apps/enterprise.deviceAttributes
 /extensions/examples/apps/downloads
 /extensions/examples/apps/documentScan
@@ -3782,6 +3802,7 @@ DEBUG:root:Ignoring /extensions/examples/apps/calculator/dns due to existing /ex
 DEBUG:root:Ignoring /extensions/examples/apps/calculator/documentScan due to existing /extensions/documentScan
 DEBUG:root:Ignoring /extensions/examples/apps/calculator/downloads due to existing /extensions/downloads
 DEBUG:root:Ignoring /extensions/examples/apps/calculator/enterprise.deviceAttributes due to existing /extensions/enterprise.deviceAttributes
+DEBUG:root:Ignoring /extensions/examples/apps/calculator/enterprise.hardwarePlatform due to existing /extensions/enterprise.hardwarePlatform
 DEBUG:root:Ignoring /extensions/examples/apps/calculator/enterprise.platformKeys due to existing /extensions/enterprise.platformKeys
 DEBUG:root:Ignoring /extensions/examples/apps/calculator/event_pages due to existing /extensions/event_pages
 DEBUG:root:Ignoring /extensions/examples/apps/calculator/events due to existing /extensions/events
@@ -4099,6 +4120,7 @@ DEBUG:root:/extensions/app_architecture appends following list:
 /extensions/events
 /extensions/event_pages
 /extensions/enterprise.platformKeys
+/extensions/enterprise.hardwarePlatform
 /extensions/enterprise.deviceAttributes
 /extensions/downloads
 /extensions/documentScan
@@ -4293,6 +4315,7 @@ DEBUG:root:/extensions/examples/apps appends following list:
 /extensions/examples/events
 /extensions/examples/event_pages
 /extensions/examples/enterprise.platformKeys
+/extensions/examples/enterprise.hardwarePlatform
 /extensions/examples/enterprise.deviceAttributes
 /extensions/examples/downloads
 /extensions/examples/documentScan
@@ -4382,6 +4405,7 @@ DEBUG:root:Ignoring /extensions/examples/apps/dns due to existing /extensions/dn
 DEBUG:root:Ignoring /extensions/examples/apps/documentScan due to existing /extensions/documentScan
 DEBUG:root:Ignoring /extensions/examples/apps/downloads due to existing /extensions/downloads
 DEBUG:root:Ignoring /extensions/examples/apps/enterprise.deviceAttributes due to existing /extensions/enterprise.deviceAttributes
+DEBUG:root:Ignoring /extensions/examples/apps/enterprise.hardwarePlatform due to existing /extensions/enterprise.hardwarePlatform
 DEBUG:root:Ignoring /extensions/examples/apps/enterprise.platformKeys due to existing /extensions/enterprise.platformKeys
 DEBUG:root:Ignoring /extensions/examples/apps/event_pages due to existing /extensions/event_pages
 DEBUG:root:Ignoring /extensions/examples/apps/events due to existing /extensions/events
@@ -4587,6 +4611,7 @@ DEBUG:root:Ignoring /extensions/dns due to existing /extensions/dns
 DEBUG:root:Ignoring /extensions/documentScan due to existing /extensions/documentScan
 DEBUG:root:Ignoring /extensions/downloads due to existing /extensions/downloads
 DEBUG:root:Ignoring /extensions/enterprise.deviceAttributes due to existing /extensions/enterprise.deviceAttributes
+DEBUG:root:Ignoring /extensions/enterprise.hardwarePlatform due to existing /extensions/enterprise.hardwarePlatform
 DEBUG:root:Ignoring /extensions/enterprise.platformKeys due to existing /extensions/enterprise.platformKeys
 DEBUG:root:Ignoring /extensions/event_pages due to existing /extensions/event_pages
 DEBUG:root:Ignoring /extensions/events due to existing /extensions/events
@@ -4801,6 +4826,7 @@ DEBUG:root:/extensions/app_frameworks appends following list:
 /extensions/events
 /extensions/event_pages
 /extensions/enterprise.platformKeys
+/extensions/enterprise.hardwarePlatform
 /extensions/enterprise.deviceAttributes
 /extensions/downloads
 /extensions/documentScan
@@ -4921,6 +4947,7 @@ DEBUG:root:Ignoring /extensions/examples/dns due to existing /extensions/dns
 DEBUG:root:Ignoring /extensions/examples/documentScan due to existing /extensions/documentScan
 DEBUG:root:Ignoring /extensions/examples/downloads due to existing /extensions/downloads
 DEBUG:root:Ignoring /extensions/examples/enterprise.deviceAttributes due to existing /extensions/enterprise.deviceAttributes
+DEBUG:root:Ignoring /extensions/examples/enterprise.hardwarePlatform due to existing /extensions/enterprise.hardwarePlatform
 DEBUG:root:Ignoring /extensions/examples/enterprise.platformKeys due to existing /extensions/enterprise.platformKeys
 DEBUG:root:Ignoring /extensions/examples/event_pages due to existing /extensions/event_pages
 DEBUG:root:Ignoring /extensions/examples/events due to existing /extensions/events
@@ -5096,6 +5123,7 @@ DEBUG:root:Ignoring /extensions/dns due to existing /extensions/dns
 DEBUG:root:Ignoring /extensions/documentScan due to existing /extensions/documentScan
 DEBUG:root:Ignoring /extensions/downloads due to existing /extensions/downloads
 DEBUG:root:Ignoring /extensions/enterprise.deviceAttributes due to existing /extensions/enterprise.deviceAttributes
+DEBUG:root:Ignoring /extensions/enterprise.hardwarePlatform due to existing /extensions/enterprise.hardwarePlatform
 DEBUG:root:Ignoring /extensions/enterprise.platformKeys due to existing /extensions/enterprise.platformKeys
 DEBUG:root:Ignoring /extensions/event_pages due to existing /extensions/event_pages
 DEBUG:root:Ignoring /extensions/events due to existing /extensions/events
@@ -5287,6 +5315,7 @@ DEBUG:root:/extensions/sencha_framework appends following list:
 /extensions/events
 /extensions/event_pages
 /extensions/enterprise.platformKeys
+/extensions/enterprise.hardwarePlatform
 /extensions/enterprise.deviceAttributes
 /extensions/downloads
 /extensions/documentScan
@@ -5488,6 +5517,7 @@ DEBUG:root:Ignoring /extensions/dns due to existing /extensions/dns
 DEBUG:root:Ignoring /extensions/documentScan due to existing /extensions/documentScan
 DEBUG:root:Ignoring /extensions/downloads due to existing /extensions/downloads
 DEBUG:root:Ignoring /extensions/enterprise.deviceAttributes due to existing /extensions/enterprise.deviceAttributes
+DEBUG:root:Ignoring /extensions/enterprise.hardwarePlatform due to existing /extensions/enterprise.hardwarePlatform
 DEBUG:root:Ignoring /extensions/enterprise.platformKeys due to existing /extensions/enterprise.platformKeys
 DEBUG:root:Ignoring /extensions/event_pages due to existing /extensions/event_pages
 DEBUG:root:Ignoring /extensions/events due to existing /extensions/events
@@ -5680,6 +5710,7 @@ DEBUG:root:/extensions/socket appends following list:
 /extensions/events
 /extensions/event_pages
 /extensions/enterprise.platformKeys
+/extensions/enterprise.hardwarePlatform
 /extensions/enterprise.deviceAttributes
 /extensions/downloads
 /extensions/documentScan
@@ -5933,6 +5964,7 @@ DEBUG:root:/extensions/manifest/sockets appends following list:
 /extensions/manifest/events
 /extensions/manifest/event_pages
 /extensions/manifest/enterprise.platformKeys
+/extensions/manifest/enterprise.hardwarePlatform
 /extensions/manifest/enterprise.deviceAttributes
 /extensions/manifest/downloads
 /extensions/manifest/documentScan
@@ -6058,6 +6090,7 @@ DEBUG:root:Ignoring /extensions/dns due to existing /extensions/dns
 DEBUG:root:Ignoring /extensions/documentScan due to existing /extensions/documentScan
 DEBUG:root:Ignoring /extensions/downloads due to existing /extensions/downloads
 DEBUG:root:Ignoring /extensions/enterprise.deviceAttributes due to existing /extensions/enterprise.deviceAttributes
+DEBUG:root:Ignoring /extensions/enterprise.hardwarePlatform due to existing /extensions/enterprise.hardwarePlatform
 DEBUG:root:Ignoring /extensions/enterprise.platformKeys due to existing /extensions/enterprise.platformKeys
 DEBUG:root:Ignoring /extensions/event_pages due to existing /extensions/event_pages
 DEBUG:root:Ignoring /extensions/events due to existing /extensions/events
@@ -6216,6 +6249,7 @@ DEBUG:root:Ignoring /extensions/manifest/dns due to existing /extensions/dns
 DEBUG:root:Ignoring /extensions/manifest/documentScan due to existing /extensions/documentScan
 DEBUG:root:Ignoring /extensions/manifest/downloads due to existing /extensions/downloads
 DEBUG:root:Ignoring /extensions/manifest/enterprise.deviceAttributes due to existing /extensions/enterprise.deviceAttributes
+DEBUG:root:Ignoring /extensions/manifest/enterprise.hardwarePlatform due to existing /extensions/enterprise.hardwarePlatform
 DEBUG:root:Ignoring /extensions/manifest/enterprise.platformKeys due to existing /extensions/enterprise.platformKeys
 DEBUG:root:Ignoring /extensions/manifest/event_pages due to existing /extensions/event_pages
 DEBUG:root:Ignoring /extensions/manifest/events due to existing /extensions/events
