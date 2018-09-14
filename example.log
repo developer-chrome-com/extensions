@@ -3758,6 +3758,7 @@ DEBUG:root:/extensions/examples/apps/calculator appends following list:
 /extensions/examples/apps/a11y
 /extensions/examples/apps
 /extensions/devguide
+/extensions/declarativeNetRequest
 /extensions/content_scripts
 /extensions/contentSecurityPolicy
 /extensions/browserAction
@@ -4135,7 +4136,6 @@ DEBUG:root:/extensions/app_architecture appends following list:
 /extensions/declare_permissions
 /extensions/declaratively
 /extensions/declarativeWebRequest
-/extensions/declarativeNetRequest
 /extensions/declarativeContent
 /extensions/debugger
 /extensions/cookies
@@ -4189,6 +4189,7 @@ DEBUG:root:Ignoring /extensions/background_pages due to existing /extensions/bac
 DEBUG:root:Ignoring /extensions/browserAction due to existing /extensions/browserAction
 DEBUG:root:Ignoring /extensions/contentSecurityPolicy due to existing /extensions/contentSecurityPolicy
 DEBUG:root:Ignoring /extensions/content_scripts due to existing /extensions/content_scripts
+DEBUG:root:Ignoring /extensions/declarativeNetRequest due to existing /extensions/declarativeNetRequest
 DEBUG:root:Ignoring /extensions/devguide due to existing /extensions/devguide
 DEBUG:root:/extensions/examples/apps appends following list:
 /extensions/extensions/contentSecurityPolicy
@@ -4359,6 +4360,7 @@ DEBUG:root:/extensions/examples/apps appends following list:
 /extensions/examples/a11y
 /extensions/examples
 /extensions/devguide
+/extensions/declarativeNetRequest
 /extensions/content_scripts
 /extensions/contentSecurityPolicy
 /extensions/browserAction
@@ -4596,7 +4598,6 @@ DEBUG:root:Ignoring /extensions/contextMenus due to existing /extensions/context
 DEBUG:root:Ignoring /extensions/cookies due to existing /extensions/cookies
 DEBUG:root:Ignoring /extensions/debugger due to existing /extensions/debugger
 DEBUG:root:Ignoring /extensions/declarativeContent due to existing /extensions/declarativeContent
-DEBUG:root:Ignoring /extensions/declarativeNetRequest due to existing /extensions/declarativeNetRequest
 DEBUG:root:Ignoring /extensions/declarativeWebRequest due to existing /extensions/declarativeWebRequest
 DEBUG:root:Ignoring /extensions/declaratively due to existing /extensions/declaratively
 DEBUG:root:Ignoring /extensions/declare_permissions due to existing /extensions/declare_permissions
@@ -4841,7 +4842,6 @@ DEBUG:root:/extensions/app_frameworks appends following list:
 /extensions/declare_permissions
 /extensions/declaratively
 /extensions/declarativeWebRequest
-/extensions/declarativeNetRequest
 /extensions/declarativeContent
 /extensions/debugger
 /extensions/cookies
@@ -4897,9 +4897,11 @@ DEBUG:root:Ignoring /extensions/background_pages due to existing /extensions/bac
 DEBUG:root:Ignoring /extensions/browserAction due to existing /extensions/browserAction
 DEBUG:root:Ignoring /extensions/contentSecurityPolicy due to existing /extensions/contentSecurityPolicy
 DEBUG:root:Ignoring /extensions/content_scripts due to existing /extensions/content_scripts
+DEBUG:root:Ignoring /extensions/declarativeNetRequest due to existing /extensions/declarativeNetRequest
 DEBUG:root:Ignoring /extensions/devguide due to existing /extensions/devguide
 DEBUG:root:/extensions/examples appends following list:
 /extensions/devguide
+/extensions/declarativeNetRequest
 /extensions/content_scripts
 /extensions/contentSecurityPolicy
 /extensions/browserAction
@@ -5108,7 +5110,6 @@ DEBUG:root:Ignoring /extensions/contextMenus due to existing /extensions/context
 DEBUG:root:Ignoring /extensions/cookies due to existing /extensions/cookies
 DEBUG:root:Ignoring /extensions/debugger due to existing /extensions/debugger
 DEBUG:root:Ignoring /extensions/declarativeContent due to existing /extensions/declarativeContent
-DEBUG:root:Ignoring /extensions/declarativeNetRequest due to existing /extensions/declarativeNetRequest
 DEBUG:root:Ignoring /extensions/declarativeWebRequest due to existing /extensions/declarativeWebRequest
 DEBUG:root:Ignoring /extensions/declaratively due to existing /extensions/declaratively
 DEBUG:root:Ignoring /extensions/declare_permissions due to existing /extensions/declare_permissions
@@ -5330,7 +5331,6 @@ DEBUG:root:/extensions/sencha_framework appends following list:
 /extensions/declare_permissions
 /extensions/declaratively
 /extensions/declarativeWebRequest
-/extensions/declarativeNetRequest
 /extensions/declarativeContent
 /extensions/debugger
 /extensions/cookies
@@ -5399,6 +5399,7 @@ DEBUG:root:Ignoring /extensions/background_pages due to existing /extensions/bac
 DEBUG:root:Ignoring /extensions/browserAction due to existing /extensions/browserAction
 DEBUG:root:Ignoring /extensions/contentSecurityPolicy due to existing /extensions/contentSecurityPolicy
 DEBUG:root:Ignoring /extensions/content_scripts due to existing /extensions/content_scripts
+DEBUG:root:Ignoring /extensions/declarativeNetRequest due to existing /extensions/declarativeNetRequest
 DEBUG:root:Ignoring /extensions/devguide due to existing /extensions/devguide
 DEBUG:root:Ignoring /declarativeContent due to existing /extensions/declarativeContent
 DEBUG:root:Ignoring /declarativeWebRequest due to existing /extensions/declarativeWebRequest
@@ -5453,6 +5454,7 @@ DEBUG:root:/extensions/app_identityhtml appends following list:
 /extensions/identity
 /extensions/fileSystem
 /extensions/devguide
+/extensions/declarativeNetRequest
 /extensions/content_scripts
 /extensions/contentSecurityPolicy
 /extensions/browserAction
@@ -5502,7 +5504,6 @@ DEBUG:root:Ignoring /extensions/contextMenus due to existing /extensions/context
 DEBUG:root:Ignoring /extensions/cookies due to existing /extensions/cookies
 DEBUG:root:Ignoring /extensions/debugger due to existing /extensions/debugger
 DEBUG:root:Ignoring /extensions/declarativeContent due to existing /extensions/declarativeContent
-DEBUG:root:Ignoring /extensions/declarativeNetRequest due to existing /extensions/declarativeNetRequest
 DEBUG:root:Ignoring /extensions/declarativeWebRequest due to existing /extensions/declarativeWebRequest
 DEBUG:root:Ignoring /extensions/declaratively due to existing /extensions/declaratively
 DEBUG:root:Ignoring /extensions/declare_permissions due to existing /extensions/declare_permissions
@@ -5725,7 +5726,6 @@ DEBUG:root:/extensions/socket appends following list:
 /extensions/declare_permissions
 /extensions/declaratively
 /extensions/declarativeWebRequest
-/extensions/declarativeNetRequest
 /extensions/declarativeContent
 /extensions/debugger
 /extensions/cookies
@@ -5755,6 +5755,7 @@ DEBUG:root:Ignoring /extensions/background_pages due to existing /extensions/bac
 DEBUG:root:Ignoring /extensions/browserAction due to existing /extensions/browserAction
 DEBUG:root:Ignoring /extensions/contentSecurityPolicy due to existing /extensions/contentSecurityPolicy
 DEBUG:root:Ignoring /extensions/content_scripts due to existing /extensions/content_scripts
+DEBUG:root:Ignoring /extensions/declarativeNetRequest due to existing /extensions/declarativeNetRequest
 DEBUG:root:Ignoring /extensions/devguide due to existing /extensions/devguide
 DEBUG:root:Ignoring /extensions/fileSystem due to existing /extensions/fileSystem
 DEBUG:root:Ignoring /extensions/identity due to existing /extensions/identity
@@ -6017,6 +6018,7 @@ DEBUG:root:/extensions/manifest/sockets appends following list:
 /extensions/identity
 /extensions/extensions/contentSecurityPolicy
 /extensions/devguide
+/extensions/declarativeNetRequest
 /extensions/content_scripts
 /extensions/contentSecurityPolicy
 /extensions/browserAction
@@ -6075,7 +6077,6 @@ DEBUG:root:Ignoring /extensions/contextMenus due to existing /extensions/context
 DEBUG:root:Ignoring /extensions/cookies due to existing /extensions/cookies
 DEBUG:root:Ignoring /extensions/debugger due to existing /extensions/debugger
 DEBUG:root:Ignoring /extensions/declarativeContent due to existing /extensions/declarativeContent
-DEBUG:root:Ignoring /extensions/declarativeNetRequest due to existing /extensions/declarativeNetRequest
 DEBUG:root:Ignoring /extensions/declarativeWebRequest due to existing /extensions/declarativeWebRequest
 DEBUG:root:Ignoring /extensions/declaratively due to existing /extensions/declaratively
 DEBUG:root:Ignoring /extensions/declare_permissions due to existing /extensions/declare_permissions
@@ -6197,6 +6198,7 @@ DEBUG:root:Ignoring /extensions/background_pages due to existing /extensions/bac
 DEBUG:root:Ignoring /extensions/browserAction due to existing /extensions/browserAction
 DEBUG:root:Ignoring /extensions/contentSecurityPolicy due to existing /extensions/contentSecurityPolicy
 DEBUG:root:Ignoring /extensions/content_scripts due to existing /extensions/content_scripts
+DEBUG:root:Ignoring /extensions/declarativeNetRequest due to existing /extensions/declarativeNetRequest
 DEBUG:root:Ignoring /extensions/devguide due to existing /extensions/devguide
 DEBUG:root:Ignoring /extensions/extensions/contentSecurityPolicy due to existing /extensions/contentSecurityPolicy
 DEBUG:root:Ignoring /extensions/identity due to existing /extensions/identity

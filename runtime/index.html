@@ -711,7 +711,7 @@
       <tr>
         <td class="title">Availability:</td>
         <td>
-            Since Chrome 25.
+            Since Chrome 26.
             <br>
         </td>
       </tr>
@@ -862,9 +862,6 @@
           <h2 id="types">Types</h2>
             <div>
               <h3 id="type-Port">Port</h3>
-              <p class="availability">
-                Since Chrome 26.
-              </p>
               <table>
                 <dd>An object which allows two way communication with other pages. See <a href="messaging#connect">Long-lived connections</a> for more information.</dd>
                   <tr><th colspan="3" id="Port-properties">properties</th></tr>
@@ -943,9 +940,6 @@
             </div>
             <div>
               <h3 id="type-MessageSender">MessageSender</h3>
-              <p class="availability">
-                Since Chrome 26.
-              </p>
               <table>
                 <dd>An object containing information about the script context that sent a message or request.</dd>
                   <tr><th colspan="3" id="MessageSender-properties">properties</th></tr>
@@ -1497,9 +1491,6 @@
               </code>
               </div>
               <div class="description">
-                <p class="availability">
-                  Since Chrome 26.
-                </p>
                 <p>
                   Attempts to connect to connect listeners within an extension/app (such as the background page), or other extensions/apps. This is useful for content scripts connecting to their extension processes, inter-app/extension communication, and <a href="manifest/externally_connectable.html">web messaging</a>. Note that this does not connect to any listeners in a content script. Extensions may connect to content scripts embedded in tabs via <a href=/extensions/tabs#method-connect>tabs.connect</a>.
                 </p>
@@ -1594,9 +1585,6 @@
               </code>
               </div>
               <div class="description">
-                <p class="availability">
-                  Since Chrome 26.
-                </p>
                 <p>
                   Sends a single message to event listeners within your extension/app or a different extension/app. Similar to <a href=/extensions/runtime#method-connect>runtime.connect</a> but only sends a single message, with an optional response. If sending to your extension, the <a href=/extensions/runtime#event-onMessage>runtime.onMessage</a> event will be fired in every frame of your extension (except for the sender's frame), or <a href=/extensions/runtime#event-onMessageExternal>runtime.onMessageExternal</a>, if a different extension. Note that extensions cannot send messages to content scripts using this method. To send messages to content scripts, use <a href=/extensions/tabs#method-sendMessage>tabs.sendMessage</a>.
                 </p>
@@ -2129,9 +2117,6 @@
             <div>
               <h3 id="event-onConnect">onConnect</h3>
               <div class="description">
-                <p class="availability">
-                  Since Chrome 26.
-                </p>
             <p>
                   Fired when a connection is made from either an extension process or a content script (by <a href=/extensions/runtime#method-connect>runtime.connect</a>).
                 </p>      <tr><td>
@@ -2179,9 +2164,6 @@
             <div>
               <h3 id="event-onConnectExternal">onConnectExternal</h3>
               <div class="description">
-                <p class="availability">
-                  Since Chrome 26.
-                </p>
             <p>
                   Fired when a connection is made from another extension (by <a href=/extensions/runtime#method-connect>runtime.connect</a>).
                 </p>      <tr><td>
@@ -2229,9 +2211,6 @@
             <div>
               <h3 id="event-onMessage">onMessage</h3>
               <div class="description">
-                <p class="availability">
-                  Since Chrome 26.
-                </p>
             <p>
                   Fired when a message is sent from either an extension process (by <a href=/extensions/runtime#method-sendMessage>runtime.sendMessage</a>) or a content script (by <a href=/extensions/tabs#method-sendMessage>tabs.sendMessage</a>).
                 </p>      <tr><td>
@@ -2304,9 +2283,6 @@
             <div>
               <h3 id="event-onMessageExternal">onMessageExternal</h3>
               <div class="description">
-                <p class="availability">
-                  Since Chrome 26.
-                </p>
             <p>
                   Fired when a message is sent from another extension/app (by <a href=/extensions/runtime#method-sendMessage>runtime.sendMessage</a>). Cannot be used in a content script.
                 </p>      <tr><td>

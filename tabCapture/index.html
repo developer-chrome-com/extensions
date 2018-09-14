@@ -750,6 +750,11 @@
             chrome.tabCapture.captureOffscreenTab(<span>string startUrl</span>, <span>    CaptureOptions options</span>, <span>function callback</span>)
             </code>
           </td></tr>
+        <tr><td><a href="#method-getMediaStreamId">getMediaStreamId</a> &minus;
+            <code class="prettyprint">
+            chrome.tabCapture.getMediaStreamId(<span class="optional">object options</span>, <span>function callback</span>)
+            </code>
+          </td></tr>
         <tr><th colspan="2">Events</th></tr>
           <tr><td><a href="#event-onStatusChanged">onStatusChanged</a></td></tr>
     </table>
@@ -1004,6 +1009,85 @@
                               <td>LocalMediaStream</td>
                               <td>
                                   stream</td>
+                              <td>
+                              
+                              </td>
+                            </tr>
+                          </table>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-getMediaStreamId"
+                  >getMediaStreamId
+              </h3>
+              <div class="summary">
+              <code class="prettyprint">
+              chrome.tabCapture.getMediaStreamId(<span class="optional">object options</span>, <span>function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p class="availability">
+                  <strong>Not fully implemented</strong>.
+                   You must build Chromium from source to try this API.
+                  
+                   <a href="http://www.chromium.org/developers">Learn more</a>.
+                </p>
+                <p>
+                  Creates a stream ID to capture the target tab. Similar to chrome.tabCapture.capture() method, but returns a media stream ID, instead of a media stream, to the consumer tab.
+                </p>
+                <table >
+                  <tr><th colspan="3">Parameters</th></tr>
+                    <tr id="property-getMediaStreamId-options">
+                      <td>object</td>
+                      <td><span class="optional">(optional)</span>
+                          options</td>
+                      <td>
+                      
+                        <table class="innerTable">
+                          <tr id="property-options-consumerTabId">
+                            <td>integer</td>
+                            <td><span class="optional">(optional)</span>
+                                consumerTabId</td>
+                            <td>
+                            
+                            <p>
+                              Optional tab id of the tab which will later invoke <code>getUserMedia()</code> to consume the stream. If not specified then the resulting stream can be used only by the calling extension. The stream can only be used by frames in the given tab whose security origin matches the consumber tab's origin. The tab's origin must be a secure origin, e.g. HTTPS.
+                            </p></td>
+                          </tr><tr id="property-options-targetTabId">
+                            <td>integer</td>
+                            <td><span class="optional">(optional)</span>
+                                targetTabId</td>
+                            <td>
+                            
+                            <p>
+                              Optional tab id of the tab which will be captured. If not specified then the current active tab will be selected. Only tabs for which the extension has been granted the <code>activeTab</code> permission can be used as the target tab.
+                            </p></td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                    <tr id="property-getMediaStreamId-callback">
+                      <td>function</td>
+                      <td>
+                          callback</td>
+                      <td>
+                      
+                      <p>
+                        Callback to invoke with the result. If successful, the result is an opaque string that can be passed to the <code>getUserMedia()</code> API to generate a media stream that corresponds to the target tab. The created <code>streamId</code> can only be used once and expires after a few seconds if it is not used.
+                      </p>    <p>
+                              The <em>callback</em> parameter should be a function
+                              that looks like this:
+                          </p>
+                        <code class="prettyprint">function(string streamId) <span class="subdued">{...}</span>;</code>
+                          <table class="innerTable">
+                            <tr id="property-callback-streamId">
+                              <td>string</td>
+                              <td>
+                                  streamId</td>
                               <td>
                               
                               </td>
