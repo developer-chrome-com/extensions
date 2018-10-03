@@ -870,7 +870,7 @@
                       <dl>
                         <dt><code>"popup"</code></dt>
                         <dd>
-                          A browser popup window.
+                          A browser popup.
                         </dd>
                       </dl>
                       <dl>
@@ -888,11 +888,11 @@
                       <dl>
                         <dt><code>"devtools"</code></dt>
                         <dd>
-                          A devtools window.
+                          A Developer Tools window.
                         </dd>
                       </dl>
                 </td></tr>
-                <dd>The type of browser window this is. Under some circumstances a Window may not be assigned type property, for example when querying closed windows from the <a href=/extensions/sessions>sessions</a> API.</dd>
+                <dd>The type of browser window this is. In some circumstances a window may not be assigned a <code>type</code> property; for example, when querying closed windows from the <a href=/extensions/sessions>sessions</a> API.</dd>
               </table>
             </div>
             <div>
@@ -903,7 +903,7 @@
                       <dl>
                         <dt><code>"normal"</code></dt>
                         <dd>
-                          Normal window state (i.e. not minimized, maximized, or fullscreen).
+                          Normal window state (not minimized, maximized, or fullscreen).
                         </dd>
                       </dl>
                       <dl>
@@ -931,7 +931,7 @@
                         </dd>
                       </dl>
                 </td></tr>
-                <dd>The state of this browser window. Under some circumstances a Window may not be assigned state property, for example when querying closed windows from the <a href=/extensions/sessions>sessions</a> API.</dd>
+                <dd>The state of this browser window. In some circumstances a window may not be assigned a <code>state</code> property; for example, when querying closed windows from the <a href=/extensions/sessions>sessions</a> API.</dd>
               </table>
             </div>
             <div>
@@ -945,7 +945,7 @@
                     <td>
                     
                     <p>
-                      The ID of the window. Window IDs are unique within a browser session. Under some circumstances a Window may not be assigned an ID, for example when querying windows using the <a href=/extensions/sessions>sessions</a> API, in which case a session ID may be present.
+                      The ID of the window. Window IDs are unique within a browser session. In some circumstances a window may not be assigned an <code>ID</code> property; for example, when querying windows using the <a href=/extensions/sessions>sessions</a> API, in which case a session ID may be present.
                     </p></td>
                   </tr><tr id="property-Window-focused">
                     <td>boolean</td>
@@ -963,7 +963,7 @@
                     <td>
                     
                     <p>
-                      The offset of the window from the top edge of the screen in pixels. Under some circumstances a Window may not be assigned top property, for example when querying closed windows from the <a href=/extensions/sessions>sessions</a> API.
+                      The offset of the window from the top edge of the screen in pixels. In some circumstances a window may not be assigned a <code>top</code> property; for example, when querying closed windows from the <a href=/extensions/sessions>sessions</a> API.
                     </p></td>
                   </tr><tr id="property-Window-left">
                     <td>integer</td>
@@ -972,7 +972,7 @@
                     <td>
                     
                     <p>
-                      The offset of the window from the left edge of the screen in pixels. Under some circumstances a Window may not be assigned left property, for example when querying closed windows from the <a href=/extensions/sessions>sessions</a> API.
+                      The offset of the window from the left edge of the screen in pixels. In some circumstances a window may not be assigned a <code>left</code> property; for example, when querying closed windows from the <a href=/extensions/sessions>sessions</a> API.
                     </p></td>
                   </tr><tr id="property-Window-width">
                     <td>integer</td>
@@ -981,7 +981,7 @@
                     <td>
                     
                     <p>
-                      The width of the window, including the frame, in pixels. Under some circumstances a Window may not be assigned width property, for example when querying closed windows from the <a href=/extensions/sessions>sessions</a> API.
+                      The width of the window, including the frame, in pixels. In some circumstances a window may not be assigned a <code>width</code> property; for example, when querying closed windows from the <a href=/extensions/sessions>sessions</a> API.
                     </p></td>
                   </tr><tr id="property-Window-height">
                     <td>integer</td>
@@ -990,7 +990,7 @@
                     <td>
                     
                     <p>
-                      The height of the window, including the frame, in pixels. Under some circumstances a Window may not be assigned height property, for example when querying closed windows from the <a href=/extensions/sessions>sessions</a> API.
+                      The height of the window, including the frame, in pixels. In some circumstances a window may not be assigned a <code>height</code> property; for example, when querying closed windows from the <a href=/extensions/sessions>sessions</a> API.
                     </p></td>
                   </tr><tr id="property-Window-tabs">
                     <td>array of     <a href=/extensions/tabs#type-Tab>tabs.Tab</a></td>
@@ -1047,7 +1047,7 @@
                     </p>
                     
                     <p>
-                      The session ID used to uniquely identify a Window obtained from the <a href=/extensions/sessions>sessions</a> API.
+                      The session ID used to uniquely identify a window, obtained from the <a href=/extensions/sessions>sessions</a> API.
                     </p></td>
                   </tr>
               </table>
@@ -1061,7 +1061,7 @@
                         <code>"popup"</code>, 
                         or <code>"panel"</code>
                 </td></tr>
-                <dd>Specifies what type of browser window to create. 'panel' is deprecated and only available to existing whitelisted extensions on Chrome OS.</dd>
+                <dd>Specifies what type of browser window to create. 'panel' is deprecated and is available only to existing whitelisted extensions on Chrome OS.</dd>
               </table>
             </div>
           <h2 id="properties">Properties</h2>
@@ -1121,7 +1121,7 @@
                             <td>
                             
                             <p>
-                              If true, the <a href=/extensions/windows#type-Window>windows.Window</a> object will have a <var>tabs</var> property that contains a list of the <a href=/extensions/tabs#type-Tab>tabs.Tab</a> objects. The <code>Tab</code> objects only contain the <code>url</code>, <code>title</code> and <code>favIconUrl</code> properties if the extension's manifest file includes the <code>"tabs"</code> permission.
+                              If true, the <a href=/extensions/windows#type-Window>windows.Window</a> object has a <var>tabs</var> property that contains a list of the <a href=/extensions/tabs#type-Tab>tabs.Tab</a> objects. The <code>Tab</code> objects only contain the <code>url</code>, <code>title</code>, and <code>favIconUrl</code> properties if the extension's manifest file includes the <code>"tabs"</code> permission.
                             </p></td>
                           </tr><tr id="property-getInfo-windowTypes">
                             <td>array of     <a href=/extensions/windows#type-WindowType>WindowType</a></td>
@@ -1133,7 +1133,7 @@
                             </p>
                             
                             <p>
-                              If set, the <a href=/extensions/windows#type-Window>windows.Window</a> returned will be filtered based on its type. If unset the default filter is set to <code>['normal', 'popup']</code>.
+                              If set, the <a href=/extensions/windows#type-Window>windows.Window</a> returned is filtered based on its type. If unset, the default filter is set to <code>['normal', 'popup']</code>.
                             </p></td>
                           </tr>
                         </table>
@@ -1196,7 +1196,7 @@
                             <td>
                             
                             <p>
-                              If true, the <a href=/extensions/windows#type-Window>windows.Window</a> object will have a <var>tabs</var> property that contains a list of the <a href=/extensions/tabs#type-Tab>tabs.Tab</a> objects. The <code>Tab</code> objects only contain the <code>url</code>, <code>title</code> and <code>favIconUrl</code> properties if the extension's manifest file includes the <code>"tabs"</code> permission.
+                              If true, the <a href=/extensions/windows#type-Window>windows.Window</a> object has a <var>tabs</var> property that contains a list of the <a href=/extensions/tabs#type-Tab>tabs.Tab</a> objects. The <code>Tab</code> objects only contain the <code>url</code>, <code>title</code>, and <code>favIconUrl</code> properties if the extension's manifest file includes the <code>"tabs"</code> permission.
                             </p></td>
                           </tr><tr id="property-getInfo-windowTypes">
                             <td>array of     <a href=/extensions/windows#type-WindowType>WindowType</a></td>
@@ -1208,7 +1208,7 @@
                             </p>
                             
                             <p>
-                              If set, the <a href=/extensions/windows#type-Window>windows.Window</a> returned will be filtered based on its type. If unset the default filter is set to <code>['normal', 'popup']</code>.
+                              If set, the <a href=/extensions/windows#type-Window>windows.Window</a> returned is filtered based on its type. If unset, the default filter is set to <code>['normal', 'popup']</code>.
                             </p></td>
                           </tr>
                         </table>
@@ -1271,7 +1271,7 @@
                             <td>
                             
                             <p>
-                              If true, the <a href=/extensions/windows#type-Window>windows.Window</a> object will have a <var>tabs</var> property that contains a list of the <a href=/extensions/tabs#type-Tab>tabs.Tab</a> objects. The <code>Tab</code> objects only contain the <code>url</code>, <code>title</code> and <code>favIconUrl</code> properties if the extension's manifest file includes the <code>"tabs"</code> permission.
+                              If true, the <a href=/extensions/windows#type-Window>windows.Window</a> object has a <var>tabs</var> property that contains a list of the <a href=/extensions/tabs#type-Tab>tabs.Tab</a> objects. The <code>Tab</code> objects only contain the <code>url</code>, <code>title</code>, and <code>favIconUrl</code> properties if the extension's manifest file includes the <code>"tabs"</code> permission.
                             </p></td>
                           </tr><tr id="property-getInfo-windowTypes">
                             <td>array of     <a href=/extensions/windows#type-WindowType>WindowType</a></td>
@@ -1283,7 +1283,7 @@
                             </p>
                             
                             <p>
-                              If set, the <a href=/extensions/windows#type-Window>windows.Window</a> returned will be filtered based on its type. If unset the default filter is set to <code>['normal', 'popup']</code>.
+                              If set, the <a href=/extensions/windows#type-Window>windows.Window</a> returned is filtered based on its type. If unset, the default filter is set to <code>['normal', 'popup']</code>.
                             </p></td>
                           </tr>
                         </table>
@@ -1346,7 +1346,7 @@
                             <td>
                             
                             <p>
-                              If true, each <a href=/extensions/windows#type-Window>windows.Window</a> object will have a <var>tabs</var> property that contains a list of the <a href=/extensions/tabs#type-Tab>tabs.Tab</a> objects for that window. The <code>Tab</code> objects only contain the <code>url</code>, <code>title</code> and <code>favIconUrl</code> properties if the extension's manifest file includes the <code>"tabs"</code> permission.
+                              If true, each <a href=/extensions/windows#type-Window>windows.Window</a> object has a <var>tabs</var> property that contains a list of the <a href=/extensions/tabs#type-Tab>tabs.Tab</a> objects for that window. The <code>Tab</code> objects only contain the <code>url</code>, <code>title</code>, and <code>favIconUrl</code> properties if the extension's manifest file includes the <code>"tabs"</code> permission.
                             </p></td>
                           </tr><tr id="property-getInfo-windowTypes">
                             <td>array of     <a href=/extensions/windows#type-WindowType>WindowType</a></td>
@@ -1358,7 +1358,7 @@
                             </p>
                             
                             <p>
-                              If set, the <a href=/extensions/windows#type-Window>windows.Window</a> returned will be filtered based on its type. If unset the default filter is set to <code>['normal', 'popup']</code>.
+                              If set, the <a href=/extensions/windows#type-Window>windows.Window</a> returned is filtered based on its type. If unset, the default filter is set to <code>['normal', 'popup']</code>.
                             </p></td>
                           </tr>
                         </table>
@@ -1402,7 +1402,7 @@
               </div>
               <div class="description">
                 <p>
-                  Creates (opens) a new browser with any optional sizing, position or default URL provided.
+                  Creates (opens) a new browser window with any optional sizing, position, or default URL provided.
                 </p>
                 <table >
                   <tr><th colspan="3">Parameters</th></tr>
@@ -1420,7 +1420,7 @@
                             <td>
                             
                             <p>
-                              A URL or array of URLs to open as tabs in the window. Fully-qualified URLs must include a scheme (i.e. 'http://www.google.com', not 'www.google.com'). Relative URLs will be relative to the current page within the extension. Defaults to the New Tab Page.
+                              A URL or array of URLs to open as tabs in the window. Fully-qualified URLs must include a scheme, e.g., 'http://www.google.com', not 'www.google.com'. Non-fully-qualified URLs are considered relative within the extension. Defaults to the New Tab Page.
                             </p></td>
                           </tr><tr id="property-createData-tabId">
                             <td>integer</td>
@@ -1429,7 +1429,7 @@
                             <td>
                             
                             <p>
-                              The id of the tab for which you want to adopt to the new window.
+                              The ID of the tab to add to the new window.
                             </p></td>
                           </tr><tr id="property-createData-left">
                             <td>integer</td>
@@ -1456,7 +1456,7 @@
                             <td>
                             
                             <p>
-                              The width in pixels of the new window, including the frame. If not specified defaults to a natural width.
+                              The width in pixels of the new window, including the frame. If not specified, defaults to a natural width.
                             </p></td>
                           </tr><tr id="property-createData-height">
                             <td>integer</td>
@@ -1465,7 +1465,7 @@
                             <td>
                             
                             <p>
-                              The height in pixels of the new window, including the frame. If not specified defaults to a natural height.
+                              The height in pixels of the new window, including the frame. If not specified, defaults to a natural height.
                             </p></td>
                           </tr><tr id="property-createData-focused">
                             <td>boolean</td>
@@ -1474,7 +1474,7 @@
                             <td>
                             
                             <p>
-                              If true, opens an active window. If false, opens an inactive window.
+                              If <code>true</code>, opens an active window. If <code>false</code>, opens an inactive window.
                             </p></td>
                           </tr><tr id="property-createData-incognito">
                             <td>boolean</td>
@@ -1504,7 +1504,7 @@
                             </p>
                             
                             <p>
-                              The initial state of the window. The 'minimized', 'maximized' and 'fullscreen' states cannot be combined with 'left', 'top', 'width' or 'height'.
+                              The initial state of the window. The <code>minimized</code>, <code>maximized</code>, and <code>fullscreen</code> states cannot be combined with <code>left</code>, <code>top</code>, <code>width</code>, or <code>height</code>.
                             </p></td>
                           </tr><tr id="property-createData-setSelfAsOpener">
                             <td>boolean</td>
@@ -1516,7 +1516,7 @@
                             </p>
                             
                             <p>
-                              If 'setSelfAsOpener' is true, then the newly created window will have its 'window.opener' set to the caller and will be in the same <a href="https://www.w3.org/TR/html51/browsers.html#unit-of-related-browsing-contexts">unit of related browsing contexts</a> as the caller.
+                              If <code>true</code>, the newly-created window's 'window.opener' is set to the caller and is in the same <a href="https://www.w3.org/TR/html51/browsers.html#unit-of-related-browsing-contexts">unit of related browsing contexts</a> as the caller.
                             </p></td>
                           </tr>
                         </table>
@@ -1562,7 +1562,7 @@
               </div>
               <div class="description">
                 <p>
-                  Updates the properties of a window. Specify only the properties that you want to change; unspecified properties will be left unchanged.
+                  Updates the properties of a window. Specify only the properties that to be changed; unspecified properties are unchanged.
                 </p>
                 <table >
                   <tr><th colspan="3">Parameters</th></tr>
@@ -1624,7 +1624,7 @@
                             <td>
                             
                             <p>
-                              If true, brings the window to the front and cannot be combined with the state 'minimized'. If false, brings the next window in the z-order to the front and cannot be combined with the state 'fullscreen' or 'maximized'.
+                              If <code>true</code>, brings the window to the front; cannot be combined with the state 'minimized'. If <code>false</code>, brings the next window in the z-order to the front; cannot be combined with the state 'fullscreen' or 'maximized'.
                             </p></td>
                           </tr><tr id="property-updateInfo-drawAttention">
                             <td>boolean</td>
@@ -1633,7 +1633,7 @@
                             <td>
                             
                             <p>
-                              If true, causes the window to be displayed in a manner that draws the user's attention to the window, without changing the focused window. The effect lasts until the user changes focus to the window. This option has no effect if the window already has focus. Set to false to cancel a previous draw attention request.
+                              If <code>true</code>, causes the window to be displayed in a manner that draws the user's attention to the window, without changing the focused window. The effect lasts until the user changes focus to the window. This option has no effect if the window already has focus. Set to <code>false</code> to cancel a previous <code>drawAttention</code> request.
                             </p></td>
                           </tr><tr id="property-updateInfo-state">
                             <td>    <a href=/extensions/windows#type-WindowState>WindowState</a></td>
@@ -1642,7 +1642,7 @@
                             <td>
                             
                             <p>
-                              The new state of the window. The 'minimized', 'maximized' and 'fullscreen' states cannot be combined with 'left', 'top', 'width' or 'height'.
+                              The new state of the window. The 'minimized', 'maximized', and 'fullscreen' states cannot be combined with 'left', 'top', 'width', or 'height'.
                             </p></td>
                           </tr>
                         </table>
@@ -1686,7 +1686,7 @@
               </div>
               <div class="description">
                 <p>
-                  Removes (closes) a window, and all the tabs inside it.
+                  Removes (closes) a window and all the tabs inside it.
                 </p>
                 <table >
                   <tr><th colspan="3">Parameters</th></tr>
@@ -1729,7 +1729,7 @@
                       <td>
                       
                       <p>
-                        Conditions that the window's type being created must satisfy. By default it will satisfy <code>['normal', 'popup']</code>.
+                        Conditions that the window's type being created must satisfy. By default it satisfies <code>['normal', 'popup']</code>.
                       </p></td>
                     </tr>
                   </dl>
@@ -1765,7 +1765,7 @@
                                     <td>
                                     
                                     <p>
-                                      Details of the window that was created.
+                                      Details of the created window.
                                     </p></td>
                                   </tr>
                                 </table>
@@ -1791,7 +1791,7 @@
                       <td>
                       
                       <p>
-                        Conditions that the window's type being removed must satisfy. By default it will satisfy <code>['normal', 'popup']</code>.
+                        Conditions that the window's type being removed must satisfy. By default it satisfies <code>['normal', 'popup']</code>.
                       </p></td>
                     </tr>
                   </dl>
@@ -1843,7 +1843,7 @@
               <h3 id="event-onFocusChanged">onFocusChanged</h3>
               <div class="description">
             <p>
-                  Fired when the currently focused window changes. Will be chrome.windows.WINDOW_ID_NONE if all chrome windows have lost focus. Note: On some Linux window managers, WINDOW_ID_NONE will always be sent immediately preceding a switch from one chrome window to another.
+                  Fired when the currently focused window changes. Returns <code>chrome.windows.WINDOW_ID_NONE</code> if all Chrome windows have lost focus. <b>Note:</b> On some Linux window managers, <code>WINDOW_ID_NONE</code> is always sent immediately preceding a switch from one Chrome window to another.
                 </p>      <h4 title="">Filters</h4>
                   <dl>
                     <tr id="property-onFocusChanged-windowTypes">
@@ -1853,7 +1853,7 @@
                       <td>
                       
                       <p>
-                        Conditions that the window's type being removed must satisfy. By default it will satisfy <code>['normal', 'popup']</code>.
+                        Conditions that the window's type being removed must satisfy. By default it satisfies <code>['normal', 'popup']</code>.
                       </p></td>
                     </tr>
                   </dl>
@@ -1889,7 +1889,7 @@
                                     <td>
                                     
                                     <p>
-                                      ID of the newly focused window.
+                                      ID of the newly-focused window.
                                     </p></td>
                                   </tr>
                                 </table>
