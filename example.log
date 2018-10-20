@@ -46,7 +46,6 @@ DEBUG:root:/extensions/a11y appends following list:
 /extensions
 DEBUG:root:/extensions/api_index appends following list:
 /extensions/windows
-/extensions/webstore
 /extensions/webRequest
 /extensions/webNavigation
 /extensions/wallpaper
@@ -378,9 +377,6 @@ DEBUG:root:/extensions/webNavigation appends following list:
 /extensions/webNavigation
 DEBUG:root:/extensions/webRequest appends following list:
 /extensions/webRequest
-DEBUG:root:/extensions/webstore appends following list:
-/extensions/webstore
-/extensions/inline_faq
 DEBUG:root:/extensions/windows appends following list:
 /extensions/windows
 DEBUG:root:Ignoring /extensions/background_pages due to existing /extensions/background_pages
@@ -445,7 +441,6 @@ DEBUG:root:Ignoring /extensions/manifest due to existing /extensions/manifest
 DEBUG:root:/extensions/manifest/default_locale appends following list:
 /extensions/manifest/xhr
 /extensions/manifest/windows
-/extensions/manifest/webstore
 /extensions/manifest/webRequest
 /extensions/manifest/webNavigation
 /extensions/manifest/wallpaper
@@ -700,7 +695,6 @@ DEBUG:root:/extensions/displaySource appends following list:
 DEBUG:root:/extensions/examples/api/displaySource/tabCast/README appends following list:
 /extensions/examples/api/displaySource/tabCast/xhr
 /extensions/examples/api/displaySource/tabCast/windows
-/extensions/examples/api/displaySource/tabCast/webstore
 /extensions/examples/api/displaySource/tabCast/webRequest
 /extensions/examples/api/displaySource/tabCast/webNavigation
 /extensions/examples/api/displaySource/tabCast/wallpaper
@@ -869,7 +863,6 @@ DEBUG:root:/extensions/examples/api/windows/merge_windows/NOTICE appends followi
 /extensions/examples/api/windows/messaging
 /extensions/examples/api/windows/merge_windows/xhr
 /extensions/examples/api/windows/merge_windows/windows
-/extensions/examples/api/windows/merge_windows/webstore
 /extensions/examples/api/windows/merge_windows/webRequest
 /extensions/examples/api/windows/merge_windows/webNavigation
 /extensions/examples/api/windows/merge_windows/wallpaper
@@ -1038,7 +1031,6 @@ DEBUG:root:/extensions/examples/apps/calculator/app/LICENSE appends following li
 /extensions/examples/apps/calculator/declarativeContent
 /extensions/examples/apps/calculator/app/xhr
 /extensions/examples/apps/calculator/app/windows
-/extensions/examples/apps/calculator/app/webstore
 /extensions/examples/apps/calculator/app/webRequest
 /extensions/examples/apps/calculator/app/webNavigation
 /extensions/examples/apps/calculator/app/wallpaper
@@ -1202,7 +1194,6 @@ DEBUG:root:Ignoring /extensions/examples/extensions/oauth_contacts/README due to
 DEBUG:root:/extensions/examples/howto/sandbox/LICENSE.handlebars appends following list:
 /extensions/examples/howto/sandbox/xhr
 /extensions/examples/howto/sandbox/windows
-/extensions/examples/howto/sandbox/webstore
 /extensions/examples/howto/sandbox/webRequest
 /extensions/examples/howto/sandbox/webNavigation
 /extensions/examples/howto/sandbox/wallpaper
@@ -1527,7 +1518,13 @@ DEBUG:root:Ignoring /extensions/vpnProvider due to existing /extensions/vpnProvi
 DEBUG:root:Ignoring /extensions/wallpaper due to existing /extensions/wallpaper
 DEBUG:root:Ignoring /extensions/webNavigation due to existing /extensions/webNavigation
 DEBUG:root:Ignoring /extensions/webRequest due to existing /extensions/webRequest
-DEBUG:root:/extensions/inline_faq appends following list:
+DEBUG:root:Ignoring /extensions/windows due to existing /extensions/windows
+DEBUG:root:Ignoring /extensions/background_pages due to existing /extensions/background_pages
+DEBUG:root:Ignoring /extensions/browserAction due to existing /extensions/browserAction
+DEBUG:root:Ignoring /extensions/contentSecurityPolicy due to existing /extensions/contentSecurityPolicy
+DEBUG:root:Ignoring /extensions/declare_permissions due to existing /extensions/declare_permissions
+DEBUG:root:/extensions/dns appends following list:
+/extensions/windows
 /extensions/webRequest
 /extensions/webNavigation
 /extensions/wallpaper
@@ -1551,23 +1548,12 @@ DEBUG:root:/extensions/inline_faq appends following list:
 /extensions/power
 /extensions/platformKeys
 /extensions/permissions
-/extensions/inline_faq
-/extensions/extensions/messaging
-/extensions/
-DEBUG:root:Ignoring /extensions/webstore due to existing /extensions/webstore
-DEBUG:root:Ignoring /extensions/windows due to existing /extensions/windows
-DEBUG:root:Ignoring /extensions/background_pages due to existing /extensions/background_pages
-DEBUG:root:Ignoring /extensions/browserAction due to existing /extensions/browserAction
-DEBUG:root:Ignoring /extensions/contentSecurityPolicy due to existing /extensions/contentSecurityPolicy
-DEBUG:root:Ignoring /extensions/declare_permissions due to existing /extensions/declare_permissions
-DEBUG:root:/extensions/dns appends following list:
-/extensions/windows
-/extensions/webstore
 /extensions/dns
 /extensions/declare_permissions
 /extensions/contentSecurityPolicy
 /extensions/browserAction
 /extensions/background_pages
+/extensions/
 DEBUG:root:/extensions/enterprise.hardwarePlatform appends following list:
 /extensions/enterprise.hardwarePlatform
 DEBUG:root:Ignoring /extensions/extensions/tabs due to existing /extensions/tabs
@@ -1754,7 +1740,6 @@ DEBUG:root:Ignoring /extensions/manifest/vpnProvider due to existing /extensions
 DEBUG:root:Ignoring /extensions/manifest/wallpaper due to existing /extensions/wallpaper
 DEBUG:root:Ignoring /extensions/manifest/webNavigation due to existing /extensions/webNavigation
 DEBUG:root:Ignoring /extensions/manifest/webRequest due to existing /extensions/webRequest
-DEBUG:root:Ignoring /extensions/manifest/webstore due to existing /extensions/webstore
 DEBUG:root:Ignoring /extensions/manifest/windows due to existing /extensions/windows
 DEBUG:root:Ignoring /extensions/manifest/xhr due to existing /extensions/xhr
 DEBUG:root:Ignoring /extensions/manifest/storage due to existing /extensions/storage
@@ -1826,7 +1811,6 @@ DEBUG:root:/extensions/examples/api/displaySource/tabCast appends following list
 /extensions/examples/api/extensions/contentSecurityPolicy
 /extensions/examples/api/displaySource/xhr
 /extensions/examples/api/displaySource/windows
-/extensions/examples/api/displaySource/webstore
 /extensions/examples/api/displaySource/webRequest
 /extensions/examples/api/displaySource/webNavigation
 /extensions/examples/api/displaySource/wallpaper
@@ -1923,7 +1907,6 @@ DEBUG:root:/extensions/examples/api/displaySource/tabCast appends following list
 /extensions/examples/api/displaySource/extensions/permission_warnings
 /extensions/examples/api/displaySource/extensions/override
 /extensions/examples/api/displaySource/extensions/options
-/extensions/examples/api/displaySource/extensions/messaging
 /extensions/examples/api/displaySource/extensions/match_patterns
 /extensions/examples/api/displaySource/extensions/manifest
 /extensions/examples/api/displaySource/extensions/declare_permissions
@@ -2147,7 +2130,6 @@ DEBUG:root:Ignoring /extensions/examples/api/displaySource/tabCast/vpnProvider d
 DEBUG:root:Ignoring /extensions/examples/api/displaySource/tabCast/wallpaper due to existing /extensions/wallpaper
 DEBUG:root:Ignoring /extensions/examples/api/displaySource/tabCast/webNavigation due to existing /extensions/webNavigation
 DEBUG:root:Ignoring /extensions/examples/api/displaySource/tabCast/webRequest due to existing /extensions/webRequest
-DEBUG:root:Ignoring /extensions/examples/api/displaySource/tabCast/webstore due to existing /extensions/webstore
 DEBUG:root:Ignoring /extensions/examples/api/displaySource/tabCast/windows due to existing /extensions/windows
 DEBUG:root:Ignoring /extensions/examples/api/displaySource/tabCast/xhr due to existing /extensions/xhr
 DEBUG:root:Ignoring /extensions/examples/api/windows/declarativeContent due to existing /extensions/declarativeContent
@@ -2156,7 +2138,6 @@ DEBUG:root:Ignoring /extensions/examples/api/windows/extensions/contentSecurityP
 DEBUG:root:/extensions/examples/api/windows/merge_windows appends following list:
 /extensions/examples/api/windows/xhr
 /extensions/examples/api/windows/windows
-/extensions/examples/api/windows/webstore
 /extensions/examples/api/windows/webRequest
 /extensions/examples/api/windows/webNavigation
 /extensions/examples/api/windows/wallpaper
@@ -2251,7 +2232,6 @@ DEBUG:root:/extensions/examples/api/windows/merge_windows appends following list
 /extensions/examples/api/windows/extensions/permission_warnings
 /extensions/examples/api/windows/extensions/override
 /extensions/examples/api/windows/extensions/options
-/extensions/examples/api/windows/extensions/messaging
 /extensions/examples/api/windows/extensions/match_patterns
 /extensions/examples/api/windows/extensions/manifest
 /extensions/examples/api/windows/extensions/declare_permissions
@@ -2470,7 +2450,6 @@ DEBUG:root:Ignoring /extensions/examples/api/windows/merge_windows/vpnProvider d
 DEBUG:root:Ignoring /extensions/examples/api/windows/merge_windows/wallpaper due to existing /extensions/wallpaper
 DEBUG:root:Ignoring /extensions/examples/api/windows/merge_windows/webNavigation due to existing /extensions/webNavigation
 DEBUG:root:Ignoring /extensions/examples/api/windows/merge_windows/webRequest due to existing /extensions/webRequest
-DEBUG:root:Ignoring /extensions/examples/api/windows/merge_windows/webstore due to existing /extensions/webstore
 DEBUG:root:Ignoring /extensions/examples/api/windows/merge_windows/windows due to existing /extensions/windows
 DEBUG:root:Ignoring /extensions/examples/api/windows/merge_windows/xhr due to existing /extensions/xhr
 DEBUG:root:Ignoring /extensions/examples/api/windows/messaging due to existing /extensions/messaging
@@ -2483,7 +2462,6 @@ DEBUG:root:/extensions/examples/apps/calculator/app appends following list:
 /extensions/examples/apps/declarativeContent
 /extensions/examples/apps/calculator/xhr
 /extensions/examples/apps/calculator/windows
-/extensions/examples/apps/calculator/webstore
 /extensions/examples/apps/calculator/webRequest
 /extensions/examples/apps/calculator/webNavigation
 /extensions/examples/apps/calculator/wallpaper
@@ -2578,7 +2556,6 @@ DEBUG:root:/extensions/examples/apps/calculator/app appends following list:
 /extensions/examples/apps/calculator/extensions/permission_warnings
 /extensions/examples/apps/calculator/extensions/override
 /extensions/examples/apps/calculator/extensions/options
-/extensions/examples/apps/calculator/extensions/messaging
 /extensions/examples/apps/calculator/extensions/match_patterns
 /extensions/examples/apps/calculator/extensions/manifest
 /extensions/examples/apps/calculator/extensions/declare_permissions
@@ -2795,7 +2772,6 @@ DEBUG:root:Ignoring /extensions/examples/apps/calculator/app/vpnProvider due to 
 DEBUG:root:Ignoring /extensions/examples/apps/calculator/app/wallpaper due to existing /extensions/wallpaper
 DEBUG:root:Ignoring /extensions/examples/apps/calculator/app/webNavigation due to existing /extensions/webNavigation
 DEBUG:root:Ignoring /extensions/examples/apps/calculator/app/webRequest due to existing /extensions/webRequest
-DEBUG:root:Ignoring /extensions/examples/apps/calculator/app/webstore due to existing /extensions/webstore
 DEBUG:root:Ignoring /extensions/examples/apps/calculator/app/windows due to existing /extensions/windows
 DEBUG:root:Ignoring /extensions/examples/apps/calculator/app/xhr due to existing /extensions/xhr
 DEBUG:root:Ignoring /extensions/examples/apps/calculator/declarativeContent due to existing /extensions/declarativeContent
@@ -2964,7 +2940,6 @@ DEBUG:root:Ignoring /extensions/examples/howto/sandbox/vpnProvider due to existi
 DEBUG:root:Ignoring /extensions/examples/howto/sandbox/wallpaper due to existing /extensions/wallpaper
 DEBUG:root:Ignoring /extensions/examples/howto/sandbox/webNavigation due to existing /extensions/webNavigation
 DEBUG:root:Ignoring /extensions/examples/howto/sandbox/webRequest due to existing /extensions/webRequest
-DEBUG:root:Ignoring /extensions/examples/howto/sandbox/webstore due to existing /extensions/webstore
 DEBUG:root:Ignoring /extensions/examples/howto/sandbox/windows due to existing /extensions/windows
 DEBUG:root:Ignoring /extensions/examples/howto/sandbox/xhr due to existing /extensions/xhr
 DEBUG:root:Ignoring /extensions/examples/api/displaySource/tabCast/README due to existing /extensions/examples/api/displaySource/tabCast/README
@@ -3165,8 +3140,11 @@ DEBUG:root:Ignoring /extensions/omnibox due to existing /extensions/omnibox
 DEBUG:root:Ignoring /extensions/pageAction due to existing /extensions/pageAction
 DEBUG:root:Ignoring /extensions/pageCapture due to existing /extensions/pageCapture
 DEBUG:root:Ignoring /extensions/ due to existing /
-DEBUG:root:Ignoring /extensions/extensions/messaging due to existing /extensions/messaging
-DEBUG:root:Ignoring /extensions/inline_faq due to existing /extensions/inline_faq
+DEBUG:root:Ignoring /extensions/background_pages due to existing /extensions/background_pages
+DEBUG:root:Ignoring /extensions/browserAction due to existing /extensions/browserAction
+DEBUG:root:Ignoring /extensions/contentSecurityPolicy due to existing /extensions/contentSecurityPolicy
+DEBUG:root:Ignoring /extensions/declare_permissions due to existing /extensions/declare_permissions
+DEBUG:root:Ignoring /extensions/dns due to existing /extensions/dns
 DEBUG:root:Ignoring /extensions/permissions due to existing /extensions/permissions
 DEBUG:root:Ignoring /extensions/platformKeys due to existing /extensions/platformKeys
 DEBUG:root:Ignoring /extensions/power due to existing /extensions/power
@@ -3190,12 +3168,6 @@ DEBUG:root:Ignoring /extensions/vpnProvider due to existing /extensions/vpnProvi
 DEBUG:root:Ignoring /extensions/wallpaper due to existing /extensions/wallpaper
 DEBUG:root:Ignoring /extensions/webNavigation due to existing /extensions/webNavigation
 DEBUG:root:Ignoring /extensions/webRequest due to existing /extensions/webRequest
-DEBUG:root:Ignoring /extensions/background_pages due to existing /extensions/background_pages
-DEBUG:root:Ignoring /extensions/browserAction due to existing /extensions/browserAction
-DEBUG:root:Ignoring /extensions/contentSecurityPolicy due to existing /extensions/contentSecurityPolicy
-DEBUG:root:Ignoring /extensions/declare_permissions due to existing /extensions/declare_permissions
-DEBUG:root:Ignoring /extensions/dns due to existing /extensions/dns
-DEBUG:root:Ignoring /extensions/webstore due to existing /extensions/webstore
 DEBUG:root:Ignoring /extensions/windows due to existing /extensions/windows
 DEBUG:root:Ignoring /extensions/enterprise.hardwarePlatform due to existing /extensions/enterprise.hardwarePlatform
 DEBUG:root:Ignoring /extensions/extensions/tabs due to existing /extensions/tabs
@@ -3269,7 +3241,6 @@ DEBUG:root:Ignoring /extensions/examples/api/displaySource/extensions/api_index 
 DEBUG:root:Ignoring /extensions/examples/api/displaySource/extensions/declare_permissions due to existing /extensions/declare_permissions
 DEBUG:root:Ignoring /extensions/examples/api/displaySource/extensions/manifest due to existing /extensions/manifest
 DEBUG:root:Ignoring /extensions/examples/api/displaySource/extensions/match_patterns due to existing /extensions/match_patterns
-DEBUG:root:Ignoring /extensions/examples/api/displaySource/extensions/messaging due to existing /extensions/messaging
 DEBUG:root:Ignoring /extensions/examples/api/displaySource/extensions/options due to existing /extensions/options
 DEBUG:root:Ignoring /extensions/examples/api/displaySource/extensions/override due to existing /extensions/override
 DEBUG:root:Ignoring /extensions/examples/api/displaySource/extensions/permission_warnings due to existing /extensions/permission_warnings
@@ -3366,7 +3337,6 @@ DEBUG:root:Ignoring /extensions/examples/api/displaySource/vpnProvider due to ex
 DEBUG:root:Ignoring /extensions/examples/api/displaySource/wallpaper due to existing /extensions/wallpaper
 DEBUG:root:Ignoring /extensions/examples/api/displaySource/webNavigation due to existing /extensions/webNavigation
 DEBUG:root:Ignoring /extensions/examples/api/displaySource/webRequest due to existing /extensions/webRequest
-DEBUG:root:Ignoring /extensions/examples/api/displaySource/webstore due to existing /extensions/webstore
 DEBUG:root:Ignoring /extensions/examples/api/displaySource/windows due to existing /extensions/windows
 DEBUG:root:Ignoring /extensions/examples/api/displaySource/xhr due to existing /extensions/xhr
 DEBUG:root:Ignoring /extensions/examples/api/extensions/contentSecurityPolicy due to existing /extensions/contentSecurityPolicy
@@ -3451,7 +3421,6 @@ DEBUG:root:Ignoring /extensions/examples/api/windows/extensions/api_index due to
 DEBUG:root:Ignoring /extensions/examples/api/windows/extensions/declare_permissions due to existing /extensions/declare_permissions
 DEBUG:root:Ignoring /extensions/examples/api/windows/extensions/manifest due to existing /extensions/manifest
 DEBUG:root:Ignoring /extensions/examples/api/windows/extensions/match_patterns due to existing /extensions/match_patterns
-DEBUG:root:Ignoring /extensions/examples/api/windows/extensions/messaging due to existing /extensions/messaging
 DEBUG:root:Ignoring /extensions/examples/api/windows/extensions/options due to existing /extensions/options
 DEBUG:root:Ignoring /extensions/examples/api/windows/extensions/override due to existing /extensions/override
 DEBUG:root:Ignoring /extensions/examples/api/windows/extensions/permission_warnings due to existing /extensions/permission_warnings
@@ -3546,12 +3515,10 @@ DEBUG:root:Ignoring /extensions/examples/api/windows/vpnProvider due to existing
 DEBUG:root:Ignoring /extensions/examples/api/windows/wallpaper due to existing /extensions/wallpaper
 DEBUG:root:Ignoring /extensions/examples/api/windows/webNavigation due to existing /extensions/webNavigation
 DEBUG:root:Ignoring /extensions/examples/api/windows/webRequest due to existing /extensions/webRequest
-DEBUG:root:Ignoring /extensions/examples/api/windows/webstore due to existing /extensions/webstore
 DEBUG:root:Ignoring /extensions/examples/api/windows/windows due to existing /extensions/windows
 DEBUG:root:Ignoring /extensions/examples/api/windows/xhr due to existing /extensions/xhr
 DEBUG:root:/extensions/examples/apps/calculator appends following list:
 /extensions/windows
-/extensions/webstore
 /extensions/webRequest
 /extensions/webNavigation
 /extensions/wallpaper
@@ -3585,7 +3552,6 @@ DEBUG:root:/extensions/examples/apps/calculator appends following list:
 /extensions/match_patterns
 /extensions/manifest
 /extensions/linux_hosting
-/extensions/inline_faq
 /extensions/i18n
 /extensions/hosting_changes
 /extensions/hosting
@@ -3600,7 +3566,6 @@ DEBUG:root:/extensions/examples/apps/calculator appends following list:
 /extensions/examples/apps/xhr
 /extensions/examples/apps/windows
 /extensions/examples/apps/webview_tag
-/extensions/examples/apps/webstore
 /extensions/examples/apps/webRequest
 /extensions/examples/apps/webNavigation
 /extensions/examples/apps/wallpaper
@@ -3696,7 +3661,6 @@ DEBUG:root:/extensions/examples/apps/calculator appends following list:
 /extensions/examples/apps/extensions/permission_warnings
 /extensions/examples/apps/extensions/override
 /extensions/examples/apps/extensions/options
-/extensions/examples/apps/extensions/messaging
 /extensions/examples/apps/extensions/match_patterns
 /extensions/examples/apps/extensions/manifest
 /extensions/examples/apps/extensions/declare_permissions
@@ -3827,7 +3791,6 @@ DEBUG:root:Ignoring /extensions/examples/apps/calculator/extensions/api_index du
 DEBUG:root:Ignoring /extensions/examples/apps/calculator/extensions/declare_permissions due to existing /extensions/declare_permissions
 DEBUG:root:Ignoring /extensions/examples/apps/calculator/extensions/manifest due to existing /extensions/manifest
 DEBUG:root:Ignoring /extensions/examples/apps/calculator/extensions/match_patterns due to existing /extensions/match_patterns
-DEBUG:root:Ignoring /extensions/examples/apps/calculator/extensions/messaging due to existing /extensions/messaging
 DEBUG:root:Ignoring /extensions/examples/apps/calculator/extensions/options due to existing /extensions/options
 DEBUG:root:Ignoring /extensions/examples/apps/calculator/extensions/override due to existing /extensions/override
 DEBUG:root:Ignoring /extensions/examples/apps/calculator/extensions/permission_warnings due to existing /extensions/permission_warnings
@@ -3922,7 +3885,6 @@ DEBUG:root:Ignoring /extensions/examples/apps/calculator/vpnProvider due to exis
 DEBUG:root:Ignoring /extensions/examples/apps/calculator/wallpaper due to existing /extensions/wallpaper
 DEBUG:root:Ignoring /extensions/examples/apps/calculator/webNavigation due to existing /extensions/webNavigation
 DEBUG:root:Ignoring /extensions/examples/apps/calculator/webRequest due to existing /extensions/webRequest
-DEBUG:root:Ignoring /extensions/examples/apps/calculator/webstore due to existing /extensions/webstore
 DEBUG:root:Ignoring /extensions/examples/apps/calculator/windows due to existing /extensions/windows
 DEBUG:root:Ignoring /extensions/examples/apps/calculator/xhr due to existing /extensions/xhr
 DEBUG:root:Ignoring /extensions/examples/apps/declarativeContent due to existing /extensions/declarativeContent
@@ -4102,7 +4064,6 @@ DEBUG:root:/extensions/app_architecture appends following list:
 /extensions/extensions/permission_warnings
 /extensions/extensions/override
 /extensions/extensions/options
-/extensions/extensions/messaging
 /extensions/extensions/match_patterns
 /extensions/extensions/manifest
 /extensions/extensions/declare_permissions
@@ -4199,7 +4160,6 @@ DEBUG:root:/extensions/examples/apps appends following list:
 /extensions/examples/xhr
 /extensions/examples/windows
 /extensions/examples/webview_tag
-/extensions/examples/webstore
 /extensions/examples/webRequest
 /extensions/examples/webNavigation
 /extensions/examples/wallpaper
@@ -4297,7 +4257,6 @@ DEBUG:root:/extensions/examples/apps appends following list:
 /extensions/examples/extensions/permission_warnings
 /extensions/examples/extensions/override
 /extensions/examples/extensions/options
-/extensions/examples/extensions/messaging
 /extensions/examples/extensions/match_patterns
 /extensions/examples/extensions/manifest
 /extensions/examples/extensions/declare_permissions
@@ -4431,7 +4390,6 @@ DEBUG:root:Ignoring /extensions/examples/apps/extensions/api_index due to existi
 DEBUG:root:Ignoring /extensions/examples/apps/extensions/declare_permissions due to existing /extensions/declare_permissions
 DEBUG:root:Ignoring /extensions/examples/apps/extensions/manifest due to existing /extensions/manifest
 DEBUG:root:Ignoring /extensions/examples/apps/extensions/match_patterns due to existing /extensions/match_patterns
-DEBUG:root:Ignoring /extensions/examples/apps/extensions/messaging due to existing /extensions/messaging
 DEBUG:root:Ignoring /extensions/examples/apps/extensions/options due to existing /extensions/options
 DEBUG:root:Ignoring /extensions/examples/apps/extensions/override due to existing /extensions/override
 DEBUG:root:Ignoring /extensions/examples/apps/extensions/permission_warnings due to existing /extensions/permission_warnings
@@ -4527,7 +4485,6 @@ DEBUG:root:Ignoring /extensions/examples/apps/vpnProvider due to existing /exten
 DEBUG:root:Ignoring /extensions/examples/apps/wallpaper due to existing /extensions/wallpaper
 DEBUG:root:Ignoring /extensions/examples/apps/webNavigation due to existing /extensions/webNavigation
 DEBUG:root:Ignoring /extensions/examples/apps/webRequest due to existing /extensions/webRequest
-DEBUG:root:Ignoring /extensions/examples/apps/webstore due to existing /extensions/webstore
 DEBUG:root:Ignoring /extensions/examples/apps/webview_tag due to existing /extensions/webview_tag
 DEBUG:root:Ignoring /extensions/examples/apps/windows due to existing /extensions/windows
 DEBUG:root:Ignoring /extensions/examples/apps/xhr due to existing /extensions/xhr
@@ -4542,7 +4499,6 @@ DEBUG:root:Ignoring /extensions/getstarted due to existing /extensions/getstarte
 DEBUG:root:Ignoring /extensions/hosting due to existing /extensions/hosting
 DEBUG:root:Ignoring /extensions/hosting_changes due to existing /extensions/hosting_changes
 DEBUG:root:Ignoring /extensions/i18n due to existing /extensions/i18n
-DEBUG:root:Ignoring /extensions/inline_faq due to existing /extensions/inline_faq
 DEBUG:root:Ignoring /extensions/linux_hosting due to existing /extensions/linux_hosting
 DEBUG:root:Ignoring /extensions/manifest due to existing /extensions/manifest
 DEBUG:root:Ignoring /extensions/match_patterns due to existing /extensions/match_patterns
@@ -4576,7 +4532,6 @@ DEBUG:root:Ignoring /extensions/vpnProvider due to existing /extensions/vpnProvi
 DEBUG:root:Ignoring /extensions/wallpaper due to existing /extensions/wallpaper
 DEBUG:root:Ignoring /extensions/webNavigation due to existing /extensions/webNavigation
 DEBUG:root:Ignoring /extensions/webRequest due to existing /extensions/webRequest
-DEBUG:root:Ignoring /extensions/webstore due to existing /extensions/webstore
 DEBUG:root:Ignoring /extensions/windows due to existing /extensions/windows
 DEBUG:root:Ignoring /declarativeContent due to existing /extensions/declarativeContent
 DEBUG:root:Ignoring /declarativeWebRequest due to existing /extensions/declarativeWebRequest
@@ -4637,7 +4592,6 @@ DEBUG:root:Ignoring /extensions/extensions/api_index due to existing /extensions
 DEBUG:root:Ignoring /extensions/extensions/declare_permissions due to existing /extensions/declare_permissions
 DEBUG:root:Ignoring /extensions/extensions/manifest due to existing /extensions/manifest
 DEBUG:root:Ignoring /extensions/extensions/match_patterns due to existing /extensions/match_patterns
-DEBUG:root:Ignoring /extensions/extensions/messaging due to existing /extensions/messaging
 DEBUG:root:Ignoring /extensions/extensions/options due to existing /extensions/options
 DEBUG:root:Ignoring /extensions/extensions/override due to existing /extensions/override
 DEBUG:root:Ignoring /extensions/extensions/permission_warnings due to existing /extensions/permission_warnings
@@ -4707,7 +4661,6 @@ DEBUG:root:/extensions/app_frameworks appends following list:
 /extensions/xhr
 /extensions/windows
 /extensions/whats_new
-/extensions/webstore
 /extensions/webRequest
 /extensions/webNavigation
 /extensions/wallpaper
@@ -4788,7 +4741,6 @@ DEBUG:root:/extensions/app_frameworks appends following list:
 /extensions/manifest
 /extensions/linux_hosting
 /extensions/javascript:void(0)
-/extensions/inline_faq
 /extensions/idltest
 /extensions/i18n-messages
 /extensions/i18n
@@ -4808,7 +4760,6 @@ DEBUG:root:/extensions/app_frameworks appends following list:
 /extensions/extensions/permission_warnings
 /extensions/extensions/override
 /extensions/extensions/options
-/extensions/extensions/messaging
 /extensions/extensions/match_patterns
 /extensions/extensions/manifest
 /extensions/extensions/declare_permissions
@@ -4973,7 +4924,6 @@ DEBUG:root:Ignoring /extensions/examples/extensions/api_index due to existing /e
 DEBUG:root:Ignoring /extensions/examples/extensions/declare_permissions due to existing /extensions/declare_permissions
 DEBUG:root:Ignoring /extensions/examples/extensions/manifest due to existing /extensions/manifest
 DEBUG:root:Ignoring /extensions/examples/extensions/match_patterns due to existing /extensions/match_patterns
-DEBUG:root:Ignoring /extensions/examples/extensions/messaging due to existing /extensions/messaging
 DEBUG:root:Ignoring /extensions/examples/extensions/options due to existing /extensions/options
 DEBUG:root:Ignoring /extensions/examples/extensions/override due to existing /extensions/override
 DEBUG:root:Ignoring /extensions/examples/extensions/permission_warnings due to existing /extensions/permission_warnings
@@ -5071,7 +5021,6 @@ DEBUG:root:Ignoring /extensions/examples/vpnProvider due to existing /extensions
 DEBUG:root:Ignoring /extensions/examples/wallpaper due to existing /extensions/wallpaper
 DEBUG:root:Ignoring /extensions/examples/webNavigation due to existing /extensions/webNavigation
 DEBUG:root:Ignoring /extensions/examples/webRequest due to existing /extensions/webRequest
-DEBUG:root:Ignoring /extensions/examples/webstore due to existing /extensions/webstore
 DEBUG:root:Ignoring /extensions/examples/webview_tag due to existing /extensions/webview_tag
 DEBUG:root:Ignoring /extensions/examples/windows due to existing /extensions/windows
 DEBUG:root:Ignoring /extensions/examples/xhr due to existing /extensions/xhr
@@ -5149,7 +5098,6 @@ DEBUG:root:Ignoring /extensions/extensions/api_index due to existing /extensions
 DEBUG:root:Ignoring /extensions/extensions/declare_permissions due to existing /extensions/declare_permissions
 DEBUG:root:Ignoring /extensions/extensions/manifest due to existing /extensions/manifest
 DEBUG:root:Ignoring /extensions/extensions/match_patterns due to existing /extensions/match_patterns
-DEBUG:root:Ignoring /extensions/extensions/messaging due to existing /extensions/messaging
 DEBUG:root:Ignoring /extensions/extensions/options due to existing /extensions/options
 DEBUG:root:Ignoring /extensions/extensions/override due to existing /extensions/override
 DEBUG:root:Ignoring /extensions/extensions/permission_warnings due to existing /extensions/permission_warnings
@@ -5169,7 +5117,6 @@ DEBUG:root:Ignoring /extensions/hosting_changes due to existing /extensions/host
 DEBUG:root:Ignoring /extensions/i18n due to existing /extensions/i18n
 DEBUG:root:Ignoring /extensions/i18n-messages due to existing /extensions/i18n-messages
 DEBUG:root:Ignoring /extensions/idltest due to existing /extensions/idltest
-DEBUG:root:Ignoring /extensions/inline_faq due to existing /extensions/inline_faq
 DEBUG:root:Ignoring /extensions/javascript:void(0) due to existing /extensions/javascript:void(0)
 DEBUG:root:Ignoring /extensions/linux_hosting due to existing /extensions/linux_hosting
 DEBUG:root:Ignoring /extensions/manifest due to existing /extensions/manifest
@@ -5277,7 +5224,6 @@ DEBUG:root:/extensions/sencha_framework appends following list:
 /extensions/manifest
 /extensions/linux_hosting
 /extensions/javascript:void(0)
-/extensions/inline_faq
 /extensions/idltest
 /extensions/i18n-messages
 /extensions/i18n
@@ -5297,7 +5243,6 @@ DEBUG:root:/extensions/sencha_framework appends following list:
 /extensions/extensions/permission_warnings
 /extensions/extensions/override
 /extensions/extensions/options
-/extensions/extensions/messaging
 /extensions/extensions/match_patterns
 /extensions/extensions/manifest
 /extensions/extensions/declare_permissions
@@ -5380,7 +5325,6 @@ DEBUG:root:Ignoring /extensions/vpnProvider due to existing /extensions/vpnProvi
 DEBUG:root:Ignoring /extensions/wallpaper due to existing /extensions/wallpaper
 DEBUG:root:Ignoring /extensions/webNavigation due to existing /extensions/webNavigation
 DEBUG:root:Ignoring /extensions/webRequest due to existing /extensions/webRequest
-DEBUG:root:Ignoring /extensions/webstore due to existing /extensions/webstore
 DEBUG:root:Ignoring /extensions/windows due to existing /extensions/windows
 DEBUG:root:Ignoring /extensions/xhr due to existing /extensions/xhr
 DEBUG:root:Ignoring /messaging due to existing /extensions/messaging
@@ -5419,7 +5363,6 @@ DEBUG:root:/extensions/app_identityhtml appends following list:
 /extensions/windows
 /extensions/whats_new
 /extensions/webview_tag
-/extensions/webstore
 /extensions/webRequest
 /extensions/webNavigation
 /extensions/wallpaper
@@ -5543,7 +5486,6 @@ DEBUG:root:Ignoring /extensions/extensions/api_index due to existing /extensions
 DEBUG:root:Ignoring /extensions/extensions/declare_permissions due to existing /extensions/declare_permissions
 DEBUG:root:Ignoring /extensions/extensions/manifest due to existing /extensions/manifest
 DEBUG:root:Ignoring /extensions/extensions/match_patterns due to existing /extensions/match_patterns
-DEBUG:root:Ignoring /extensions/extensions/messaging due to existing /extensions/messaging
 DEBUG:root:Ignoring /extensions/extensions/options due to existing /extensions/options
 DEBUG:root:Ignoring /extensions/extensions/override due to existing /extensions/override
 DEBUG:root:Ignoring /extensions/extensions/permission_warnings due to existing /extensions/permission_warnings
@@ -5563,7 +5505,6 @@ DEBUG:root:Ignoring /extensions/hosting_changes due to existing /extensions/host
 DEBUG:root:Ignoring /extensions/i18n due to existing /extensions/i18n
 DEBUG:root:Ignoring /extensions/i18n-messages due to existing /extensions/i18n-messages
 DEBUG:root:Ignoring /extensions/idltest due to existing /extensions/idltest
-DEBUG:root:Ignoring /extensions/inline_faq due to existing /extensions/inline_faq
 DEBUG:root:Ignoring /extensions/javascript:void(0) due to existing /extensions/javascript:void(0)
 DEBUG:root:Ignoring /extensions/linux_hosting due to existing /extensions/linux_hosting
 DEBUG:root:Ignoring /extensions/manifest due to existing /extensions/manifest
@@ -5672,7 +5613,6 @@ DEBUG:root:/extensions/socket appends following list:
 /extensions/manifest
 /extensions/linux_hosting
 /extensions/javascript:void(0)
-/extensions/inline_faq
 /extensions/idltest
 /extensions/i18n-messages
 /extensions/i18n
@@ -5692,7 +5632,6 @@ DEBUG:root:/extensions/socket appends following list:
 /extensions/extensions/permission_warnings
 /extensions/extensions/override
 /extensions/extensions/options
-/extensions/extensions/messaging
 /extensions/extensions/match_patterns
 /extensions/extensions/manifest
 /extensions/extensions/declare_permissions
@@ -5796,7 +5735,6 @@ DEBUG:root:Ignoring /extensions/vpnProvider due to existing /extensions/vpnProvi
 DEBUG:root:Ignoring /extensions/wallpaper due to existing /extensions/wallpaper
 DEBUG:root:Ignoring /extensions/webNavigation due to existing /extensions/webNavigation
 DEBUG:root:Ignoring /extensions/webRequest due to existing /extensions/webRequest
-DEBUG:root:Ignoring /extensions/webstore due to existing /extensions/webstore
 DEBUG:root:Ignoring /extensions/webview_tag due to existing /extensions/webview_tag
 DEBUG:root:Ignoring /extensions/windows due to existing /extensions/windows
 DEBUG:root:Ignoring /extensions/xhr due to existing /extensions/xhr
@@ -5814,7 +5752,6 @@ DEBUG:root:/extensions/manifest/sockets appends following list:
 /extensions/xhr
 /extensions/windows
 /extensions/whats_new
-/extensions/webstore
 /extensions/webRequest
 /extensions/webNavigation
 /extensions/wallpaper
@@ -5840,7 +5777,6 @@ DEBUG:root:/extensions/manifest/sockets appends following list:
 /extensions/manifest/xhr
 /extensions/manifest/windows
 /extensions/manifest/webview_tag
-/extensions/manifest/webstore
 /extensions/manifest/webRequest
 /extensions/manifest/webNavigation
 /extensions/manifest/wallpaper
@@ -5946,7 +5882,6 @@ DEBUG:root:/extensions/manifest/sockets appends following list:
 /extensions/manifest/extensions/permission_warnings
 /extensions/manifest/extensions/override
 /extensions/manifest/extensions/options
-/extensions/manifest/extensions/messaging
 /extensions/manifest/extensions/match_patterns
 /extensions/manifest/extensions/manifest
 /extensions/manifest/extensions/declare_permissions
@@ -6116,7 +6051,6 @@ DEBUG:root:Ignoring /extensions/extensions/api_index due to existing /extensions
 DEBUG:root:Ignoring /extensions/extensions/declare_permissions due to existing /extensions/declare_permissions
 DEBUG:root:Ignoring /extensions/extensions/manifest due to existing /extensions/manifest
 DEBUG:root:Ignoring /extensions/extensions/match_patterns due to existing /extensions/match_patterns
-DEBUG:root:Ignoring /extensions/extensions/messaging due to existing /extensions/messaging
 DEBUG:root:Ignoring /extensions/extensions/options due to existing /extensions/options
 DEBUG:root:Ignoring /extensions/extensions/override due to existing /extensions/override
 DEBUG:root:Ignoring /extensions/extensions/permission_warnings due to existing /extensions/permission_warnings
@@ -6136,7 +6070,6 @@ DEBUG:root:Ignoring /extensions/hosting_changes due to existing /extensions/host
 DEBUG:root:Ignoring /extensions/i18n due to existing /extensions/i18n
 DEBUG:root:Ignoring /extensions/i18n-messages due to existing /extensions/i18n-messages
 DEBUG:root:Ignoring /extensions/idltest due to existing /extensions/idltest
-DEBUG:root:Ignoring /extensions/inline_faq due to existing /extensions/inline_faq
 DEBUG:root:Ignoring /extensions/javascript:void(0) due to existing /extensions/javascript:void(0)
 DEBUG:root:Ignoring /extensions/linux_hosting due to existing /extensions/linux_hosting
 DEBUG:root:Ignoring /extensions/manifest due to existing /extensions/manifest
@@ -6275,7 +6208,6 @@ DEBUG:root:Ignoring /extensions/manifest/extensions/api_index due to existing /e
 DEBUG:root:Ignoring /extensions/manifest/extensions/declare_permissions due to existing /extensions/declare_permissions
 DEBUG:root:Ignoring /extensions/manifest/extensions/manifest due to existing /extensions/manifest
 DEBUG:root:Ignoring /extensions/manifest/extensions/match_patterns due to existing /extensions/match_patterns
-DEBUG:root:Ignoring /extensions/manifest/extensions/messaging due to existing /extensions/messaging
 DEBUG:root:Ignoring /extensions/manifest/extensions/options due to existing /extensions/options
 DEBUG:root:Ignoring /extensions/manifest/extensions/override due to existing /extensions/override
 DEBUG:root:Ignoring /extensions/manifest/extensions/permission_warnings due to existing /extensions/permission_warnings
@@ -6381,7 +6313,6 @@ DEBUG:root:Ignoring /extensions/manifest/vpnProvider due to existing /extensions
 DEBUG:root:Ignoring /extensions/manifest/wallpaper due to existing /extensions/wallpaper
 DEBUG:root:Ignoring /extensions/manifest/webNavigation due to existing /extensions/webNavigation
 DEBUG:root:Ignoring /extensions/manifest/webRequest due to existing /extensions/webRequest
-DEBUG:root:Ignoring /extensions/manifest/webstore due to existing /extensions/webstore
 DEBUG:root:Ignoring /extensions/manifest/webview_tag due to existing /extensions/webview_tag
 DEBUG:root:Ignoring /extensions/manifest/windows due to existing /extensions/windows
 DEBUG:root:Ignoring /extensions/manifest/xhr due to existing /extensions/xhr
@@ -6407,7 +6338,6 @@ DEBUG:root:Ignoring /extensions/vpnProvider due to existing /extensions/vpnProvi
 DEBUG:root:Ignoring /extensions/wallpaper due to existing /extensions/wallpaper
 DEBUG:root:Ignoring /extensions/webNavigation due to existing /extensions/webNavigation
 DEBUG:root:Ignoring /extensions/webRequest due to existing /extensions/webRequest
-DEBUG:root:Ignoring /extensions/webstore due to existing /extensions/webstore
 DEBUG:root:Ignoring /extensions/windows due to existing /extensions/windows
 DEBUG:root:Ignoring /extensions/xhr due to existing /extensions/xhr
 DEBUG:root:Ignoring /declarativeContent due to existing /extensions/declarativeContent
