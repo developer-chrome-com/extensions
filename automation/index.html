@@ -1098,6 +1098,7 @@
                         <code>"doDefault"</code>, 
                         <code>"focus"</code>, 
                         <code>"getImageData"</code>, 
+                        <code>"getTextLocation"</code>, 
                         <code>"hitTest"</code>, 
                         <code>"increment"</code>, 
                         <code>"loadInlineTextBoxes"</code>, 
@@ -1430,12 +1431,8 @@
                     <td>
                     
                     <p>
-                      Computes the bounding box of a subrange of this node in global screen coordinates. Returns the same as |location| if range information is not available. The start and end indices are zero-based offsets into the node's "name" string attribute.
-                    </p>	
-                      <br/>Returns<span class="property">	
-                            <a href=/extensions/automation#type-Rect>Rect</a>.
-                      </span>
-                      <table class="innerTable">
+                      Determines the location of the text within the node specified by |startIndex| and |endIndex|, inclusively. Invokes |callback| with the bounding rectangle, in screen coordinates. |callback| can be invoked either synchronously or asynchronously.
+                    </p>  <table class="innerTable">
                         <tr><th colspan="3">Parameters</th></tr>
                         <tr id="property-boundsForRange-startIndex">
                           <td>integer</td>
