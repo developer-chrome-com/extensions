@@ -1207,6 +1207,62 @@
                     </div>
                   </div>
                   </td></tr>
+                  <tr><th colspan="3" id="StorageArea-events">events</th></tr>
+                  <div>
+                    <h3 id="event-StorageArea-onChanged">onChanged</h3>
+                    <div class="description">
+                      <p class="availability">
+                        <strong>Not fully implemented</strong>.
+                         You must build Chromium from source to try this API.
+                        
+                         <a href="http://www.chromium.org/developers">Learn more</a>.
+                      </p>
+                  <p>
+                        Fired when one or more items change.
+                      </p>      <tr><td>
+                        <div>
+                          <h4
+                              title="">addListener
+                          </h4>
+                          <div class="summary">
+                          <code class="prettyprint">
+                          onChanged.addListener(<span>function callback</span>)
+                          </code>
+                          </div>
+                          <div class="description">
+                            <table class="innerTable">
+                              <tr><th colspan="3">Parameters</th></tr>
+                                <tr id="property-onChanged-callback">
+                                  <td>function</td>
+                                  <td>
+                                      callback</td>
+                                  <td>
+                                  
+                                      <p>
+                                          The <em>callback</em> parameter should be a function
+                                          that looks like this:
+                                      </p>
+                                    <code class="prettyprint">function(object changes) <span class="subdued">{...}</span>;</code>
+                                      <table class="innerTable">
+                                        <tr id="property-onChanged-changes">
+                                          <td>object</td>
+                                          <td>
+                                              changes</td>
+                                          <td>
+                                          
+                                          <p>
+                                            Object mapping each key that changed to its corresponding <a href=/extensions/storage#type-StorageChange>storage.StorageChange</a> for that item.
+                                          </p></td>
+                                        </tr>
+                                      </table>
+                                  </td>
+                                </tr>
+                            </table>
+                          </div>
+                        </div>
+                        </td></tr>
+                    </div>
+                  </div>
               </table>
             </div>
           <h2 id="properties">Properties</h2>
