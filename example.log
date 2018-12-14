@@ -269,6 +269,7 @@ DEBUG:root:/extensions/debugger appends following list:
 /extensions/debugger
 DEBUG:root:/extensions/declarativeContent appends following list:
 /extensions/declarativeContent
+/extensions/
 DEBUG:root:/extensions/declarativeNetRequest appends following list:
 /extensions/declarativeNetRequest
 DEBUG:root:/extensions/declarativeWebRequest appends following list:
@@ -338,7 +339,6 @@ DEBUG:root:/extensions/power appends following list:
 /extensions/power
 DEBUG:root:/extensions/printerProvider appends following list:
 /extensions/printerProvider
-/extensions/
 DEBUG:root:/extensions/privacy appends following list:
 /extensions/privacy
 DEBUG:root:/extensions/processes appends following list:
@@ -1395,6 +1395,7 @@ DEBUG:root:Ignoring /extensions/contentSettings due to existing /extensions/cont
 DEBUG:root:Ignoring /extensions/contextMenus due to existing /extensions/contextMenus
 DEBUG:root:Ignoring /extensions/cookies due to existing /extensions/cookies
 DEBUG:root:Ignoring /extensions/debugger due to existing /extensions/debugger
+DEBUG:root:Ignoring /extensions/ due to existing /
 DEBUG:root:Ignoring /extensions/declarativeContent due to existing /extensions/declarativeContent
 DEBUG:root:Ignoring /extensions/declarativeNetRequest due to existing /extensions/declarativeNetRequest
 DEBUG:root:Ignoring /extensions/declarativeWebRequest due to existing /extensions/declarativeWebRequest
@@ -1460,6 +1461,7 @@ DEBUG:root:/extensions/cloudMessaging appends following list:
 /extensions/alarms
 /extensions/accessibilityFeatures
 /extensions/a11y
+/extensions/
 /extensions
 DEBUG:root:Ignoring /extensions/gcm due to existing /extensions/gcm
 DEBUG:root:Ignoring /extensions/history due to existing /extensions/history
@@ -1497,7 +1499,6 @@ DEBUG:root:/extensions/mdns appends following list:
 DEBUG:root:Ignoring /extensions/permissions due to existing /extensions/permissions
 DEBUG:root:Ignoring /extensions/platformKeys due to existing /extensions/platformKeys
 DEBUG:root:Ignoring /extensions/power due to existing /extensions/power
-DEBUG:root:Ignoring /extensions/ due to existing /
 DEBUG:root:Ignoring /extensions/printerProvider due to existing /extensions/printerProvider
 DEBUG:root:Ignoring /extensions/privacy due to existing /extensions/privacy
 DEBUG:root:Ignoring /extensions/processes due to existing /extensions/processes
@@ -1553,7 +1554,6 @@ DEBUG:root:/extensions/dns appends following list:
 /extensions/contentSecurityPolicy
 /extensions/browserAction
 /extensions/background_pages
-/extensions/
 DEBUG:root:/extensions/enterprise.hardwarePlatform appends following list:
 /extensions/enterprise.hardwarePlatform
 DEBUG:root:Ignoring /extensions/extensions/tabs due to existing /extensions/tabs
@@ -2955,6 +2955,7 @@ DEBUG:root:Ignoring /extensions/examples/extensions/oauth_contacts/README due to
 DEBUG:root:Ignoring /extensions/examples/howto/sandbox/LICENSE.handlebars due to existing /extensions/examples/howto/sandbox/LICENSE.handlebars
 DEBUG:root:Ignoring /extensions/javascript:void(0) due to existing /extensions/javascript:void(0)
 DEBUG:root:Ignoring /extensions due to existing /extensions
+DEBUG:root:Ignoring /extensions/ due to existing /
 DEBUG:root:Ignoring /extensions/a11y due to existing /extensions/a11y
 DEBUG:root:Ignoring /extensions/accessibilityFeatures due to existing /extensions/accessibilityFeatures
 DEBUG:root:Ignoring /extensions/alarms due to existing /extensions/alarms
@@ -3110,6 +3111,7 @@ DEBUG:root:/extensions/publish_app appends following list:
 /extensions/activeTab
 /extensions/accessibilityFeatures
 /extensions/a11y
+/extensions/
 /extensions
 /declarativeWebRequest
 /declarativeContent
@@ -3139,7 +3141,6 @@ DEBUG:root:Ignoring /extensions/mdns due to existing /extensions/mdns
 DEBUG:root:Ignoring /extensions/omnibox due to existing /extensions/omnibox
 DEBUG:root:Ignoring /extensions/pageAction due to existing /extensions/pageAction
 DEBUG:root:Ignoring /extensions/pageCapture due to existing /extensions/pageCapture
-DEBUG:root:Ignoring /extensions/ due to existing /
 DEBUG:root:Ignoring /extensions/background_pages due to existing /extensions/background_pages
 DEBUG:root:Ignoring /extensions/browserAction due to existing /extensions/browserAction
 DEBUG:root:Ignoring /extensions/contentSecurityPolicy due to existing /extensions/contentSecurityPolicy
@@ -3730,7 +3731,6 @@ DEBUG:root:/extensions/examples/apps/calculator appends following list:
 /extensions/browserAction
 /extensions/background_pages
 /extensions/api_other
-/extensions/
 DEBUG:root:Ignoring /extensions/examples/apps/calculator/a11y due to existing /extensions/a11y
 DEBUG:root:Ignoring /extensions/examples/apps/calculator/accessibilityFeatures due to existing /extensions/accessibilityFeatures
 DEBUG:root:Ignoring /extensions/examples/apps/calculator/activeTab due to existing /extensions/activeTab
@@ -3895,6 +3895,7 @@ DEBUG:root:Ignoring /extensions/examples/apps/runtime due to existing /extension
 DEBUG:root:Ignoring /declarativeContent due to existing /extensions/declarativeContent
 DEBUG:root:Ignoring /declarativeWebRequest due to existing /extensions/declarativeWebRequest
 DEBUG:root:Ignoring /extensions due to existing /extensions
+DEBUG:root:Ignoring /extensions/ due to existing /
 DEBUG:root:Ignoring /extensions/a11y due to existing /extensions/a11y
 DEBUG:root:Ignoring /extensions/accessibilityFeatures due to existing /extensions/accessibilityFeatures
 DEBUG:root:Ignoring /extensions/activeTab due to existing /extensions/activeTab
@@ -4120,6 +4121,7 @@ DEBUG:root:/extensions/app_architecture appends following list:
 /extensions/activeTab
 /extensions/accessibilityFeatures
 /extensions/a11y
+/extensions/
 /extensions
 /declarativeWebRequest
 /declarativeContent
@@ -4148,7 +4150,6 @@ DEBUG:root:/extensions/app_storage appends following list:
 /extensions/fileSystem
 /extensions/app_storage
 /extensions/app_lifecycle
-DEBUG:root:Ignoring /extensions/ due to existing /
 DEBUG:root:Ignoring /extensions/api_other due to existing /extensions/api_other
 DEBUG:root:Ignoring /extensions/background_pages due to existing /extensions/background_pages
 DEBUG:root:Ignoring /extensions/browserAction due to existing /extensions/browserAction
@@ -4327,7 +4328,6 @@ DEBUG:root:/extensions/examples/apps appends following list:
 /extensions/browserAction
 /extensions/background_pages
 /extensions/api_other
-/extensions/
 DEBUG:root:Ignoring /extensions/examples/apps/a11y due to existing /extensions/a11y
 DEBUG:root:Ignoring /extensions/examples/apps/accessibilityFeatures due to existing /extensions/accessibilityFeatures
 DEBUG:root:Ignoring /extensions/examples/apps/activeTab due to existing /extensions/activeTab
@@ -4536,6 +4536,7 @@ DEBUG:root:Ignoring /extensions/windows due to existing /extensions/windows
 DEBUG:root:Ignoring /declarativeContent due to existing /extensions/declarativeContent
 DEBUG:root:Ignoring /declarativeWebRequest due to existing /extensions/declarativeWebRequest
 DEBUG:root:Ignoring /extensions due to existing /extensions
+DEBUG:root:Ignoring /extensions/ due to existing /
 DEBUG:root:Ignoring /extensions/a11y due to existing /extensions/a11y
 DEBUG:root:Ignoring /extensions/accessibilityFeatures due to existing /extensions/accessibilityFeatures
 DEBUG:root:Ignoring /extensions/activeTab due to existing /extensions/activeTab
@@ -4819,6 +4820,7 @@ DEBUG:root:/extensions/app_frameworks appends following list:
 /extensions/activeTab
 /extensions/accessibilityFeatures
 /extensions/a11y
+/extensions/
 /extensions
 /declarativeWebRequest
 /declarativeContent
@@ -4846,7 +4848,6 @@ DEBUG:root:/extensions/fileSystem appends following list:
 /extensions/app_lifecycle
 DEBUG:root:/extensions/syncFileSystem appends following list:
 /extensions/syncFileSystem
-DEBUG:root:Ignoring /extensions/ due to existing /
 DEBUG:root:Ignoring /extensions/api_other due to existing /extensions/api_other
 DEBUG:root:Ignoring /extensions/background_pages due to existing /extensions/background_pages
 DEBUG:root:Ignoring /extensions/browserAction due to existing /extensions/browserAction
@@ -4860,7 +4861,6 @@ DEBUG:root:/extensions/examples appends following list:
 /extensions/browserAction
 /extensions/background_pages
 /extensions/api_other
-/extensions/
 DEBUG:root:Ignoring /extensions/examples/a11y due to existing /extensions/a11y
 DEBUG:root:Ignoring /extensions/examples/accessibilityFeatures due to existing /extensions/accessibilityFeatures
 DEBUG:root:Ignoring /extensions/examples/activeTab due to existing /extensions/activeTab
@@ -5028,6 +5028,7 @@ DEBUG:root:Ignoring /extensions/extensions/contentSecurityPolicy due to existing
 DEBUG:root:Ignoring /declarativeContent due to existing /extensions/declarativeContent
 DEBUG:root:Ignoring /declarativeWebRequest due to existing /extensions/declarativeWebRequest
 DEBUG:root:Ignoring /extensions due to existing /extensions
+DEBUG:root:Ignoring /extensions/ due to existing /
 DEBUG:root:Ignoring /extensions/a11y due to existing /extensions/a11y
 DEBUG:root:Ignoring /extensions/accessibilityFeatures due to existing /extensions/accessibilityFeatures
 DEBUG:root:Ignoring /extensions/activeTab due to existing /extensions/activeTab
@@ -5041,6 +5042,7 @@ DEBUG:root:/extensions/angular_framework appends following list:
 /extensions/activeTab
 /extensions/accessibilityFeatures
 /extensions/a11y
+/extensions/
 /extensions
 /declarativeWebRequest
 /declarativeContent
@@ -5341,7 +5343,6 @@ DEBUG:root:Ignoring /extensions/networking.config due to existing /extensions/ne
 DEBUG:root:Ignoring /extensions/offline_apps due to existing /extensions/offline_apps
 DEBUG:root:Ignoring /extensions/webview_tag due to existing /extensions/webview_tag
 DEBUG:root:Ignoring /extensions/syncFileSystem due to existing /extensions/syncFileSystem
-DEBUG:root:Ignoring /extensions/ due to existing /
 DEBUG:root:Ignoring /extensions/api_other due to existing /extensions/api_other
 DEBUG:root:Ignoring /extensions/background_pages due to existing /extensions/background_pages
 DEBUG:root:Ignoring /extensions/browserAction due to existing /extensions/browserAction
@@ -5351,6 +5352,7 @@ DEBUG:root:Ignoring /extensions/devguide due to existing /extensions/devguide
 DEBUG:root:Ignoring /declarativeContent due to existing /extensions/declarativeContent
 DEBUG:root:Ignoring /declarativeWebRequest due to existing /extensions/declarativeWebRequest
 DEBUG:root:Ignoring /extensions due to existing /extensions
+DEBUG:root:Ignoring /extensions/ due to existing /
 DEBUG:root:Ignoring /extensions/a11y due to existing /extensions/a11y
 DEBUG:root:Ignoring /extensions/accessibilityFeatures due to existing /extensions/accessibilityFeatures
 DEBUG:root:Ignoring /extensions/activeTab due to existing /extensions/activeTab

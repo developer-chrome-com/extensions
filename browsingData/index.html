@@ -711,7 +711,7 @@
       <tr>
         <td class="title">Availability:</td>
         <td>
-            Since Chrome 26.
+            Since Chrome 27.
             <br>
         </td>
       </tr>
@@ -923,6 +923,11 @@
             chrome.browsingData.removeCache(<span>    RemovalOptions options</span>, <span class="optional">function callback</span>)
             </code>
           </td></tr>
+        <tr><td><a href="#method-removeCacheStorage">removeCacheStorage</a> &minus;
+            <code class="prettyprint">
+            chrome.browsingData.removeCacheStorage(<span>    RemovalOptions options</span>, <span class="optional">function callback</span>)
+            </code>
+          </td></tr>
         <tr><td><a href="#method-removeCookies">removeCookies</a> &minus;
             <code class="prettyprint">
             chrome.browsingData.removeCookies(<span>    RemovalOptions options</span>, <span class="optional">function callback</span>)
@@ -966,6 +971,11 @@
         <tr><td><a href="#method-removePasswords">removePasswords</a> &minus;
             <code class="prettyprint">
             chrome.browsingData.removePasswords(<span>    RemovalOptions options</span>, <span class="optional">function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="#method-removeServiceWorkers">removeServiceWorkers</a> &minus;
+            <code class="prettyprint">
+            chrome.browsingData.removeServiceWorkers(<span>    RemovalOptions options</span>, <span class="optional">function callback</span>)
             </code>
           </td></tr>
         <tr><td><a href="#method-removeWebSQL">removeWebSQL</a> &minus;
@@ -1036,9 +1046,6 @@
             </div>
             <div>
               <h3 id="type-DataTypeSet">DataTypeSet</h3>
-              <p class="availability">
-                Since Chrome 27.
-              </p>
               <table>
                 <dd>A set of data types. Missing data types are interpreted as <code>false</code>.</dd>
                   <tr><th colspan="3" id="DataTypeSet-properties">properties</th></tr>
@@ -1058,7 +1065,22 @@
                     <td>
                     
                     <p>
-                      The browser's cache. Note: when removing data, this clears the <em>entire</em> cache: it is not limited to the range you specify.
+                      The browser's cache.
+                    </p></td>
+                  </tr><tr id="property-DataTypeSet-cacheStorage">
+                    <td>boolean</td>
+                    <td><span class="optional">(optional)</span>
+                        cacheStorage</td>
+                    <td>
+                    <p class="availability">
+                      Since Chrome 72.
+                       <em>Warning:</em> this is the current <strong>Beta</strong> channel.
+                      
+                       <a href="api_index#beta_apis">Learn more</a>.
+                    </p>
+                    
+                    <p>
+                      Cache storage
                     </p></td>
                   </tr><tr id="property-DataTypeSet-cookies">
                     <td>boolean</td>
@@ -1371,6 +1393,54 @@
                       
                       <p>
                         Called when the browser's cache has been cleared.
+                      </p>    <p>
+                              If you specify the <em>callback</em> parameter, it should
+                              be a function that looks like this:
+                          </p>
+                        <code class="prettyprint">function() <span class="subdued">{...}</span>;</code>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-removeCacheStorage"
+                  >removeCacheStorage
+              </h3>
+              <div class="summary">
+              <code class="prettyprint">
+              chrome.browsingData.removeCacheStorage(<span>    <a href=/extensions/browsingData#type-RemovalOptions>RemovalOptions</a> options</span>, <span class="optional">function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p class="availability">
+                  Since Chrome 72.
+                   <em>Warning:</em> this is the current <strong>Beta</strong> channel.
+                  
+                   <a href="api_index#beta_apis">Learn more</a>.
+                </p>
+                <p>
+                  Clears websites' cache storage data.
+                </p>
+                <table >
+                  <tr><th colspan="3">Parameters</th></tr>
+                    <tr id="property-removeCacheStorage-options">
+                      <td>    <a href=/extensions/browsingData#type-RemovalOptions>RemovalOptions</a></td>
+                      <td>
+                          options</td>
+                      <td>
+                      
+                      </td>
+                    </tr>
+                    <tr id="property-removeCacheStorage-callback">
+                      <td>function</td>
+                      <td><span class="optional">(optional)</span>
+                          callback</td>
+                      <td>
+                      
+                      <p>
+                        Called when websites' cache storage has been cleared.
                       </p>    <p>
                               If you specify the <em>callback</em> parameter, it should
                               be a function that looks like this:
@@ -1749,6 +1819,54 @@
                       
                       <p>
                         Called when the browser's passwords have been cleared.
+                      </p>    <p>
+                              If you specify the <em>callback</em> parameter, it should
+                              be a function that looks like this:
+                          </p>
+                        <code class="prettyprint">function() <span class="subdued">{...}</span>;</code>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-removeServiceWorkers"
+                  >removeServiceWorkers
+              </h3>
+              <div class="summary">
+              <code class="prettyprint">
+              chrome.browsingData.removeServiceWorkers(<span>    <a href=/extensions/browsingData#type-RemovalOptions>RemovalOptions</a> options</span>, <span class="optional">function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p class="availability">
+                  Since Chrome 72.
+                   <em>Warning:</em> this is the current <strong>Beta</strong> channel.
+                  
+                   <a href="api_index#beta_apis">Learn more</a>.
+                </p>
+                <p>
+                  Clears websites' service workers.
+                </p>
+                <table >
+                  <tr><th colspan="3">Parameters</th></tr>
+                    <tr id="property-removeServiceWorkers-options">
+                      <td>    <a href=/extensions/browsingData#type-RemovalOptions>RemovalOptions</a></td>
+                      <td>
+                          options</td>
+                      <td>
+                      
+                      </td>
+                    </tr>
+                    <tr id="property-removeServiceWorkers-callback">
+                      <td>function</td>
+                      <td><span class="optional">(optional)</span>
+                          callback</td>
+                      <td>
+                      
+                      <p>
+                        Called when websites' service workers have been cleared.
                       </p>    <p>
                               If you specify the <em>callback</em> parameter, it should
                               be a function that looks like this:

@@ -704,14 +704,14 @@
       <tr>
         <td class="title">Description:</td>
         <td>
-            Use browser actions to put icons in the main Google Chrome toolbar, to the right of the address bar. In addition to its <a href='browserAction#icon'>icon</a>, a browser action can also have a <a href='browserAction#tooltip'>tooltip</a>, a <a href='browserAction#badge'>badge</a>, and a <a href='browserAction#popups'>popup</a>.
+            Use browser actions to put icons in the main Google Chrome toolbar, to the right of the address bar. In addition to its <a href='browserAction#icon'>icon</a>, a browser action can have a <a href='browserAction#tooltip'>tooltip</a>, a <a href='browserAction#badge'>badge</a>, and a <a href='browserAction#popups'>popup</a>.
                     <br>
         </td>
       </tr>
       <tr>
         <td class="title">Availability:</td>
         <td>
-            Since Chrome 26.
+            Since Chrome 27.
             <br>
         </td>
       </tr>
@@ -1010,7 +1010,7 @@
             <div>
               <h3 id="type-ImageDataType">ImageDataType</h3>
               <table>
-                <dd>Pixel data for an image. Must be an ImageData object (for example, from a <code>canvas</code> element).</dd>
+                <dd>Pixel data for an image. Must be an ImageData object; for example, from a <code>canvas</code> element.</dd>
               </table>
             </div>
           <h2 id="methods">Methods</h2>
@@ -1026,7 +1026,7 @@
               </div>
               <div class="description">
                 <p>
-                  Sets the title of the browser action. This shows up in the tooltip.
+                  Sets the title of the browser action. This title appears in the tooltip.
                 </p>
                 <table >
                   <tr><th colspan="3">Parameters</th></tr>
@@ -1105,7 +1105,7 @@
                             <td>
                             
                             <p>
-                              Specify the tab to get the title from. If no tab is specified, the non-tab-specific title is returned.
+                              The tab to get the title from. If no tab is specified, the default title is returned.
                             </p></td>
                           </tr>
                         </table>
@@ -1149,7 +1149,7 @@
               </div>
               <div class="description">
                 <p>
-                  Sets the icon for the browser action. The icon can be specified either as the path to an image file or as the pixel data from a canvas element, or as dictionary of either one of those. Either the <b>path</b> or the <b>imageData</b> property must be specified.
+                  Sets the icon for the browser action. The icon can be specified as the path to an image file, as the pixel data from a canvas element, or as a dictionary of one of those. Either the <code>path</code> or the <code>imageData</code> property must be specified.
                 </p>
                 <table >
                   <tr><th colspan="3">Parameters</th></tr>
@@ -1167,7 +1167,7 @@
                             <td>
                             
                             <p>
-                              Either an ImageData object or a dictionary {size -> ImageData} representing icon to be set. If the icon is specified as a dictionary, the actual image to be used is chosen depending on screen's pixel density. If the number of image pixels that fit into one screen space unit equals <code>scale</code>, then image with size <code>scale</code> * n will be selected, where n is the size of the icon in the UI. At least one image must be specified. Note that 'details.imageData = foo' is equivalent to 'details.imageData = {'16': foo}'
+                              Either an ImageData object or a dictionary {size -> ImageData} representing an icon to be set. If the icon is specified as a dictionary, the image used is chosen depending on the screen's pixel density. If the number of image pixels that fit into one screen space unit equals <code>scale</code>, then an image with size <code>scale</code> * n is selected, where <i>n</i> is the size of the icon in the UI. At least one image must be specified. Note that 'details.imageData = foo' is equivalent to 'details.imageData = {'16': foo}'
                             </p></td>
                           </tr><tr id="property-details-path">
                             <td>string or object</td>
@@ -1176,7 +1176,7 @@
                             <td>
                             
                             <p>
-                              Either a relative image path or a dictionary {size -> relative image path} pointing to icon to be set. If the icon is specified as a dictionary, the actual image to be used is chosen depending on screen's pixel density. If the number of image pixels that fit into one screen space unit equals <code>scale</code>, then image with size <code>scale</code> * n will be selected, where n is the size of the icon in the UI. At least one image must be specified. Note that 'details.path = foo' is equivalent to 'details.path = {'16': foo}'
+                              Either a relative image path or a dictionary {size -> relative image path} pointing to an icon to be set. If the icon is specified as a dictionary, the image used is chosen depending on the screen's pixel density. If the number of image pixels that fit into one screen space unit equals <code>scale</code>, then an image with size <code>scale</code> * n is selected, where <i>n</i> is the size of the icon in the UI. At least one image must be specified. Note that 'details.path = foo' is equivalent to 'details.path = {'16': foo}'
                             </p></td>
                           </tr><tr id="property-details-tabId">
                             <td>integer</td>
@@ -1219,7 +1219,7 @@
               </div>
               <div class="description">
                 <p>
-                  Sets the html document to be opened as a popup when the user clicks on the browser action's icon.
+                  Sets the HTML document to be opened as a popup when the user clicks the browser action icon.
                 </p>
                 <table >
                   <tr><th colspan="3">Parameters</th></tr>
@@ -1246,7 +1246,7 @@
                             <td>
                             
                             <p>
-                              The html file to show in a popup.  If set to the empty string (''), no popup is shown.
+                              The HTML file to show in a popup. If set to the empty string (''), no popup is shown.
                             </p></td>
                           </tr>
                         </table>
@@ -1280,7 +1280,7 @@
               </div>
               <div class="description">
                 <p>
-                  Gets the html document set as the popup for this browser action.
+                  Gets the HTML document that is set as the popup for this browser action.
                 </p>
                 <table >
                   <tr><th colspan="3">Parameters</th></tr>
@@ -1298,7 +1298,7 @@
                             <td>
                             
                             <p>
-                              Specify the tab to get the popup from. If no tab is specified, the non-tab-specific popup is returned.
+                              The tab to get the popup from. If no tab is specified, the non-tab-specific popup is returned.
                             </p></td>
                           </tr>
                         </table>
@@ -1360,7 +1360,7 @@
                             <td>
                             
                             <p>
-                              Any number of characters can be passed, but only about four can fit in the space.
+                              Any number of characters can be passed, but only about four can fit into the space.
                             </p></td>
                           </tr><tr id="property-details-tabId">
                             <td>integer</td>
@@ -1421,7 +1421,7 @@
                             <td>
                             
                             <p>
-                              Specify the tab to get the badge text from. If no tab is specified, the non-tab-specific badge text is returned.
+                              The tab to get the badge text from. If no tab is specified, the non-tab-specific badge text is returned.
                             </p></td>
                           </tr>
                         </table>
@@ -1483,7 +1483,7 @@
                             <td>
                             
                             <p>
-                              An array of four integers in the range [0,255] that make up the RGBA color of the badge. Can also be a string with a CSS value, red being <code>#FF0000</code> or <code>#F00</code>. Renders colors at full opacity.
+                              An array of four integers in the range 0-255 that make up the RGBA color of the badge. Can also be a string with a CSS hex color value; for example, <code>#FF0000</code> or <code>#F00</code> (red). Renders colors at full opacity.
                             </p></td>
                           </tr><tr id="property-details-tabId">
                             <td>integer</td>
@@ -1544,7 +1544,7 @@
                             <td>
                             
                             <p>
-                              Specify the tab to get the badge background color from. If no tab is specified, the non-tab-specific badge background color is returned.
+                              The tab to get the badge background color from. If no tab is specified, the non-tab-specific badge background color is returned.
                             </p></td>
                           </tr>
                         </table>
@@ -1588,7 +1588,7 @@
               </div>
               <div class="description">
                 <p>
-                  Enables the browser action for a tab. By default, browser actions are enabled.
+                  Enables the browser action for a tab. Defaults to enabled.
                 </p>
                 <table >
                   <tr><th colspan="3">Parameters</th></tr>
@@ -1599,7 +1599,7 @@
                       <td>
                       
                       <p>
-                        The id of the tab for which you want to modify the browser action.
+                        The ID of the tab for which to modify the browser action.
                       </p></td>
                     </tr>
                     <tr id="property-enable-callback">
@@ -1641,7 +1641,7 @@
                       <td>
                       
                       <p>
-                        The id of the tab for which you want to modify the browser action.
+                        The ID of the tab for which to modify the browser action.
                       </p></td>
                     </tr>
                     <tr id="property-disable-callback">
@@ -1665,7 +1665,7 @@
               <h3 id="event-onClicked">onClicked</h3>
               <div class="description">
             <p>
-                  Fired when a browser action icon is clicked.  This event will not fire if the browser action has a popup.
+                  Fired when a browser action icon is clicked. Does not fire if the browser action has a popup.
                 </p>      <tr><td>
                   <div>
                     <h4

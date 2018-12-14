@@ -1805,6 +1805,10 @@ Chrome provides extensions with many special-purpose APIs like
 <table>
   <tr><th>Name</th><th>Description</th></tr>
    <tr>
+     <td><a href="declarativeNetRequest">declarativeNetRequest</a></td>
+     <td> The <code>chrome.declarativeNetRequest</code> API is used to block or redirect network requests by specifying declarative rules.</td>
+   </tr>
+   <tr>
      <td><a href="declarativeWebRequest">declarativeWebRequest</a></td>
      <td><em><strong>Note:</strong> this API is currently on hold, without concrete plans to move to stable.</em> Use the <code>chrome.declarativeWebRequest</code> API to intercept, block, or modify requests in-flight. It is significantly faster than the <a href='webRequest'><code>chrome.webRequest</code> API</a> because you can register rules that are evaluated in the browser rather than the JavaScript engine, which reduces roundtrip latencies and allows higher efficiency.</td>
    </tr>
@@ -1818,10 +1822,6 @@ Chrome provides extensions with many special-purpose APIs like
    <tr>
      <td><a href="automation">automation</a></td>
      <td> The <code>chrome.automation</code> API allows developers to access the automation (accessibility) tree for the browser. The tree resembles the DOM tree, but only exposes the <em>semantic</em> structure of a page. It can be used to programmatically interact with a page by examining names, roles, and states, listening for events, and performing actions on nodes.</td>
-   </tr>
-   <tr>
-     <td><a href="declarativeNetRequest">declarativeNetRequest</a></td>
-     <td> The <code>chrome.declarativeNetRequest</code> API is used to block or redirect network requests by specifying declarative rules.</td>
    </tr>
    <tr>
      <td><a href="processes">processes</a></td>

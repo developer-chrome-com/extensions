@@ -711,7 +711,7 @@
       <tr>
         <td class="title">Availability:</td>
         <td>
-            Since Chrome 26.
+            Since Chrome 27.
             <br>
         </td>
       </tr>
@@ -1179,7 +1179,8 @@
                 <tr><th>Enum</th></tr>
                 <tr><td>
                         <code>"requestHeaders"</code>, 
-                        or <code>"blocking"</code>
+                        <code>"blocking"</code>, 
+                        or <code>"extraHeaders"</code>
                 </td></tr>
               </table>
             </div>
@@ -1188,7 +1189,8 @@
               <table>
                 <tr><th>Enum</th></tr>
                 <tr><td>
-                        <code>"requestHeaders"</code>
+                        <code>"requestHeaders"</code>, 
+                        or <code>"extraHeaders"</code>
                 </td></tr>
               </table>
             </div>
@@ -1198,7 +1200,8 @@
                 <tr><th>Enum</th></tr>
                 <tr><td>
                         <code>"blocking"</code>, 
-                        or <code>"responseHeaders"</code>
+                        <code>"responseHeaders"</code>, 
+                        or <code>"extraHeaders"</code>
                 </td></tr>
               </table>
             </div>
@@ -1209,7 +1212,8 @@
                 <tr><td>
                         <code>"responseHeaders"</code>, 
                         <code>"blocking"</code>, 
-                        or <code>"asyncBlocking"</code>
+                        <code>"asyncBlocking"</code>, 
+                        or <code>"extraHeaders"</code>
                 </td></tr>
               </table>
             </div>
@@ -1218,7 +1222,8 @@
               <table>
                 <tr><th>Enum</th></tr>
                 <tr><td>
-                        <code>"responseHeaders"</code>
+                        <code>"responseHeaders"</code>, 
+                        or <code>"extraHeaders"</code>
                 </td></tr>
               </table>
             </div>
@@ -1227,7 +1232,8 @@
               <table>
                 <tr><th>Enum</th></tr>
                 <tr><td>
-                        <code>"responseHeaders"</code>
+                        <code>"responseHeaders"</code>, 
+                        or <code>"extraHeaders"</code>
                 </td></tr>
               </table>
             </div>
@@ -1236,7 +1242,8 @@
               <table>
                 <tr><th>Enum</th></tr>
                 <tr><td>
-                        <code>"responseHeaders"</code>
+                        <code>"responseHeaders"</code>, 
+                        or <code>"extraHeaders"</code>
                 </td></tr>
               </table>
             </div>
@@ -3016,9 +3023,6 @@
               <div class="description">
                 <p class="availability">
                   Since Chrome 70.
-                   <em>Warning:</em> this is the current <strong>Beta</strong> channel.
-                  
-                   <a href="api_index#beta_apis">Learn more</a>.
                 </p>
             <p>
                   Fired when an extension's proposed modification to a network request is ignored. This happens in case of conflicts with other extensions.
