@@ -714,7 +714,7 @@
       <tr>
         <td class="title">Availability:</td>
         <td>
-            Since Chrome 27.
+            Since Chrome 28.
             <br>
         </td>
       </tr>
@@ -2005,9 +2005,6 @@
               </code>
               </div>
               <div class="description">
-                <p class="availability">
-                  Since Chrome 28.
-                </p>
                 <p>
                   Join the multicast group and start to receive packets from that group. The socket must be of UDP type and must be bound to a local port before calling this method.
                 </p>
@@ -2072,9 +2069,6 @@
               </code>
               </div>
               <div class="description">
-                <p class="availability">
-                  Since Chrome 28.
-                </p>
                 <p>
                   <p>Leave the multicast group previously joined using <code>joinGroup</code>. It's not necessary to leave the multicast group before destroying the socket or exiting. This is automatically called by the OS.</p><p>Leaving the group will prevent the router from sending multicast datagrams to the local host, presuming no other process on the host is still joined to the group.</p>
                 </p>
@@ -2139,9 +2133,6 @@
               </code>
               </div>
               <div class="description">
-                <p class="availability">
-                  Since Chrome 28.
-                </p>
                 <p>
                   <p>Set the time-to-live of multicast packets sent to the multicast group.</p><p>Calling this method does not require multicast permissions.</p>
                 </p>
@@ -2206,9 +2197,6 @@
               </code>
               </div>
               <div class="description">
-                <p class="availability">
-                  Since Chrome 28.
-                </p>
                 <p>
                   <p>Set whether multicast packets sent from the host to the multicast group will be looped back to the host.</p><p>Note: the behavior of <code>setMulticastLoopbackMode</code> is slightly different between Windows and Unix-like systems. The inconsistency happens only when there is more than one application on the same host joined to the same multicast group while having different settings on multicast loopback mode. On Windows, the applications with loopback off will not RECEIVE the loopback packets; while on Unix-like systems, the applications with loopback off will not SEND the loopback packets to other applications on the same host. See MSDN: http://goo.gl/6vqbj</p><p>Calling this method does not require multicast permissions.</p>
                 </p>
@@ -2273,9 +2261,6 @@
               </code>
               </div>
               <div class="description">
-                <p class="availability">
-                  Since Chrome 28.
-                </p>
                 <p>
                   Get the multicast group addresses the socket is currently joined to.
                 </p>
