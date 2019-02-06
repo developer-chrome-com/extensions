@@ -806,7 +806,7 @@
         "condition" : {
           "urlFilter" : "abc",
           "domains" : ["foo.com"],
-          "resource_types" : ["script"]
+          "resourceTypes" : ["script"]
         }
       }
       </pre>
@@ -883,9 +883,10 @@
       To disable the extension ruleset on a particular page, extensions can use the
       <a href="#method-addAllowedPages">
       chrome.declarativeNetRequest.addAllowedPages</a> API. This allows
-      extensions to specify match patterns that are compared against the tab URL. Any
-      requests originating from these pages are not evaluated against the extension
-      ruleset. The number of such patterns an extension can add is bound by the
+      extensions to specify <a href="/extensions/match_patterns">match patterns</a>
+      that are compared against the tab URL. Any requests originating from these pages
+      are not evaluated against the extension ruleset. The number of such patterns an
+      extension can add is bound by the
       <a href="#property-MAX_NUMBER_OF_ALLOWED_PAGES">chrome.declarativeNetRequest.MAX_NUMBER_OF_ALLOWED_PAGES</a> constant.
       </p>
       
@@ -1280,7 +1281,7 @@
                       <td>
                       
                       <p>
-                        Array of match patterns which are to be allowed.
+                        Array of <a href="/extensions/match_patterns">match patterns</a> which are to be allowed.
                       </p></td>
                     </tr>
                     <tr id="property-addAllowedPages-callback">
@@ -1324,7 +1325,7 @@
                       <td>
                       
                       <p>
-                        Array of match patterns which are to removed.
+                        Array of <a href="/extensions/match_patterns">match patterns</a> which are to be removed.
                       </p></td>
                     </tr>
                     <tr id="property-removeAllowedPages-callback">
