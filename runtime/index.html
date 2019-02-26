@@ -852,6 +852,7 @@
           <tr><td><a href="#event-onBrowserUpdateAvailable">onBrowserUpdateAvailable</a></td></tr>
           <tr><td><a href="#event-onConnect">onConnect</a></td></tr>
           <tr><td><a href="#event-onConnectExternal">onConnectExternal</a></td></tr>
+          <tr><td><a href="#event-onConnectNative">onConnectNative</a></td></tr>
           <tr><td><a href="#event-onMessage">onMessage</a></td></tr>
           <tr><td><a href="#event-onMessageExternal">onMessageExternal</a></td></tr>
           <tr><td><a href="#event-onRestartRequired">onRestartRequired</a></td></tr>
@@ -933,7 +934,7 @@
                     <td>
                     
                     <p>
-                      This property will <b>only</b> be present on ports passed to <a href=/extensions/runtime#event-onConnect>onConnect</a> / <a href=/extensions/runtime#event-onConnectExternal>onConnectExternal</a> listeners.
+                      This property will <b>only</b> be present on ports passed to <a href=/extensions/runtime#event-onConnect>onConnect</a> / <a href=/extensions/runtime#event-onConnectExternal>onConnectExternal</a> / <a href=/extensions/runtime#event-onConnectExternal>onConnectNative</a> listeners.
                     </p></td>
                   </tr>
               </table>
@@ -981,6 +982,21 @@
                     
                     <p>
                       The URL of the page or frame that opened the connection. If the sender is in an iframe, it will be iframe's URL not the URL of the page which hosts it.
+                    </p></td>
+                  </tr><tr id="property-MessageSender-nativeApplication">
+                    <td>string</td>
+                    <td><span class="optional">(optional)</span>
+                        nativeApplication</td>
+                    <td>
+                    <p class="availability">
+                      <strong>Not fully implemented</strong>.
+                       You must build Chromium from source to try this API.
+                      
+                       <a href="http://www.chromium.org/developers">Learn more</a>.
+                    </p>
+                    
+                    <p>
+                      The name of the native application that opened the connection, if any.
                     </p></td>
                   </tr><tr id="property-MessageSender-tlsChannelId">
                     <td>string</td>
@@ -2183,6 +2199,59 @@
                               <code class="prettyprint">function(    <a href=/extensions/runtime#type-Port>Port</a> port) <span class="subdued">{...}</span>;</code>
                                 <table class="innerTable">
                                   <tr id="property-onConnectExternal-port">
+                                    <td>    <a href=/extensions/runtime#type-Port>Port</a></td>
+                                    <td>
+                                        port</td>
+                                    <td>
+                                    
+                                    </td>
+                                  </tr>
+                                </table>
+                            </td>
+                          </tr>
+                      </table>
+                    </div>
+                  </div>
+                  </td></tr>
+              </div>
+            </div>
+            <div>
+              <h3 id="event-onConnectNative">onConnectNative</h3>
+              <div class="description">
+                <p class="availability">
+                  <strong>Not fully implemented</strong>.
+                   You must build Chromium from source to try this API.
+                  
+                   <a href="http://www.chromium.org/developers">Learn more</a>.
+                </p>
+            <p>
+                  Fired when a connection is made from a native application. Currently only supported on Chrome OS.
+                </p>      <tr><td>
+                  <div>
+                    <h4
+                        title="">addListener
+                    </h4>
+                    <div class="summary">
+                    <code class="prettyprint">
+                    chrome.runtime.onConnectNative.addListener(<span>function callback</span>)
+                    </code>
+                    </div>
+                    <div class="description">
+                      <table class="innerTable">
+                        <tr><th colspan="3">Parameters</th></tr>
+                          <tr id="property-onConnectNative-callback">
+                            <td>function</td>
+                            <td>
+                                callback</td>
+                            <td>
+                            
+                                <p>
+                                    The <em>callback</em> parameter should be a function
+                                    that looks like this:
+                                </p>
+                              <code class="prettyprint">function(    <a href=/extensions/runtime#type-Port>Port</a> port) <span class="subdued">{...}</span>;</code>
+                                <table class="innerTable">
+                                  <tr id="property-onConnectNative-port">
                                     <td>    <a href=/extensions/runtime#type-Port>Port</a></td>
                                     <td>
                                         port</td>
