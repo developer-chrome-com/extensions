@@ -1073,7 +1073,7 @@
                                     <td>
                                     
                                     <p>
-                                      ID of frame that wraps the frame. Set to -1 of no parent frame exists.
+                                      The ID of the parent frame, or <code>-1</code> if this is the main frame.
                                     </p></td>
                                   </tr>
                                 </table>
@@ -1181,7 +1181,7 @@
                                           <td>
                                           
                                           <p>
-                                            ID of frame that wraps the frame. Set to -1 of no parent frame exists.
+                                            The ID of the parent frame, or <code>-1</code> if this is the main frame.
                                           </p></td>
                                         </tr><tr id="property-detailsType-url">
                                           <td>string</td>
@@ -1489,7 +1489,7 @@
                                           <td>
                                           
                                           <p>
-                                            ID of frame that wraps the frame. Set to -1 of no parent frame exists.
+                                            The ID of the parent frame, or <code>-1</code> if this is the main frame.
                                           </p></td>
                                         </tr><tr id="property-details-timeStamp">
                                           <td>double</td>
@@ -1785,6 +1785,21 @@
                                           
                                           <p>
                                             0 indicates the navigation happens in the tab content window; a positive value indicates navigation in a subframe. Frame IDs are unique within a tab.
+                                          </p></td>
+                                        </tr><tr id="property-details-parentFrameId">
+                                          <td>integer</td>
+                                          <td>
+                                              parentFrameId</td>
+                                          <td>
+                                          <p class="availability">
+                                            Since Chrome 74.
+                                             <em>Warning:</em> this is the current <strong>Dev</strong> channel.
+                                            
+                                             <a href="api_index#dev_apis">Learn more</a>.
+                                          </p>
+                                          
+                                          <p>
+                                            The ID of the parent frame, or <code>-1</code> if this is the main frame.
                                           </p></td>
                                         </tr><tr id="property-details-transitionType">
                                           <td>    <a href=/extensions/webNavigation#type-TransitionType>TransitionType</a></td>
@@ -2099,6 +2114,21 @@
                                           <p>
                                             0 indicates the navigation happens in the tab content window; a positive value indicates navigation in a subframe. Frame IDs are unique within a tab.
                                           </p></td>
+                                        </tr><tr id="property-details-parentFrameId">
+                                          <td>integer</td>
+                                          <td>
+                                              parentFrameId</td>
+                                          <td>
+                                          <p class="availability">
+                                            Since Chrome 74.
+                                             <em>Warning:</em> this is the current <strong>Dev</strong> channel.
+                                            
+                                             <a href="api_index#dev_apis">Learn more</a>.
+                                          </p>
+                                          
+                                          <p>
+                                            The ID of the parent frame, or <code>-1</code> if this is the main frame.
+                                          </p></td>
                                         </tr><tr id="property-details-timeStamp">
                                           <td>double</td>
                                           <td>
@@ -2393,6 +2423,21 @@
                                           
                                           <p>
                                             0 indicates the navigation happens in the tab content window; a positive value indicates navigation in a subframe. Frame IDs are unique within a tab.
+                                          </p></td>
+                                        </tr><tr id="property-details-parentFrameId">
+                                          <td>integer</td>
+                                          <td>
+                                              parentFrameId</td>
+                                          <td>
+                                          <p class="availability">
+                                            Since Chrome 74.
+                                             <em>Warning:</em> this is the current <strong>Dev</strong> channel.
+                                            
+                                             <a href="api_index#dev_apis">Learn more</a>.
+                                          </p>
+                                          
+                                          <p>
+                                            The ID of the parent frame, or <code>-1</code> if this is the main frame.
                                           </p></td>
                                         </tr><tr id="property-details-timeStamp">
                                           <td>double</td>
@@ -2692,6 +2737,21 @@
                                           
                                           <p>
                                             0 indicates the navigation happens in the tab content window; a positive value indicates navigation in a subframe. Frame IDs are unique within a tab.
+                                          </p></td>
+                                        </tr><tr id="property-details-parentFrameId">
+                                          <td>integer</td>
+                                          <td>
+                                              parentFrameId</td>
+                                          <td>
+                                          <p class="availability">
+                                            Since Chrome 74.
+                                             <em>Warning:</em> this is the current <strong>Dev</strong> channel.
+                                            
+                                             <a href="api_index#dev_apis">Learn more</a>.
+                                          </p>
+                                          
+                                          <p>
+                                            The ID of the parent frame, or <code>-1</code> if this is the main frame.
                                           </p></td>
                                         </tr><tr id="property-details-error">
                                           <td>string</td>
@@ -3303,6 +3363,21 @@
                                           <p>
                                             0 indicates the navigation happens in the tab content window; a positive value indicates navigation in a subframe. Frame IDs are unique within a tab.
                                           </p></td>
+                                        </tr><tr id="property-details-parentFrameId">
+                                          <td>integer</td>
+                                          <td>
+                                              parentFrameId</td>
+                                          <td>
+                                          <p class="availability">
+                                            Since Chrome 74.
+                                             <em>Warning:</em> this is the current <strong>Dev</strong> channel.
+                                            
+                                             <a href="api_index#dev_apis">Learn more</a>.
+                                          </p>
+                                          
+                                          <p>
+                                            The ID of the parent frame, or <code>-1</code> if this is the main frame.
+                                          </p></td>
                                         </tr><tr id="property-details-transitionType">
                                           <td>    <a href=/extensions/webNavigation#type-TransitionType>TransitionType</a></td>
                                           <td>
@@ -3692,6 +3767,21 @@
                                           
                                           <p>
                                             0 indicates the navigation happens in the tab content window; a positive value indicates navigation in a subframe. Frame IDs are unique within a tab.
+                                          </p></td>
+                                        </tr><tr id="property-details-parentFrameId">
+                                          <td>integer</td>
+                                          <td>
+                                              parentFrameId</td>
+                                          <td>
+                                          <p class="availability">
+                                            Since Chrome 74.
+                                             <em>Warning:</em> this is the current <strong>Dev</strong> channel.
+                                            
+                                             <a href="api_index#dev_apis">Learn more</a>.
+                                          </p>
+                                          
+                                          <p>
+                                            The ID of the parent frame, or <code>-1</code> if this is the main frame.
                                           </p></td>
                                         </tr><tr id="property-details-transitionType">
                                           <td>    <a href=/extensions/webNavigation#type-TransitionType>TransitionType</a></td>

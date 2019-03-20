@@ -1072,6 +1072,36 @@
                         </tr>
                       </table>
                     </td>
+                  </tr><tr id="property-RemovalOptions-origins">
+                    <td>array of string</td>
+                    <td><span class="optional">(optional)</span>
+                        origins</td>
+                    <td>
+                    <p class="availability">
+                      Since Chrome 74.
+                       <em>Warning:</em> this is the current <strong>Dev</strong> channel.
+                      
+                       <a href="api_index#dev_apis">Learn more</a>.
+                    </p>
+                    
+                    <p>
+                      When present, only data for origins in this list is deleted. Only supported for cookies, storage and cache. Cookies are cleared for the whole registrable domain.
+                    </p></td>
+                  </tr><tr id="property-RemovalOptions-excludeOrigins">
+                    <td>array of string</td>
+                    <td><span class="optional">(optional)</span>
+                        excludeOrigins</td>
+                    <td>
+                    <p class="availability">
+                      Since Chrome 74.
+                       <em>Warning:</em> this is the current <strong>Dev</strong> channel.
+                      
+                       <a href="api_index#dev_apis">Learn more</a>.
+                    </p>
+                    
+                    <p>
+                      When present, data for origins in this list is excluded from deletion. Can't be used together with <code>origins</code>. Only supported for cookies, storage and cache.  Cookies are excluded for the whole registrable domain.
+                    </p></td>
                   </tr>
               </table>
             </div>
