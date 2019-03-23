@@ -711,7 +711,7 @@
       <tr>
         <td class="title">Availability:</td>
         <td>
-            Since Chrome 28.
+            Since Chrome 29.
             <br>
         </td>
       </tr>
@@ -990,9 +990,9 @@
                     <td>
                     <p class="availability">
                       Since Chrome 74.
-                       <em>Warning:</em> this is the current <strong>Dev</strong> channel.
+                       <em>Warning:</em> this is the current <strong>Beta</strong> channel.
                       
-                       <a href="api_index#dev_apis">Learn more</a>.
+                       <a href="api_index#beta_apis">Learn more</a>.
                     </p>
                     
                     <p>
@@ -1746,9 +1746,6 @@
               </code>
               </div>
               <div class="description">
-                <p class="availability">
-                  Since Chrome 29.
-                </p>
                 <p>
                   Returns information about the current platform.
                 </p>
@@ -1793,9 +1790,6 @@
               </code>
               </div>
               <div class="description">
-                <p class="availability">
-                  Since Chrome 29.
-                </p>
                 <p>
                   Returns a DirectoryEntry for the package directory.
                 </p>
@@ -1925,9 +1919,6 @@
                                           <td><span class="optional">(optional)</span>
                                               id</td>
                                           <td>
-                                          <p class="availability">
-                                            Since Chrome 29.
-                                          </p>
                                           
                                           <p>
                                             Indicates the ID of the imported shared module extension which updated. This is present only if 'reason' is 'shared_module_update'.
@@ -2219,9 +2210,9 @@
               <h3 id="event-onConnectNative">onConnectNative</h3>
               <div class="description">
                 <p class="availability">
-                  <strong>Dev</strong> channel only.
+                  <strong>Beta</strong> and <strong>Dev</strong> channels only.
                   
-                   <a href="api_index#dev_apis">Learn more</a>.
+                   <a href="api_index#beta_apis">Learn more</a>.
                 </p>
             <p>
                   Fired when a connection is made from a native application. Currently only supported on Chrome OS.
@@ -2257,9 +2248,9 @@
                                     <td>
                                     <p class="availability">
                                       Since Chrome 74.
-                                       <em>Warning:</em> this is the current <strong>Dev</strong> channel.
+                                       <em>Warning:</em> this is the current <strong>Beta</strong> channel.
                                       
-                                       <a href="api_index#dev_apis">Learn more</a>.
+                                       <a href="api_index#beta_apis">Learn more</a>.
                                     </p>
                                     
                                     </td>
@@ -2420,9 +2411,6 @@
             <div>
               <h3 id="event-onRestartRequired">onRestartRequired</h3>
               <div class="description">
-                <p class="availability">
-                  Since Chrome 29.
-                </p>
             <p>
                   Fired when an app or the device that it runs on needs to be restarted. The app should close all its windows at its earliest convenient time to let the restart to happen. If the app does nothing, a restart will be enforced after a 24-hour grace period has passed. Currently, this event is only fired for Chrome OS kiosk apps.
                 </p>      <tr><td>
